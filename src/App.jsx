@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
-import Projects from './components/Projects'
+
 import Contact from './components/ContactFormWithInfo'
 import Footer from './components/Footer'
 import ProjectsShowcase from './components/ProjectsShowcase'
@@ -10,7 +10,7 @@ import Technologies from './components/Technologies'
 import IdeaToLaunch from './IdeaToLaunch'
 import WebsiteProjects from './components/WebsiteProjects'
 import VisionMission from './components/VisionMission'
-import Testimonials from './components/Testimonials'
+
 import ChatWidget from './components/ChatWidget'   // ✅ new import
 
 export default function App(){
