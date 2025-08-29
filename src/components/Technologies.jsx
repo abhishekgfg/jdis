@@ -82,7 +82,10 @@ const tabs = [
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-slate-50 to-sky-50 py-20 px-6 md:px-16 overflow-hidden">
+    <section 
+  id="technologies" 
+  className="relative bg-gradient-to-b from-white via-slate-50 to-sky-50 py-20 px-6 md:px-16 overflow-hidden"
+>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-tr from-sky-100 via-white to-indigo-100 opacity-60 blur-3xl animate-pulse"></div>
 

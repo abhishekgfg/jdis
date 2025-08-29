@@ -12,6 +12,7 @@ import {
   FaPhone, 
   FaEnvelope 
 } from "react-icons/fa";
+import logo from "./images/jagdamba.png";
 
 
 
@@ -41,7 +42,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div>
             <div className="flex items-center mb-3">
-              <img src="src/components/images/jagdamba.png" alt="Logo" className="w-20 h-20 mr-3" />
+             <img src={logo} alt="Logo" className="w-20 h-20 mr-3" />
               <span className="font-extrabold text-2xl text-sky-700">JD Infotech Solution</span>
             </div>
             <p className="text-slate-600 text-sm leading-relaxed">

@@ -27,7 +27,10 @@ export default function ContactFormWithInfo() {
   };
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-20 bg-gradient-to-b from-white via-sky-50 to-slate-50 overflow-hidden">
+   <section
+  id="contact"
+  className="relative w-full py-20 px-6 md:px-20 bg-gradient-to-b from-white via-sky-50 to-slate-50 overflow-hidden"
+>
       {/* Background Circles */}
         <div className="absolute inset-0 pointer-events-none">
     <div className="absolute -top-32 -left-24 w-96 h-96 bg-purple-500 rounded-full opacity-20"></div>

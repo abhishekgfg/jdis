@@ -95,7 +95,10 @@ const projects = [
 
 export default function WebsiteProjects() {
   return (
-   <section className="relative bg-gradient-to-b from-white via-slate-50 to-indigo-50 py-20 px-6 md:px-16 overflow-hidden">
+  <section 
+  id="webuild" 
+  className="relative bg-gradient-to-b from-white via-slate-50 to-indigo-50 py-20 px-6 md:px-16 overflow-hidden"
+>
   {/* Background circle + spark design */}
  <div className="absolute inset-0 pointer-events-none">
     <div className="absolute -top-32 -left-24 w-96 h-96 bg-purple-500 rounded-full opacity-20"></div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "./images/jagdamba.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +18,9 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
           {/* Logo + Name */}
           <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden shadow">
+            <div className="w-20 h-15 rounded-xl flex items-center justify-center overflow-hidden shadow">
               <img
-                src="src/components/images/jagdamba.png"
+                src={logo}
                 alt="Logo"
                 className="w-full h-full object-cover"
               />
@@ -33,17 +34,22 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex gap-6 items-center text-sm">
-            <a href="#services" className="hover:text-brand-700">Services</a>
-            <a href="#projects" className="hover:text-brand-700">Projects</a>
-            <a href="#contact" className="hover:text-brand-700">Contact</a>
-            <a
-              href="#"
-              className="ml-4 inline-block px-4 py-2 bg-gradient-to-r from-brand-500 to-blue-600 text-white rounded-lg shadow"
-            >
-              Let's Talk
-            </a>
-          </nav>
+       <nav className="hidden md:flex gap-6 items-center text-sm">
+  <a href="#hero" className="hover:text-brand-700">Home</a>
+  <a href="#services" className="hover:text-brand-700">Services</a>
+  <a href="#projects" className="hover:text-brand-700">Projects</a>
+  <a href="#technologies" className="hover:text-brand-700">Technologies</a>
+  <a href="#webuild" className="hover:text-brand-700">We Build</a>
+
+  <a href="#contact" className="hover:text-brand-700">Contact</a>
+
+  <a
+    href="#contact"
+    className="ml-4 inline-block px-4 py-2 bg-gradient-to-r from-brand-500 to-blue-600 text-white rounded-lg shadow"
+  >
+    Let's Talk
+  </a>
+</nav>
 
           {/* Mobile Menu Button */}
           <button
