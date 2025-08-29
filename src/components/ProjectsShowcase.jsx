@@ -25,13 +25,14 @@ const projects = [
     status: "Successfull delivered",
     link: "https://airfresearch.com/"
   },
-  {
-    title: "Education Website",
-    desc: "A modern marriage hall booking portal where users can check availability, explore event packages, and book halls online with integrated payment options.",
-    stack: ["React", "Redux", "TailwindCSS", "Node.js", "MongoDB", "Firebase", "HTML", "Git"],
-    status: "Successfull delivered",
-    link: "https://www.shodhsutra.com/"
-  },
+{
+  title: "Education Platform",
+  desc: "A modern education portal where students can access courses, track progress, and interact with instructors online. Features include course catalogs, quizzes, and seamless payment integration.",
+  stack: ["React", "Redux", "TailwindCSS", "Node.js", "MongoDB", "Firebase", "HTML", "Git"],
+  status: "Successfully Delivered",
+  link: "https://www.shodhsutra.com/"
+},
+
   {
     title: "Indian Institute of Research and Higher Education",
     desc: "An intuitive platform to guide students through the admission process — includes university listings, real-time counseling, and document submission.",
@@ -46,13 +47,14 @@ const projects = [
     status: "🚧 Under Development",
     link: "https://restaurant-tan-phi.vercel.app/"
   },
-  {
-    title: "School Website",
-    desc: "An interactive website for a car detailing business showcasing services, appointment booking, pricing, and dynamic service listings with animation.",
-    stack: ["React", "Framer Motion", "TailwindCSS", "Firebase", "Git"],
-    status: "🚧 Under Development",
-    link: "https://institute-frontend-mocha.vercel.app/"
-  },
+{
+  title: "School Website",
+  desc: "An interactive school website showcasing academic programs, events, faculty, and admission information. Features include dynamic content, animations, and easy navigation for students and parents.",
+  stack: ["React", "Framer Motion", "TailwindCSS", "Firebase", "Git"],
+  status: "🚧 Under Development",
+  link: "https://institute-frontend-mocha.vercel.app/"
+},
+
   {
     title: "Library Management System",
     desc: "A digital library system for managing book inventories, issuing/returning books, and tracking user activity with an admin dashboard.",
