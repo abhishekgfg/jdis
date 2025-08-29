@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Gradient slide animation (runs once per hover) */
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.group:hover .animate-slide {
+  animation: slide 1.5s linear forwards;
+}
