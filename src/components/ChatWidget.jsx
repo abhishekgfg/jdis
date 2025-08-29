@@ -21,7 +21,8 @@ Email: aviraj0403@gmail.com
 WhatsApp: https://wa.me/916200594193
 
 👨‍💼 Hritik Kumar
-Phone: +91 6203120072`;
+Email: hritikcse859@gmail.com
+Phone: +91 6209015004`;
 
   // ✅ Auto open chat after 5 seconds
   useEffect(() => {
