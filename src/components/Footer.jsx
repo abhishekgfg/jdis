@@ -84,7 +84,7 @@ export default function Footer() {
     {/* Address */}
     <li className="flex items-center gap-2">
       <FaMapMarkerAlt className="text-sky-500 mt-1" />
-      <span>hosiyarpur, Noida Sector 51, Noida, UP</span>
+      <span>hosiyarpur, Noida Sector 51, Noida, UP && Patna Bihar</span>
     </li>
 
     {/* Phone Numbers */}
@@ -94,10 +94,8 @@ export default function Footer() {
         <a href="tel:+916202000340" className="hover:text-green-500 transition">
           +91 6202000340
         </a>
-        ,{" "}
-        <a href="tel:+916200594193" className="hover:text-green-500 transition">
-          6200594193
-        </a>
+      
+        
       </span>
     </li>
 
@@ -106,12 +104,10 @@ export default function Footer() {
       <FaEnvelope className="text-sky-500 mt-1" />
       <span>
         <a href="mailto:abhishek8579013@gmail.com" className="hover:text-sky-500 transition">
-          info@jdinfotechsolution.com
+          abhishek8579013@gmail.com
         </a>
-        ,{" "}
-        {/* <a href="mailto:aviraj0403@gmail.com" className="hover:text-sky-500 transition">
-          aviraj0403@gmail.com
-        </a> */}
+      
+       
       </span>
     </li>
   </ul>

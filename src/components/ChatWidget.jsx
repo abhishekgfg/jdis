@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 
 export default function ChatWidget() {
@@ -7,6 +7,8 @@ export default function ChatWidget() {
     { sender: "bot", text: "Hello 👋, I’m JD Infotech AI Assistant. How can I help you today?" }
   ]);
   const [input, setInput] = useState("");
+
+  const chatContainerRef = useRef(null); // Ref for scrolling
 
   const contactInfo = `\n\n📞 Contact Our Team:
 
@@ -24,13 +26,17 @@ WhatsApp: https://wa.me/916200594193
 Email: hritikcse859@gmail.com
 Phone: +91 6209015004`;
 
-  // ✅ Auto open chat after 5 seconds
+  // ✅ Auto-open chat after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
       setMessages(prev => [
         ...prev,
-        { sender: "bot", text: "🤔 Still confused? Please i will guide you ask anything or please contact us!" + contactInfo }
+        {
+          sender: "bot",
+          text:
+            "🤔 Still confused? Please ask anything or contact us!" + contactInfo
+        }
       ]);
     }, 5000);
 
@@ -41,10 +47,22 @@ Phone: +91 6209015004`;
     e.preventDefault();
     if (!input.trim()) return;
 
+    // Add user message
     setMessages([...messages, { sender: "user", text: input }]);
     const userMsg = input.toLowerCase();
     setInput("");
 
+    // Scroll the last message to the top
+    setTimeout(() => {
+      if (chatContainerRef.current) {
+        const lastMsg = chatContainerRef.current.lastElementChild;
+        if (lastMsg) {
+          chatContainerRef.current.scrollTop = lastMsg.offsetTop;
+        }
+      }
+    }, 50);
+
+    // Bot reply simulation
     setTimeout(() => {
       let reply = "";
 
@@ -99,6 +117,7 @@ Phone: +91 6209015004`;
 
       {isOpen && (
         <div className="w-80 h-96 bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+          {/* Header */}
           <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <h3 className="font-semibold">JD Infotech AI Chat</h3>
             <button onClick={() => setIsOpen(false)}>
@@ -106,7 +125,11 @@ Phone: +91 6209015004`;
             </button>
           </div>
 
-          <div className="flex-1 p-3 space-y-2 overflow-y-auto whitespace-pre-line">
+          {/* Messages */}
+          <div
+            ref={chatContainerRef}
+            className="flex-1 p-3 space-y-2 overflow-y-auto whitespace-pre-line"
+          >
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -121,6 +144,7 @@ Phone: +91 6209015004`;
             ))}
           </div>
 
+          {/* Input */}
           <form onSubmit={handleSend} className="flex items-center border-t">
             <input
               type="text"

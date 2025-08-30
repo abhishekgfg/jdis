@@ -63,7 +63,7 @@ const projects = [
     link: "https://dashboard-ten-alpha-25.vercel.app/"
   },
   {
-    title: "Counstatancy Website",
+    title: "Consultancy Website",
     desc: "A professional school website featuring admission forms, class sections, photo gallery, download center, and student result portal.",
     stack: ["React", "TailwindCSS", "Framer Motion", "Firebase", "Git"],
     status: "✅ Live",

@@ -38,7 +38,8 @@ export default function ContactFormWithInfo() {
     <div className="absolute top-1/2 left-0 w-72 h-72 bg-teal-500 rounded-full opacity-10"></div>
   </div>
 
-      <div className="relative max-w-7xl mx-auto grid gap-10 md:grid-cols-2 items-center">
+    <div className="relative max-w-7xl mx-auto grid gap-10 md:grid-cols-2 items-start">
+
         {/* Left: Form */}
         <motion.form
           onSubmit={handleSubmit}
@@ -111,7 +112,8 @@ export default function ContactFormWithInfo() {
         </motion.form>
 
         {/* Right: Contact Info */}
-        <motion.div className="flex flex-col gap-6 relative z-10">
+       <motion.div className="flex flex-col gap-6 relative z-10 w-full">
+
           {/* Address */}
           <div className="flex items-center gap-4 bg-white rounded-3xl shadow-xl p-6 hover:scale-105 transition-transform duration-300">
             <div className="p-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white">
@@ -140,12 +142,7 @@ export default function ContactFormWithInfo() {
                   +91 6202000340
                 </a>
                 ,{" "}
-                <a
-                  href="tel:+916200594193"
-                  className="hover:underline hover:text-green-500 transition"
-                >
-                  6200594193 ,
-                </a> <a
+             <a
                   href="tel:+916200594193"
                   className="hover:underline hover:text-green-500 transition"
                 >
@@ -170,12 +167,7 @@ export default function ContactFormWithInfo() {
                   abhishek8579013@gmail.com
                 </a>
                 ,{" "}
-                <a
-                  href="mailto:aviraj0403@gmail.com"
-                  className="hover:underline hover:text-purple-500 transition"
-                >
-                  aviraj0403@gmail.com
-                </a>
+            
               </p>
             </div>
           </div>
