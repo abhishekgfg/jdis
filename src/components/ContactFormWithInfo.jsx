@@ -122,7 +122,7 @@ export default function ContactFormWithInfo() {
             <div>
               <h4 className="font-semibold text-gray-800">Address</h4>
               <p className="text-gray-500">
-                Hosiyarpur, Noida Sector 51, Noida, UP
+                Patna bihar, noida up
               </p>
             </div>
           </div>
@@ -139,14 +139,14 @@ export default function ContactFormWithInfo() {
                   href="tel:+916202000340"
                   className="hover:underline hover:text-green-500 transition"
                 >
-                  +91 6202000340
+                  +91 6209015004
                 </a>
                 ,{" "}
              <a
                   href="tel:+916200594193"
                   className="hover:underline hover:text-green-500 transition"
                 >
-               6209015004
+              6202000340
                 </a>
               </p>
             </div>
@@ -164,7 +164,8 @@ export default function ContactFormWithInfo() {
                   href="mailto:abhishek8579013@gmail.com"
                   className="hover:underline hover:text-purple-500 transition"
                 >
-                  abhishek8579013@gmail.com
+                 jdinfotechsloution@gmail.com
+
                 </a>
                 ,{" "}
             
