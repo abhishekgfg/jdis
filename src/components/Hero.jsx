@@ -27,7 +27,7 @@ export default function Hero() {
     const message = `Hello, my name is ${formData.name}.
 Email: ${formData.email}
 Project Details: ${formData.project}`;
-    const phoneNumber = "916202000340"; // your WhatsApp number (without +)
+    const phoneNumber = "919523435814"; // your WhatsApp number (without +)
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };

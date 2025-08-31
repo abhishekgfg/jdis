@@ -18,7 +18,7 @@ export default function ContactFormWithInfo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const whatsappNumber = "6202000340";
+    const whatsappNumber = "9523435814";
     const text = `Hello, my name is ${form.name}. Email: ${form.email}. Phone: ${form.phone}. Subject: ${form.subject}. Message: ${form.message}`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       text
@@ -136,7 +136,7 @@ export default function ContactFormWithInfo() {
               <h4 className="font-semibold text-gray-800">Phone</h4>
               <p className="text-gray-500">
                 <a
-                  href="tel:+916202000340"
+                  href="tel:+9166209015004"
                   className="hover:underline hover:text-green-500 transition"
                 >
                   +91 6209015004
