@@ -12,18 +12,20 @@ export default function ChatWidget() {
 
   const contactInfo = `\n\n📞 Contact Our Team:
 
-👨‍💼 Abhishek Kumar Pandey
-Phone: +91 6202000340
-Email: abhishek8579013@gmail.com
-WhatsApp: https://wa.me/916202000340
 
 👨‍💻 Aviraj
 Phone: +91 6200594193
-Email: aviraj0403@gmail.com
+Email: jdinfotechsloution@gmail.com
 WhatsApp: https://wa.me/916200594193
 
+👨‍💼 Abhishek pandey
+Phone: +91 6202000340
+Email: jdinfotechsloution@gmail.com
+WhatsApp: https://wa.me/919523435814
+
+
 👨‍💼 Hritik Kumar
-Email: hritikcse859@gmail.com
+Email:jdinfotechsloution@gmail.com
 Phone: +91 6209015004`;
 
   // ✅ Auto-open chat after 5 seconds
