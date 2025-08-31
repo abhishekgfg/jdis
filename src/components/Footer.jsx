@@ -84,7 +84,7 @@ export default function Footer() {
     {/* Address */}
     <li className="flex items-center gap-2">
       <FaMapMarkerAlt className="text-sky-500 mt-1" />
-      <span>Patna Bihar</span>
+      <span>Bhagwat Nagar Patna Bihar && noida sector 27 near of atta market noida uttar pradesh</span>
     </li>
 
     {/* Phone Numbers */}

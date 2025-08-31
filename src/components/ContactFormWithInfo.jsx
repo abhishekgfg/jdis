@@ -122,7 +122,7 @@ export default function ContactFormWithInfo() {
             <div>
               <h4 className="font-semibold text-gray-800">Address</h4>
               <p className="text-gray-500">
-                Patna bihar, noida up
+                Bhagwat Nagar Patna Bihar && noida sector 27 near of atta market noida uttar pradesh
               </p>
             </div>
           </div>
