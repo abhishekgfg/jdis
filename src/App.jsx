@@ -19,13 +19,13 @@ export default function App(){
       <Navbar />
       <main className="pt-20">
         <Hero />
+        <Contact />
         <Services />
         <ProjectsShowcase />
         <Technologies />
         <WebsiteProjects />
         <IdeaToLaunch />
         <VisionMission />
-        <Contact />
       </main>
       <Footer />
 
