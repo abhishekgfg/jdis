@@ -143,10 +143,10 @@ export default function ContactFormWithInfo() {
                 </a>
                 ,{" "}
              <a
-                  href="tel:+916200594193"
+                  href="tel:+91 8699913072"
                   className="hover:underline hover:text-green-500 transition"
                 >
-              6202000340
+             8699913072
                 </a>
               </p>
             </div>

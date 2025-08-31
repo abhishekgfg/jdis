@@ -13,13 +13,13 @@ export default function ChatWidget() {
   const contactInfo = `\n\n📞 Contact Our Team:
 
 
-👨‍💻 Aviraj
-Phone: +91 6200594193
-Email: jdinfotechsloution@gmail.com
-WhatsApp: https://wa.me/916200594193
+// 👨‍💻 Aviraj
+// Phone: +91 6200594193
+// Email: jdinfotechsloution@gmail.com
+// WhatsApp: https://wa.me/916200594193
 
-👨‍💼 Abhishek pandey
-Phone: +91 6202000340
+👨‍💼 suraj kumar
+Phone: +91 8699913072
 Email: jdinfotechsloution@gmail.com
 WhatsApp: https://wa.me/919523435814
 
@@ -27,6 +27,11 @@ WhatsApp: https://wa.me/919523435814
 👨‍💼 Hritik Kumar
 Email:jdinfotechsloution@gmail.com
 Phone: +91 6209015004`;
+// WhatsApp: https://wa.me/919523435814
+
+
+
+
 
   // ✅ Auto-open chat after 5 seconds
   useEffect(() => {

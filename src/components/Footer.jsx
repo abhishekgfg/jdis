@@ -92,7 +92,7 @@ export default function Footer() {
       <FaPhone className="text-green-500 mt-1" />
       <span>
         <a href="tel:+916202000340" className="hover:text-green-500 transition">
-          +91 6209015004
+          +91 6209015004 ,8699913072
         </a>
       
         
