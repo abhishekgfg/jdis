@@ -1,20 +1,46 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import logo from "./images/jagdamba.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  // Sidebar links
+  // Links
   const links = [
-    { href: "#hero", label: "Home" },
+    { href: "/", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#projects", label: "Projects" },
     { href: "#technologies", label: "Technologies" },
     { href: "#webuild", label: "We Build" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
+    { href: "/casestudy", label: "Case Studies" },
+    { href: "/blog", label: "Blog" },
   ];
+
+  // Helper to render links
+  const renderLink = (link) => {
+    if (link.href.startsWith("#")) {
+      // ID link
+      return location.pathname === "/" ? (
+        <HashLink smooth to={link.href} onClick={() => setIsOpen(false)}>
+          {link.label}
+        </HashLink>
+      ) : (
+        <HashLink smooth to={`/${link.href}`} onClick={() => setIsOpen(false)}>
+          {link.label}
+        </HashLink>
+      );
+    }
+    return (
+      <Link to={link.href} onClick={() => setIsOpen(false)}>
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -40,16 +66,18 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-6 items-center text-sm">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-brand-700">
-                {link.label}
-              </a>
+              <div key={link.href} className="hover:text-brand-700">
+                {renderLink(link)}
+              </div>
             ))}
-            <a
-              href="#contact"
+
+            <HashLink
+              smooth
+              to={location.pathname === "/" ? "#contact" : "/#contact"}
               className="ml-4 inline-block px-4 py-2 bg-gradient-to-r from-yellow-500 to-blue-600 text-white rounded-lg shadow hover:scale-105 transition-transform"
             >
               Let's Talk
-            </a>
+            </HashLink>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -87,11 +115,11 @@ export default function Navbar() {
               {/* Header */}
               <div className="p-6 border-b border-slate-200 flex items-center justify-between yellow text-blue rounded-b-xl shadow-md">
                 <div className="flex items-center gap-3">
-    <div className="w-20 h-15 rounded-full overflow-hidden shadow-md">
-      <img src={logo} alt="JD Infotech Logo" className="w-full h-full object-cover" />
-    </div>
-    <h2 className="text-lg font-bold">JD Infotech Solution</h2>
-  </div>
+                  <div className="w-20 h-15 rounded-full overflow-hidden shadow-md">
+                    <img src={logo} alt="JD Infotech Logo" className="w-full h-full object-cover" />
+                  </div>
+                  <h2 className="text-lg font-bold">JD Infotech Solution</h2>
+                </div>
 
                 <button
                   onClick={() => setIsOpen(false)}
@@ -101,7 +129,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Sidebar Links with stagger animation */}
+              {/* Sidebar Links */}
               <motion.nav
                 initial="hidden"
                 animate="visible"
@@ -111,30 +139,21 @@ export default function Navbar() {
                 }}
               >
                 {links.map((link) => (
-                  <motion.a
+                  <motion.div
                     key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="hover:text-blue-600 transition-transform hover:scale-105"
-                    variants={{
-                      hidden: { opacity: 0, x: 50 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
+                    variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0 } }}
                   >
-                    {link.label}
-                  </motion.a>
+                    {renderLink(link)}
+                  </motion.div>
                 ))}
-                <motion.a
-                  href="#contact"
-                  onClick={() => setIsOpen(false)}
+
+                <HashLink
+                  smooth
+                  to={location.pathname === "/" ? "#contact" : "/#contact"}
                   className="px-4 py-2 mt-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow text-center hover:scale-105 transition-transform"
-                  variants={{
-                    hidden: { opacity: 0, x: 50 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
                 >
                   Let's Talk
-                </motion.a>
+                </HashLink>
               </motion.nav>
 
               {/* Footer */}
