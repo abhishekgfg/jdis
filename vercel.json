@@ -2,6 +2,5 @@
   "installCommand": "npm install --ignore-scripts",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "ignoreCommand": "echo 'no cache'",
   "cleanUrls": true
 }
