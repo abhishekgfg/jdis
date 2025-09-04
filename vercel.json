@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm install --ignore-scripts && npx vite build",
   "installCommand": "npm install --ignore-scripts",
-  "ignoreCommand": "echo 'Ignoring cache'",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "ignoreCommand": "echo 'no cache'",
   "cleanUrls": true
 }
