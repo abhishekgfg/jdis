@@ -11,27 +11,19 @@ export default function ChatWidget() {
   const chatContainerRef = useRef(null); // Ref for scrolling
 
   const contactInfo = `\n\n📞 Contact Our Team:
-
-
-👨‍💼 Hritik Kumar
-Phone: +91 6209015004
+👨‍💼 Abhishek kumar
+Phone: +91 6202000340
 Email: jdinfotechsloution@gmail.com
-WhatsApp: https://wa.me/916209015004
+WhatsApp: https://wa.me/916202000340
 
-👨‍💼 suraj kumar
-Phone: +91 8699913072
+👨‍💼 Hritik kumar
+Phone: +91 6209015004
 Email: jdinfotechsloution@gmail.com
 WhatsApp: https://wa.me/919523435814
 
-
-👨‍💼 Hritik Kumar
+👨‍💼 Suraj Kumar
 Email:jdinfotechsloution@gmail.com
-Phone: +91 6209015004`;
-
-
-
-
-
+Phone: +91 8699913072`;
 
   // ✅ Auto-open chat after 5 seconds
   useEffect(() => {

@@ -135,11 +135,18 @@ export default function ContactFormWithInfo() {
             <div>
               <h4 className="font-semibold text-gray-800">Phone</h4>
               <p className="text-gray-500">
+                  <a
+                  href="tel:+916202000340"
+                  className="hover:underline hover:text-green-500 transition"
+                >
+                  +91 6202000340
+                </a>
+                 ,{" "}
                 <a
                   href="tel:+9166209015004"
                   className="hover:underline hover:text-green-500 transition"
                 >
-                  +91 6209015004
+                  +91 6209015004 
                 </a>
                 ,{" "}
              <a

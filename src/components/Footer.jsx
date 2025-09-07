@@ -92,7 +92,7 @@ export default function Footer() {
       <FaPhone className="text-green-500 mt-1" />
       <span>
         <a href="tel:+916202000340" className="hover:text-green-500 transition">
-          +91 6209015004 ,8699913072
+          +91 6202000340
         </a>
       
         
@@ -120,19 +120,28 @@ export default function Footer() {
         </div>
 
         {/* Animated Social Icons */}
-        <div className="flex justify-center space-x-6 mt-12 relative z-10 text-slate-600">
-          {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-2xl hover:text-sky-500 transition-colors"
-            >
-              <Icon />
-            </motion.a>
-          ))}
-        </div>
+        {/* Animated Social Icons */}
+<div className="flex justify-center space-x-6 mt-12 relative z-10 text-slate-600">
+  {[
+    { Icon: FaFacebookF, url: "https://www.facebook.com/share/19egFPptAQ/" },
+    { Icon: FaInstagram, url: "https://www.instagram.com/jd_infotech_solutions?igsh=anp6ZmpzZmR1dTcy" },
+    { Icon: FaLinkedinIn, url: "https://www.linkedin.com/company/yourpage" },
+    { Icon: FaYoutube, url: "https://www.youtube.com/@yourchannel" }
+  ].map(({ Icon, url }, index) => (
+    <motion.a
+      key={index}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.2, rotate: 10 }}
+      whileTap={{ scale: 0.9 }}
+      className="text-2xl hover:text-sky-500 transition-colors"
+    >
+      <Icon />
+    </motion.a>
+  ))}
+</div>
+
 
         {/* Footer Bottom */}
         <div className="text-center text-slate-500 text-sm mt-8 relative z-10 pb-6">
