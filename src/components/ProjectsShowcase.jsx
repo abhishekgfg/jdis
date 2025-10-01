@@ -98,14 +98,16 @@ export default function ProjectsShowcase() {
         {/* Cards */}
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
           {projects.map((p, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: i * 0.15, duration: 0.6, type: "spring" }}
-              className="relative group p-6 rounded-2xl bg-white/80 backdrop-blur-lg border border-slate-200 
-                         shadow-lg hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 transition-all duration-500"
-            >
+<motion.div
+  key={i}
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="relative group p-6 rounded-2xl bg-white border border-slate-200 
+             shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-500"
+>
+
               {/* Left-to-right glow on hover */}
             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-700 overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-500 animate-slide"></div>
