@@ -98,7 +98,7 @@ Phone: +91 8699913072`;
         <div
           className="absolute bottom-20 right-0 bg-white shadow-lg border p-3 rounded-lg w-64 text-sm text-gray-700 animate-bounce"
         >
-          🤔 Still confused? Please ask anything or contact us! 9523435814
+          🤔 Still confused? Please ask anything or contact us! +919523435814
         </div>
       )}
 
