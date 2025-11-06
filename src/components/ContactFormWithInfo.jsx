@@ -143,18 +143,18 @@ export default function ContactFormWithInfo() {
                 </a>
                  ,{" "}
                 <a
-                  href="tel:+9166209015004"
+                  href="tel:+919523435814"
                   className="hover:underline hover:text-green-500 transition"
                 >
-                  +91 6209015004 
+                  +91 9523435814 
                 </a>
                 ,{" "}
-             <a
+             {/* <a
                   href="tel:+91 8699913072"
                   className="hover:underline hover:text-green-500 transition"
                 >
              8699913072
-                </a>
+                </a> */}
               </p>
             </div>
           </div>
@@ -171,10 +171,17 @@ export default function ContactFormWithInfo() {
                   href="mailto:abhishek8579013@gmail.com"
                   className="hover:underline hover:text-purple-500 transition"
                 >
-                 jdinfotechsloution@gmail.com
+                 jdinfotechsloution@gmail.com ,
 
                 </a>
                 ,{" "}
+                       <a
+                  href="mailto:abhishek8579013@gmail.com"
+                  className="hover:underline hover:text-purple-500 transition"
+                >
+                 abhishek8579013@gmail.com
+
+                </a>
             
               </p>
             </div>
