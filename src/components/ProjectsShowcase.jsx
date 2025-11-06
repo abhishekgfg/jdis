@@ -8,14 +8,14 @@ const projects = [
     title: "Grocery Delivery",
     desc: "A user-friendly grocery delivery platform that allows customers to browse products, add items to cart, and place orders with real-time status updates.",
     stack: ["React", "Redux", "TailwindCSS", "Node.js", "MongoDB", "Firebase", "HTML", "Git"],
-    status: "🚧 Under Development",
-    link: "#"
+    status: "Live",
+    link: "https://shanumart.in/"
   },
   {
     title: "Ecommerce website ",
     desc: "A full-featured school management system to handle admissions, attendance, student progress, and teacher coordination — all in one dashboard.",
     stack: ["React", "Node.js", "MongoDB", "Express.js", "TailwindCSS", "Git"],
-    status: "🚧 Under Development",
+    status: "Live",
     link: "https://herbs.manovaidya.in/"
   },
   {
@@ -25,13 +25,13 @@ const projects = [
     status: "Successfull delivered",
     link: "https://airfresearch.com/"
   },
-{
-  title: "Education Platform",
-  desc: "A modern education portal where students can access courses, track progress, and interact with instructors online. Features include course catalogs, quizzes, and seamless payment integration.",
-  stack: ["React", "Redux", "TailwindCSS", "Node.js", "MongoDB", "Firebase", "HTML", "Git"],
-  status: "Successfully Delivered",
-  link: "https://www.shodhsutra.com/"
-},
+  {
+    title: "Education Platform",
+    desc: "A modern education portal where students can access courses, track progress, and interact with instructors online. Features include course catalogs, quizzes, and seamless payment integration.",
+    stack: ["React", "Redux", "TailwindCSS", "Node.js", "MongoDB", "Firebase", "HTML", "Git"],
+    status: "Successfully Delivered",
+    link: "https://www.shodhsutra.com/"
+  },
 
   {
     title: "Indian Institute of Research and Higher Education",
@@ -44,16 +44,16 @@ const projects = [
     title: "Restaurant Ordering System",
     desc: "A full-stack food ordering system that supports restaurant listings, dynamic menu uploads, table bookings, and real-time order status.",
     stack: ["React", "Redux", "Node.js", "MongoDB", "Express.js", "TailwindCSS", "JWT"],
-    status: "🚧 Under Development",
-    link: "https://restaurant-tan-phi.vercel.app/"
+    status: "Live",
+    link: "https://the9to9restaurant.com/"
   },
-{
-  title: "School Website",
-  desc: "An interactive school website showcasing academic programs, events, faculty, and admission information. Features include dynamic content, animations, and easy navigation for students and parents.",
-  stack: ["React", "Framer Motion", "TailwindCSS", "Firebase", "Git"],
-  status: "🚧 Under Development",
-  link: "https://institute-frontend-mocha.vercel.app/"
-},
+  {
+    title: "School Website",
+    desc: "An interactive school website showcasing academic programs, events, faculty, and admission information. Features include dynamic content, animations, and easy navigation for students and parents.",
+    stack: ["React", "Framer Motion", "TailwindCSS", "Firebase", "Git"],
+    status: "🚧 Under Development",
+    link: "https://institute-frontend-mocha.vercel.app/"
+  },
 
   {
     title: "Library Management System",
@@ -98,20 +98,20 @@ export default function ProjectsShowcase() {
         {/* Cards */}
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
           {projects.map((p, i) => (
-<motion.div
-  key={i}
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  className="relative group p-6 rounded-2xl bg-white border border-slate-200 
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative group p-6 rounded-2xl bg-white border border-slate-200 
              shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-500"
->
+            >
 
               {/* Left-to-right glow on hover */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-700 overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-500 animate-slide"></div>
-</div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-700 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-500 animate-slide"></div>
+              </div>
               {/* Inner Content */}
               <div className="relative z-10">
                 {/* Title + Link */}
@@ -141,8 +141,8 @@ export default function ProjectsShowcase() {
                 <div className="mt-5">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold 
-                      ${p.status.includes("Live") 
-                        ? "bg-green-100 text-green-600" 
+                      ${p.status.includes("Live")
+                        ? "bg-green-100 text-green-600"
                         : "bg-yellow-100 text-yellow-700 animate-pulse"}`}
                   >
                     {p.status}
