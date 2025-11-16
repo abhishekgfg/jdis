@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: true, 
-    allowedHosts: ['all'], 
+    allowedHosts: ['all', 'www.jdinfotechsolutions.in'],
   }
 
 });
