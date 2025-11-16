@@ -8,4 +8,5 @@ export default defineConfig({
     host: true, 
     allowedHosts: ['all', 'www.jdinfotechsolutions.in'],
   }
+  
 });
