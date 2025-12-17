@@ -97,15 +97,15 @@ Project Details: ${formData.project}`;
           {/* Stats */}
           <div className="mt-8 flex gap-6 text-sm text-slate-500">
             <div>
-              <div className="text-2xl font-bold">20+</div>
+              <div className="text-2xl font-bold">100+</div>
               <div>Products shipped</div>
             </div>
             <div>
-              <div className="text-2xl font-bold">50+</div>
+              <div className="text-2xl font-bold">20+</div>
               <div>Experienced engineers</div>
             </div>
             <div>
-              <div className="text-2xl font-bold">10</div>
+              <div className="text-2xl font-bold">5+</div>
               <div>Years of combined experience</div>
             </div>
           </div>

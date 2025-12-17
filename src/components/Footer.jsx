@@ -123,7 +123,7 @@ export default function Footer() {
         {/* Animated Social Icons */}
 <div className="flex justify-center space-x-6 mt-12 relative z-10 text-slate-600">
   {[
-    { Icon: FaFacebookF, url: "https://www.facebook.com/share/19egFPptAQ/" },
+    { Icon: FaFacebookF, url: "https://www.facebook.com/profile.php?id=61579891453524" },
     { Icon: FaInstagram, url: "https://www.instagram.com/jd_infotech_solutions?igsh=anp6ZmpzZmR1dTcy" },
     { Icon: FaLinkedinIn, url: "https://www.linkedin.com/company/yourpage" },
     { Icon: FaYoutube, url: "https://www.youtube.com/@yourchannel" }

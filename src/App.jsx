@@ -10,6 +10,7 @@ import CaseStudy from './components/CaseStudy'
 import ContactFormWithInfo from './components/ContactFormWithInfo'
 import ScrollToTop from './components/ScrollToTop' // ✅ import
 import BlogPage from './components/BlogPage'
+import MeetOurTeam from './pages/teams/MeetOurTeam'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/casestudy" element={<CaseStudy />} /> 
             <Route path="/contact" element={<ContactFormWithInfo />} /> 
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/meet-our-team" element={<MeetOurTeam />} />
           </Routes>
         </main>
         <Footer />
