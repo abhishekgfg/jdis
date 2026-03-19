@@ -6,7 +6,9 @@ import Rishabh from "../../components/images/rishbh.jpeg";
 import Ritik from "../../components/images/hritik.jpeg";
 import Suraj from "../../components/images/suraj.jpeg";
 import Deepak from "../../components/images/deepak.jpeg";
-import Golu from "../../components/images/Golu.jpeg";
+// import Golu from "../../components/images/Golu.jpeg";
+import Sachin from "../../components/images/Sachin.jpeg";
+import Shubham from "../../components/images/Shubham.jpeg";
 import Vivek from "../../components/images/Vivek.jpeg";
 import Rishikesh from "../../components/images/Rishikesh.png";
 import Nikhil from "../../components/images/Nikhil.png";
@@ -66,20 +68,26 @@ export default function MeetOurTeam() {
         img: Pankaj,
       },
       {
+        name: "Sachin Kumar",
+        role: "GM || Darbhanga",
+        description: "Specializes in business development, strategic sales, and client relationship management to accelerate sustainable growth.",
+        img: Sachin,
+      },
+        {
+        name: "Shubham Kumar",
+        role: "BDM || CPR",
+        description: "Specializes in business development, strategic sales, and client relationship management to accelerate sustainable growth.",
+        img: Shubham,
+      },
+      {
         name: "Vivek Kumar",
         role: "Business Development Executive",
         description: "Specializes in business development strategies and client relationship management for sustainable growth.",
         img: Vivek,
-      },
-       {
-        name: "Abhishek Kumar",
-        role: "Executive || Muzaffarpur",
-        description: "Specializes in business development, strategic sales, and client relationship management to accelerate sustainable growth.",
-        img: Golu,
-      },
+      }
     ],
     "Creative & Design Team": [
-        {
+      {
         name: "Nikhil Kumar",
         role: "Graphic Designer",
         description: "Creative graphic designer focused on visual branding, UI/UX design, and compelling visual communications.",
@@ -124,9 +132,8 @@ export default function MeetOurTeam() {
               {members.map((member, index) => (
                 <div
                   key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "justify-start" : "justify-end"
-                  } w-full`}
+                  className={`flex items-center ${index % 2 === 0 ? "justify-start" : "justify-end"
+                    } w-full`}
                 >
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
