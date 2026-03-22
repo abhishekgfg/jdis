@@ -12,9 +12,9 @@ export default function Navbar() {
   // Links (Resources dropdown)
   const links = [
     { href: "/", label: "Home" },
-    { href: "#services", label: "Services" },
+    { href: "/services", label: "Services" },
     { href: "/meet-our-team", label: "Our Team" },
-    { href: "#projects", label: "Projects" },
+    { href: "/projects", label: "Projects" },
     { href: "#technologies", label: "Technologies" },
     { href: "#webuild", label: "We Build" },
 
