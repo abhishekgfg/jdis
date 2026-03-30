@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "./images/jagdamba.png";
@@ -50,6 +50,24 @@ export default function Navbar() {
     );
   };
 
+  // Heartbeat animation variants
+  const heartbeatVariants = {
+    initial: { scale: 1 },
+    animate: {
+      scale: [1, 1.1, 1, 1.05, 1],
+      transition: {
+        duration: 1.2,
+        repeat: Infinity,
+        repeatDelay: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.2 },
+    },
+  };
+
   return (
     <>
       {/* NAVBAR */}
@@ -59,7 +77,7 @@ export default function Navbar() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm"
       >
-        <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-20 h-15 rounded-xl overflow-hidden shadow">
@@ -109,6 +127,20 @@ export default function Navbar() {
                 </div>
               )
             )}
+
+            {/* Call Button with Heartbeat Effect */}
+            <motion.a
+              href="tel:9523435814"
+              variants={heartbeatVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-900 to-emerald-600
+                         text-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <Phone size={18} />
+              <span className="font-medium">+919523435814</span>
+            </motion.a>
 
             <HashLink
               smooth
@@ -191,11 +223,26 @@ export default function Navbar() {
                   )
                 )}
 
+                {/* Mobile Call Button */}
+                <motion.a
+                  href="tel:9523435814"
+                  variants={heartbeatVariants}
+                  initial="initial"
+                  animate="animate"
+                  whileHover="hover"
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 to-emerald-600
+                             text-white rounded-lg text-center mt-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Phone size={18} />
+                  <span>Call 9523435814</span>
+                </motion.a>
+
                 <HashLink
                   smooth
                   to={location.pathname === "/" ? "#contact" : "/#contact"}
                   onClick={() => setIsOpen(false)}
-                  className="mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600
+                  className="mt-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600
                              text-white rounded-lg text-center"
                 >
                   Let's Talk
