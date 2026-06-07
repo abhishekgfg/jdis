@@ -1,13 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @import "tailwindcss";
 
-/* Gradient slide animation (runs once per hover) */
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Global Font */
+html,
+body {
+  font-family: "Inter", sans-serif;
+  background: #020817;
+}
+
+/* Hero Button Shine Animation */
 @keyframes slide {
   from {
     transform: translateX(-100%);
   }
   to {
-    transform: translateX(100%);
+    transform: translateX(300%);
   }
+}
+
+.animate-slide {
+  animation: none;
 }
 
 .group:hover .animate-slide {
