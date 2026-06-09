@@ -171,6 +171,16 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const quickLinks = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Case Studies", href: "/casestudy" },
+    { label: "Blog", href: "/blog" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
     <footer className="relative bg-[#061326] text-white overflow-hidden">
       {/* Top CTA */}
@@ -243,15 +253,13 @@ export default function Footer() {
           <div className="border-l border-white/10 pl-8">
             <h4 className="text-[15px] font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-[13px] text-[#c7d1e0]">
-              {["Home", "About Us", "Portfolio", "Case Studies", "Blog", "Careers", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-[#ffb700] transition">
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="hover:text-[#ffb700] transition">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

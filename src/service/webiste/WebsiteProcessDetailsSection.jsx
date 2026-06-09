@@ -127,7 +127,7 @@ export default function WebsiteProcessDetailsSection() {
       title: "Corporate Business Website",
       type: "Web Development",
       desc: "Modern corporate website with CMS integration and multi-language support.",
-      link: "/projects",
+      link: "/portfolio",
     },
     {
       img: project1,
@@ -297,7 +297,7 @@ export default function WebsiteProcessDetailsSection() {
               </span>
 
               <a
-                href="/projects"
+                href="/portfolio"
                 className="text-[#145cff] text-[12px] font-bold inline-flex items-center gap-2"
               >
                 View All Projects

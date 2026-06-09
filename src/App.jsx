@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -11,14 +11,15 @@ import ContactFormWithInfo from './components/ContactFormWithInfo'
 import ScrollToTop from './components/ScrollToTop' // ✅ import
 import BlogPage from './components/BlogPage'
 import MeetOurTeam from './pages/teams/MeetOurTeam'
-import ProjectsShowcase from './components/ProjectsShowcase'
 // import Services from './components/Services'
 import About from './about/About'
 import Service from './service/Service'
 import Website from './service/webiste/Website'
 import Mobile from './service/mobile/Mobile'
 import Solution from './solution/Solution'
-
+import Portfolio from './portfolio/Portfolio'
+import IndustriesPage from "./industries/IndustriesPage";
+import TechnologyPage from "./technology/technology-page/TechnologyPage";
 
 
 
@@ -36,7 +37,8 @@ export default function App() {
             <Route path="/contact" element={<ContactFormWithInfo />} /> 
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/meet-our-team" element={<MeetOurTeam />} />
-            <Route path="/projects" element={<ProjectsShowcase />} /> {/* Fallback to ProjectsShowcase for unknown routes */}
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/projects" element={<Navigate to="/portfolio" replace />} />
             {/* <Route path="/services" element={<Services />} />  */}
 
 
@@ -45,6 +47,8 @@ export default function App() {
             <Route path="/services/website" element={<Website />} />
             <Route path="/services/mobile-application" element={<Mobile />} />
             <Route path="/solutions" element={<Solution />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+            <Route path="/technologies" element={<TechnologyPage />} />
           </Routes>
         </main>
         <Footer />

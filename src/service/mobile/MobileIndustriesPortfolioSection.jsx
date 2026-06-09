@@ -202,7 +202,7 @@ export default function MobileIndustriesPortfolioSection() {
                         {project.desc}
                       </p>
                       <a
-                        href="/projects"
+                        href="/portfolio"
                         className="mt-3 inline-flex items-center gap-2 text-[11px] font-bold text-white"
                       >
                         View Case Study
