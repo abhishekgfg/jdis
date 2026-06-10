@@ -180,25 +180,25 @@ export default function WebsiteProcessDetailsSection() {
 
   return (
     <section className="bg-[#f8fbff] py-8">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Process */}
-        <div className="rounded-xl bg-white/70 border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.05)] p-6">
+        <div className="rounded-xl border border-[#e5edf7] bg-white/70 p-4 shadow-[0_10px_35px_rgba(15,23,42,0.05)] sm:p-6">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
             Our Process
           </span>
 
-          <h2 className="text-[24px] lg:text-[28px] font-bold text-[#071426]">
+          <h2 className="text-[22px] font-bold leading-tight text-[#071426] sm:text-[24px] lg:text-[28px]">
             Our Proven Website Development Process
           </h2>
 
           <div className="relative mt-6">
             <div className="hidden lg:block absolute top-[31px] left-[65px] right-[65px] border-t border-dashed border-[#b9cdf0]" />
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 relative z-10">
+            <div className="relative z-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 lg:gap-6">
               {process.map((item, index) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.step} className="text-center relative">
+                  <div key={item.step} className="relative rounded-xl border border-[#e5edf7] bg-white p-4 text-center shadow-[0_8px_25px_rgba(20,92,255,0.08)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
                     {index < process.length - 1 && (
                       <span className="hidden lg:block absolute top-[24px] right-[-16px] text-[#145cff]">
                         →
@@ -224,15 +224,15 @@ export default function WebsiteProcessDetailsSection() {
         </div>
 
         {/* Middle Cards */}
-        <div className="grid lg:grid-cols-[1fr_1fr_1.05fr] gap-5 mt-5">
+        <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_1fr_1.05fr]">
           {/* Industries */}
-          <div className="rounded-xl bg-white border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.05)] overflow-hidden">
+          <div className="overflow-hidden rounded-xl border border-[#e5edf7] bg-white shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
             <div className="p-5">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
                 Industries We Serve
               </span>
 
-              <div className="mt-4 grid grid-cols-[160px_1fr] gap-4">
+              <div className="mt-4 grid gap-4 sm:grid-cols-[160px_1fr]">
                 <div className="space-y-4">
                   {industries.map((item) => {
                     const Icon = item.icon;
@@ -247,7 +247,7 @@ export default function WebsiteProcessDetailsSection() {
                     );
                   })}
 
-                  <button className="pt-2 text-[#145cff] text-[13px] font-bold inline-flex items-center gap-2">
+                  <button className="inline-flex pt-2 text-[13px] font-bold text-[#145cff] items-center gap-2">
                     View All Industries
                     <ArrowRight size={15} />
                   </button>
@@ -256,25 +256,25 @@ export default function WebsiteProcessDetailsSection() {
                 <img
                   src={industryImg}
                   alt="Industries"
-                  className="w-full h-[190px] object-cover rounded-lg"
+                  className="h-[210px] w-full rounded-lg object-cover sm:h-[190px]"
                 />
               </div>
             </div>
           </div>
 
           {/* Technologies */}
-          <div className="rounded-xl bg-white border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.05)] p-5">
+          <div className="rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Technologies We Use
             </span>
 
-            <div className="grid grid-cols-4 gap-3 mt-4">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {technologies.map((tech) => {
                 const Icon = tech.icon;
                 return (
                   <div
                     key={tech.name}
-                    className="h-[64px] rounded-lg border border-[#e5edf7] bg-white hover:bg-[#f3f7ff] flex flex-col items-center justify-center gap-1.5 text-center text-[11px] font-semibold text-[#071426] shadow-sm transition-all"
+                    className="flex h-[70px] flex-col items-center justify-center gap-1.5 rounded-lg border border-[#e5edf7] bg-white text-center text-[11px] font-semibold text-[#071426] shadow-sm transition-all hover:bg-[#f3f7ff] sm:h-[64px]"
                   >
                     <Icon size={20} className={tech.color} />
                     <span className="leading-none">{tech.name}</span>
@@ -290,15 +290,15 @@ export default function WebsiteProcessDetailsSection() {
           </div>
 
           {/* Related Portfolio */}
-          <div className="rounded-xl bg-white border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.05)] p-5 overflow-hidden">
-            <div className="flex justify-between items-center">
+          <div className="overflow-hidden rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
+            <div className="flex items-center justify-between gap-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
                 Related Portfolio
               </span>
 
               <a
                 href="/portfolio"
-                className="text-[#145cff] text-[12px] font-bold inline-flex items-center gap-2"
+                className="inline-flex shrink-0 items-center gap-2 text-[12px] font-bold text-[#145cff]"
               >
                 View All Projects
                 <ArrowRight size={14} />
@@ -310,7 +310,7 @@ export default function WebsiteProcessDetailsSection() {
                 type="button"
                 onClick={showPrevProject}
                 aria-label="Previous portfolio project"
-                className="absolute left-[-12px] top-[96px] z-20 w-8 h-8 rounded-full bg-white border border-[#dbe7f5] text-[#145cff] shadow-[0_8px_20px_rgba(15,23,42,0.12)] flex items-center justify-center hover:bg-[#f3f7ff] transition-all"
+                className="absolute left-2 top-[108px] z-20 flex h-8 w-8 items-center justify-center rounded-full border border-[#dbe7f5] bg-white text-[#145cff] shadow-[0_8px_20px_rgba(15,23,42,0.12)] transition-all hover:bg-[#f3f7ff] sm:left-[-12px] sm:top-[96px]"
               >
                 <ChevronLeft size={17} />
               </button>
@@ -325,11 +325,11 @@ export default function WebsiteProcessDetailsSection() {
                       <img
                         src={project.img}
                         alt={project.title}
-                        className="w-full h-[130px] object-cover"
+                        className="h-[180px] w-full object-cover sm:h-[130px]"
                       />
 
                       <div className="p-4">
-                        <div className="flex items-center justify-between gap-3">
+                        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                           <h3 className="text-[14px] font-bold text-[#071426] leading-5">
                             {project.title}
                           </h3>
@@ -361,7 +361,7 @@ export default function WebsiteProcessDetailsSection() {
                 type="button"
                 onClick={showNextProject}
                 aria-label="Next portfolio project"
-                className="absolute right-[-12px] top-[96px] z-20 w-8 h-8 rounded-full bg-white border border-[#dbe7f5] text-[#145cff] shadow-[0_8px_20px_rgba(15,23,42,0.12)] flex items-center justify-center hover:bg-[#f3f7ff] transition-all"
+                className="absolute right-2 top-[108px] z-20 flex h-8 w-8 items-center justify-center rounded-full border border-[#dbe7f5] bg-white text-[#145cff] shadow-[0_8px_20px_rgba(15,23,42,0.12)] transition-all hover:bg-[#f3f7ff] sm:right-[-12px] sm:top-[96px]"
               >
                 <ChevronRight size={17} />
               </button>
@@ -371,13 +371,13 @@ export default function WebsiteProcessDetailsSection() {
 
         {/* FAQ */}
         <div className="mt-6">
-          <div className="flex justify-between items-center mb-4">
+          <div className="mb-4 flex items-start justify-between gap-4">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
                 Frequently Asked Questions
               </span>
 
-              <h2 className="text-[24px] font-bold text-[#071426]">
+              <h2 className="text-[22px] font-bold leading-tight text-[#071426] sm:text-[24px]">
                 Have Questions? We Have Answers!
               </h2>
             </div>
@@ -388,7 +388,7 @@ export default function WebsiteProcessDetailsSection() {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 items-start">
+          <div className="grid gap-4 items-start md:grid-cols-3">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
@@ -422,15 +422,15 @@ export default function WebsiteProcessDetailsSection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-5 rounded-xl bg-[#061326] overflow-hidden border border-[#183456] shadow-[0_15px_40px_rgba(2,8,23,0.15)]">
-          <div className="min-h-[90px] px-7 py-5 flex flex-col lg:flex-row items-center justify-between gap-5">
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-full bg-[#145cff]/20 border border-[#145cff]/40 flex items-center justify-center">
+        <div className="mt-5 overflow-hidden rounded-xl border border-[#183456] bg-[#061326] shadow-[0_15px_40px_rgba(2,8,23,0.15)]">
+          <div className="flex min-h-[90px] flex-col items-stretch justify-between gap-5 px-5 py-6 text-center lg:flex-row lg:items-center lg:px-7 lg:py-5 lg:text-left">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border border-[#145cff]/40 bg-[#145cff]/20 sm:h-16 sm:w-16">
                 <Headphones size={30} className="text-[#2b8cff]" />
               </div>
 
               <div>
-                <h2 className="text-white text-[26px] lg:text-[28px] leading-tight font-bold">
+                <h2 className="text-[22px] font-bold leading-tight text-white sm:text-[26px] lg:text-[28px]">
                   Ready to Build a{" "}
                   <span className="text-[#2b8cff]">Powerful Website?</span>
                 </h2>
@@ -440,13 +440,13 @@ export default function WebsiteProcessDetailsSection() {
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="h-[46px] px-7 rounded-md bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] font-bold inline-flex items-center gap-3 shadow-lg shadow-yellow-500/20 transition-all">
+            <div className="grid gap-3 sm:flex sm:flex-wrap sm:justify-center">
+              <button className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-7 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Start Your Project
                 <ArrowRight size={17} />
               </button>
 
-              <button className="h-[46px] px-7 rounded-md border border-white/25 bg-white/5 hover:bg-white/10 text-white font-semibold inline-flex items-center gap-3 transition-all">
+              <button className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 Schedule a Call
                 <Phone size={17} />
               </button>

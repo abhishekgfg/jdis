@@ -89,20 +89,20 @@ export default function ContactSupportSection() {
   );
 
   return (
-    <section className="bg-[#f7faff] pb-12 text-[#151d35]">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <section className="bg-[#f7faff] pb-10 text-[#151d35] sm:pb-12">
+      <div className="mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <h2 className="text-center text-[16px] font-extrabold text-[#151d35]">
           Connect With Us Your Way
         </h2>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-4 grid gap-4 min-[480px]:grid-cols-2 lg:grid-cols-5">
           {contactWays.map((item) => {
             const Icon = item.icon;
             return (
               <a
                 key={item.title}
                 href={item.href}
-                className="rounded-[6px] border border-[#e1e9f5] bg-white px-5 py-5 text-center shadow-[0_10px_28px_rgba(15,55,105,.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,55,105,.1)]"
+                className="rounded-[6px] border border-[#e1e9f5] bg-white px-4 py-5 text-center shadow-[0_10px_28px_rgba(15,55,105,.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,55,105,.1)] sm:px-5"
               >
                 <div
                   className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full ${item.bg}`}
@@ -128,14 +128,14 @@ export default function ContactSupportSection() {
           <iframe
             title="JD Infotech Solutions Noida Sector 51 Hoshiyarpur map"
             src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
-            className="h-[210px] w-full border-0 md:h-[235px]"
+            className="h-[360px] w-full border-0 sm:h-[260px] md:h-[235px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(247,250,255,.96)_0%,rgba(247,250,255,.52)_34%,rgba(247,250,255,.04)_100%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(247,250,255,.96)_0%,rgba(247,250,255,.52)_42%,rgba(247,250,255,.04)_100%)] sm:bg-[linear-gradient(90deg,rgba(247,250,255,.96)_0%,rgba(247,250,255,.52)_34%,rgba(247,250,255,.04)_100%)]" />
 
-          <div className="absolute left-5 top-1/2 w-[min(360px,calc(100%-40px))] -translate-y-1/2">
+          <div className="absolute left-4 right-4 top-4 w-auto sm:left-5 sm:right-auto sm:top-1/2 sm:w-[min(360px,calc(100%-40px))] sm:-translate-y-1/2">
             <div className="rounded-[6px] border border-[#dce7f7] bg-white p-4 shadow-[0_12px_30px_rgba(15,55,105,.14)]">
               <div className="flex gap-3">
                 <MapPin size={22} className="mt-1 shrink-0 text-[#1767ff]" />
@@ -202,30 +202,30 @@ export default function ContactSupportSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[8px] bg-[#1767ff] p-7 text-white shadow-[0_16px_36px_rgba(23,103,255,.22)]">
+          <div className="relative overflow-hidden rounded-[8px] bg-[#1767ff] p-5 text-white shadow-[0_16px_36px_rgba(23,103,255,.22)] sm:p-7">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(255,255,255,.24),transparent_14%),radial-gradient(circle_at_78%_96%,rgba(2,11,27,.28),transparent_30%)]" />
             <div className="absolute bottom-0 right-4 hidden h-[155px] w-[155px] rounded-t-full bg-white/20 md:block" />
             <Rocket className="absolute bottom-8 right-20 hidden h-[98px] w-[98px] text-white drop-shadow-[0_18px_24px_rgba(2,8,23,.22)] md:block" />
 
             <div className="relative max-w-[560px]">
-              <h2 className="text-[28px] font-extrabold leading-tight">
+              <h2 className="text-[24px] font-extrabold leading-tight sm:text-[28px]">
                 Ready to Start Your Project?
               </h2>
               <p className="mt-3 max-w-[500px] text-[13px] font-semibold leading-6 text-[#e7efff]">
                 Let's discuss how we can help you achieve your business goals
                 with the right technology solution.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex h-11 items-center gap-3 rounded bg-white px-6 text-[12px] font-extrabold text-[#1767ff]"
+                  className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-white px-5 text-[12px] font-extrabold text-[#1767ff] sm:w-auto sm:px-6"
                 >
                   Discuss Your Project
                   <ArrowRight size={14} />
                 </a>
                 <a
                   href="/services"
-                  className="inline-flex h-11 items-center gap-3 rounded border border-white/40 bg-white/10 px-6 text-[12px] font-extrabold text-white"
+                  className="inline-flex h-11 w-full items-center justify-center gap-3 rounded border border-white/40 bg-white/10 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:px-6"
                 >
                   View Our Services
                   <ArrowRight size={14} />

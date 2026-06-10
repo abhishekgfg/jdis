@@ -90,18 +90,18 @@ export default function IndustryDeliveryProcessSection() {
   return (
     <section className="relative overflow-hidden bg-[#011733] py-10 text-white sm:py-12 lg:py-14">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_12%,rgba(0,132,255,.24),transparent_24%),radial-gradient(circle_at_92%_78%,rgba(24,144,255,.24),transparent_22%)]" />
-      <div className="relative mx-auto  px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto px-4 sm:px-8 lg:px-10">
         <div>
           <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#1793ff]">
             Our Process
           </span>
-          <h2 className="mt-1 text-[26px] font-bold leading-tight text-white sm:text-[34px] lg:text-[34px]">
+          <h2 className="mt-1 text-[24px] font-bold leading-tight text-white sm:text-[34px] lg:text-[34px]">
             How We Deliver Solutions
           </h2>
           <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f6b51f]" />
         </div>
 
-        <div className="relative mt-7 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-7 lg:gap-4">
+        <div className="relative mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-7 lg:gap-4">
           <div className="absolute left-[6%] right-[6%] top-[43px] hidden border-t border-dashed border-[#1767ff]/70 lg:block" />
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -109,7 +109,7 @@ export default function IndustryDeliveryProcessSection() {
             return (
               <article
                 key={step.number}
-                className="relative z-10 text-center"
+                className="relative z-10 rounded-xl border border-[#1767ff]/25 bg-[#071f42]/70 p-5 text-center shadow-[0_12px_28px_rgba(0,0,0,.18)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
               >
                 {index < steps.length - 1 && (
                   <div className="absolute right-[-12px] top-[38px] hidden h-2 w-2 rotate-45 border-r-2 border-t-2 border-[#1793ff] lg:block" />

@@ -185,7 +185,7 @@ export default function TechnologyShowcaseSection() {
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#031632_0%,rgba(3,22,50,.88)_36%,rgba(2,11,27,.5)_100%)]" />
 
-      <div className="relative mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <div className="grid gap-10 xl:grid-cols-[1.65fr_.9fr]">
           <div>
             <MiniHeading
@@ -193,13 +193,13 @@ export default function TechnologyShowcaseSection() {
               title="Built With Modern Technologies"
             />
 
-            <div className="mt-5 grid gap-5 md:grid-cols-3">
+            <div className="mt-5 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
               {projects.map((project) => (
                 <article
                   key={project.title}
                   className="overflow-hidden rounded-[8px] border border-[#2a4f7d] bg-[#061a38]/88 shadow-[0_18px_42px_rgba(0,0,0,.26)]"
                 >
-                  <div className="relative h-[124px] overflow-hidden border-b border-[#2a4f7d] bg-[#020b1b]">
+                  <div className="relative h-[180px] overflow-hidden border-b border-[#2a4f7d] bg-[#020b1b] sm:h-[124px]">
                     <img
                       src={project.image}
                       alt=""
@@ -215,7 +215,7 @@ export default function TechnologyShowcaseSection() {
                     <h3 className="text-[14px] font-extrabold text-white">
                       {project.title}
                     </h3>
-                    <p className="mt-3 min-h-[42px] text-[11px] font-semibold leading-5 text-[#b9c8dc]">
+                    <p className="mt-3 text-[11px] font-semibold leading-5 text-[#b9c8dc] sm:min-h-[42px]">
                       {project.desc}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -322,10 +322,10 @@ export default function TechnologyShowcaseSection() {
         </div>
 
         <div className="mt-6 overflow-hidden rounded-[10px] border border-[#1f4c82] bg-[#062456]/78 shadow-[0_20px_48px_rgba(0,0,0,.32),inset_0_0_42px_rgba(22,141,255,.16)]">
-          <div className="relative flex flex-col gap-5 px-6 py-5 sm:flex-row sm:items-center sm:px-8">
+          <div className="relative flex flex-col items-center gap-5 px-5 py-6 text-center sm:flex-row sm:items-center sm:px-8 sm:text-left">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_52%,rgba(22,141,255,.35),transparent_32%)]" />
-            <div className="relative flex h-[76px] w-[76px] shrink-0 items-center justify-center rounded-full border border-[#168dff]/45 bg-[#062f6d] shadow-[0_0_28px_rgba(22,141,255,.28)]">
-              <MessageSquare size={34} className="text-[#168dff]" />
+            <div className="relative flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-full border border-[#168dff]/45 bg-[#062f6d] shadow-[0_0_28px_rgba(22,141,255,.28)] sm:h-[76px] sm:w-[76px]">
+              <MessageSquare size={30} className="text-[#168dff] sm:h-[34px] sm:w-[34px]" />
             </div>
             <div className="relative flex-1">
               <h2 className="text-[24px] font-bold leading-tight text-white lg:text-[24px]">
@@ -336,17 +336,17 @@ export default function TechnologyShowcaseSection() {
                 Let's create scalable digital solutions powered by cutting-edge
                 technologies.
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 grid gap-3 sm:flex sm:flex-wrap">
                 <a
                   href="/contact"
-                  className="inline-flex h-11 items-center gap-3 rounded bg-[#ffb525] px-6 text-[12px] font-extrabold text-[#061326] shadow-[0_12px_28px_rgba(255,181,37,.25)]"
+                  className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-[#ffb525] px-5 text-[12px] font-extrabold text-[#061326] shadow-[0_12px_28px_rgba(255,181,37,.25)] sm:w-auto sm:px-6"
                 >
                   Start Your Project
                   <ArrowRight size={15} />
                 </a>
                 <a
                   href="/contact"
-                  className="inline-flex h-11 items-center gap-3 rounded border border-white/35 bg-[#061326]/45 px-6 text-[12px] font-extrabold text-white"
+                  className="inline-flex h-11 w-full items-center justify-center gap-3 rounded border border-white/35 bg-[#061326]/45 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:px-6"
                 >
                   Schedule A Call
                   <PhoneCall size={15} />
@@ -359,17 +359,17 @@ export default function TechnologyShowcaseSection() {
 
       {activeProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#020817]/82 px-4 py-5 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#020817]/82 px-3 py-4 backdrop-blur-sm sm:items-center sm:px-4 sm:py-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby="technology-project-title"
           onMouseDown={() => setActiveProject(null)}
         >
           <div
-            className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-[10px] border border-[#1f4c82] bg-[#061a38] shadow-[0_35px_100px_rgba(0,0,0,.45)]"
+            className="w-full max-w-5xl overflow-hidden rounded-[10px] border border-[#1f4c82] bg-[#061a38] shadow-[0_35px_100px_rgba(0,0,0,.45)] sm:max-h-[92vh] sm:overflow-y-auto"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[285px] overflow-hidden bg-[#020b1b]">
+            <div className="relative min-h-[245px] overflow-hidden bg-[#020b1b] sm:min-h-[285px]">
               <img
                 src={activeProject.image}
                 alt={activeProject.title}
@@ -379,19 +379,19 @@ export default function TechnologyShowcaseSection() {
               <button
                 type="button"
                 onClick={() => setActiveProject(null)}
-                className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur"
+                className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur sm:right-5 sm:top-5"
                 aria-label="Close project details"
               >
                 <X size={18} />
               </button>
 
-              <div className="relative z-10 max-w-3xl px-6 py-8 sm:px-8">
+              <div className="relative z-10 max-w-3xl px-5 py-7 sm:px-8 sm:py-8">
                 <span className="inline-flex rounded-full bg-[#4358ff] px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide text-white">
                   {activeProject.badge}
                 </span>
                 <h3
                   id="technology-project-title"
-                  className="mt-5 text-[30px] font-extrabold leading-tight text-white sm:text-[42px]"
+                  className="mt-5 pr-8 text-[24px] font-extrabold leading-tight text-white sm:pr-0 sm:text-[42px]"
                 >
                   {activeProject.title}
                 </h3>
@@ -399,7 +399,7 @@ export default function TechnologyShowcaseSection() {
                   {activeProject.overview}
                 </p>
 
-                <div className="mt-6 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+                <div className="mt-6 grid max-w-xl grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-4">
                   <div className="rounded-[8px] border border-white/15 bg-white/10 p-3">
                     <p className="text-[10px] font-extrabold uppercase text-[#ffb525]">
                       Client
@@ -433,7 +433,7 @@ export default function TechnologyShowcaseSection() {
               </div>
             </div>
 
-            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="grid gap-6 p-5 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
                 {[
                   ["The Challenge", activeProject.challenge],
@@ -485,7 +485,7 @@ export default function TechnologyShowcaseSection() {
                   ))}
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {activeProject.stats.map(([value, label]) => (
                     <div
                       key={label}

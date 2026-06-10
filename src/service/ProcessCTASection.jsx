@@ -51,14 +51,14 @@ export default function ProcessCTASection() {
 
   return (
     <section className="bg-[#f8fbff] py-10">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
             Our Process
           </span>
 
-          <h2 className="mt-1 text-[28px] lg:text-[28px] leading-tight font-bold text-[#071426]">
+          <h2 className="mt-1 text-[24px] font-bold leading-tight text-[#071426] sm:text-[28px] lg:text-[28px]">
             How We Deliver Excellence
           </h2>
         </div>
@@ -67,12 +67,12 @@ export default function ProcessCTASection() {
         <div className="relative mt-8">
           <div className="hidden lg:block absolute top-[33px] left-[90px] right-[90px] border-t border-dashed border-[#b9cdf0]" />
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-5 relative z-10">
+          <div className="relative z-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-5">
             {process.map((item, index) => {
               const Icon = item.icon;
 
               return (
-                <div key={item.step} className="text-center relative">
+                <div key={item.step} className="relative rounded-xl border border-[#e5edf7] bg-white p-5 text-center shadow-[0_8px_25px_rgba(20,92,255,0.08)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
                   {index < process.length - 1 && (
                     <span className="hidden lg:block absolute top-[20px] right-[-16px] text-[#145cff]">
                       →
@@ -101,31 +101,31 @@ export default function ProcessCTASection() {
         </div>
 
         {/* CTA Banner */}
-        <div className="mt-10 rounded-xl bg-[#061326] overflow-hidden border border-[#183456] shadow-[0_15px_40px_rgba(2,8,23,0.15)]">
-          <div className="relative min-h-[140px] px-8 lg:px-12 py-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="mt-10 overflow-hidden rounded-xl border border-[#183456] bg-[#061326] shadow-[0_15px_40px_rgba(2,8,23,0.15)]">
+          <div className="relative flex min-h-[140px] flex-col items-stretch justify-between gap-6 px-5 py-7 text-center sm:px-8 lg:flex-row lg:items-center lg:gap-8 lg:px-12 lg:py-8 lg:text-left">
             <div className="absolute left-0 top-0 bottom-0 w-[220px] opacity-30 bg-[radial-gradient(circle_at_center,#145cff_1px,transparent_1px)] [background-size:10px_10px]" />
 
             <div className="relative z-10 max-w-[430px]">
-              <h2 className="text-white text-[24px] lg:text-[18px] leading-tight font-bold">
+              <h2 className="text-[22px] font-bold leading-tight text-white sm:text-[24px] lg:text-[18px]">
                 Ready to{" "}
                 <span className="text-[#ffb700]">Transform</span> Your Ideas
-                <br />
+                <br className="hidden sm:block" />
                 into Reality?
               </h2>
             </div>
 
-            <p className="relative z-10 max-w-[280px] text-[13px] leading-6 text-[#c7d1e0] text-center lg:text-left">
+            <p className="relative z-10 mx-auto max-w-[280px] text-center text-[13px] leading-6 text-[#c7d1e0] lg:mx-0 lg:text-left">
               Let’s discuss how our services can help your business grow and
               succeed.
             </p>
 
-            <div className="relative z-10 flex flex-wrap justify-center gap-4">
-              <button className="h-[52px] px-5 rounded-md bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] font-bold inline-flex items-center gap-3 shadow-lg shadow-yellow-500/20 transition-all">
+            <div className="relative z-10 grid gap-3 sm:flex sm:flex-wrap sm:justify-center lg:justify-end">
+              <button className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-5 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Start Your Project
                 <ArrowRight size={17} />
               </button>
 
-              <button className="h-[52px] px-7 rounded-md border border-white/25 bg-white/5 hover:bg-white/10 text-white font-semibold inline-flex items-center gap-3 transition-all">
+              <button className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 Schedule a Call
                 <Phone size={17} />
               </button>

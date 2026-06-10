@@ -94,27 +94,27 @@ export default function TrustGlobalCTASection() {
   ];
 
   return (
-    <section className="bg-[#f8fbff] py-6">
-      <div className="mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[1.15fr_1.7fr_1fr] gap-4 items-stretch">
+    <section className="bg-[#f8fbff] py-8 lg:py-6">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid gap-4 items-stretch lg:grid-cols-[1.15fr_1.7fr_1fr]">
           {/* Testimonial */}
-          <div className="bg-white rounded-xl p-4 shadow-[0_10px_35px_rgba(15,23,42,0.06)] border border-[#e5edf7] relative min-h-[320px]">
+          <div className="relative min-h-[320px] rounded-xl border border-[#e5edf7] bg-white p-4 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#145cff]">
               What Our Clients Say
             </span>
 
-            <h2 className="mt-2 text-[22px] leading-tight font-bold text-[#071426]">
+            <h2 className="mt-2 pr-8 text-[20px] font-bold leading-tight text-[#071426] sm:pr-0 sm:text-[22px]">
               Trusted by Businesses Worldwide
             </h2>
 
-            <div className="mt-4 bg-white rounded-xl p-4 shadow-[0_8px_30px_rgba(15,23,42,0.08)] border border-[#eef3fb]">
+            <div className="mt-4 rounded-xl border border-[#eef3fb] bg-white p-4 shadow-[0_8px_30px_rgba(15,23,42,0.08)]">
               <Quote size={24} className="text-[#145cff] fill-[#145cff]/10" />
 
               <p className="mt-3 text-[12px] leading-5 text-[#536174]">
                 {testimonials[currentTestimonial].text}
               </p>
 
-              <div className="mt-4 flex items-center justify-between gap-3">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
                   <div>
                     <h4 className="text-[13px] font-bold text-[#145cff]">
@@ -136,14 +136,14 @@ export default function TrustGlobalCTASection() {
 
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#145cff] hover:bg-[#0f3da6] shadow-md border border-[#145cff] flex items-center justify-center text-white transition-all"
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#145cff] bg-[#145cff] text-white shadow-md transition-all hover:bg-[#0f3da6] sm:top-1/2 sm:-translate-y-1/2"
             >
               <ChevronRight size={16} />
             </button>
 
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white hover:bg-gray-50 shadow-md border border-[#e5edf7] flex items-center justify-center text-[#145cff] transition-all"
+              className="absolute right-14 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[#e5edf7] bg-white text-[#145cff] shadow-md transition-all hover:bg-gray-50 sm:left-4 sm:right-auto sm:top-1/2 sm:-translate-y-1/2"
             >
               <ChevronLeft size={16} />
             </button>
@@ -164,7 +164,7 @@ export default function TrustGlobalCTASection() {
           </div>
 
           {/* Global Map */}
-          <div className="relative rounded-xl overflow-hidden min-h-[320px] border border-[#183456] shadow-[0_15px_40px_rgba(2,8,23,0.18)] bg-[#061326]">
+          <div className="relative min-h-[420px] overflow-hidden rounded-xl border border-[#183456] bg-[#061326] shadow-[0_15px_40px_rgba(2,8,23,0.18)] sm:min-h-[320px]">
             <img
               src={globeMap}
               alt="Serving clients across the globe"
@@ -173,15 +173,15 @@ export default function TrustGlobalCTASection() {
 
             <div className="absolute inset-0 bg-gradient-to-r from-[#03101f]/95 via-[#03101f]/55 to-[#03101f]/25" />
 
-            <div className="relative z-20 h-full flex">
-              <div className="w-[300px] p-6">
-                <h2 className="text-white text-[26px] font-bold leading-tight">
+            <div className="relative z-20 flex h-full flex-col sm:flex-row">
+              <div className="w-full p-5 sm:w-[300px] sm:p-6">
+                <h2 className="text-[24px] font-bold leading-tight text-white sm:text-[26px]">
                   Serving Clients
                   <br />
                   Across the Globe
                 </h2>
 
-                <ul className="mt-5 space-y-3">
+                <ul className="mt-5 grid grid-cols-2 gap-3 space-y-0 sm:block sm:space-y-3">
                   {locations.map((item) => (
                     <li
                       key={item}
@@ -194,7 +194,7 @@ export default function TrustGlobalCTASection() {
                 </ul>
               </div>
 
-              <div className="flex-1 relative">
+              <div className="relative min-h-[190px] flex-1 sm:min-h-0">
                 {pins.map((pin, index) => (
                   <div key={index} className={`absolute ${pin}`}>
                     <div className="relative">
@@ -210,7 +210,7 @@ export default function TrustGlobalCTASection() {
           </div>
 
           {/* CTA */}
-          <div className="bg-white rounded-xl p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] border border-[#e5edf7] flex flex-col justify-center min-h-[320px]">
+          <div className="flex min-h-[260px] flex-col justify-center rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] lg:min-h-[320px]">
             <h2 className="text-[22px] leading-tight font-bold text-[#071426]">
               Have a Project in Mind?
             </h2>
@@ -219,7 +219,7 @@ export default function TrustGlobalCTASection() {
               Let’s turn your ideas into powerful digital solutions.
             </p>
 
-            <button className="mt-5 h-[48px] px-6 rounded-md bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] font-bold inline-flex items-center justify-center gap-3 shadow-lg shadow-yellow-500/20 transition-all">
+            <button className="mt-5 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-6 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-fit">
               Start Your Project
               <ArrowRight size={17} />
             </button>

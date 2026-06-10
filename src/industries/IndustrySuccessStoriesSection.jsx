@@ -106,13 +106,13 @@ export default function IndustrySuccessStoriesSection() {
 
   return (
     <section className="bg-[#f8fbff] py-10 sm:py-12 lg:py-14">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <div className="flex items-start justify-between gap-5">
           <div>
             <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#1767ff]">
               Case Studies
             </span>
-            <h2 className="mt-1 text-[28px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
+            <h2 className="mt-1 text-[24px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
               Our Success Stories
             </h2>
             <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f6b51f]" />
@@ -133,7 +133,7 @@ export default function IndustrySuccessStoriesSection() {
               key={study.title}
               className="overflow-hidden rounded-[8px] border border-[#dce7f7] bg-white shadow-[0_12px_32px_rgba(15,55,105,.09)]"
             >
-              <div className="relative h-[160px] overflow-hidden">
+              <div className="relative h-[190px] overflow-hidden md:h-[160px]">
                 <img
                   src={study.image}
                   alt={study.title}
@@ -149,7 +149,7 @@ export default function IndustrySuccessStoriesSection() {
                 <h3 className="text-[16px] font-extrabold text-[#0a1830]">
                   {study.title}
                 </h3>
-                <p className="mt-2 min-h-[48px] text-[12px] font-semibold leading-6 text-[#475569]">
+                <p className="mt-2 text-[12px] font-semibold leading-6 text-[#475569] md:min-h-[48px]">
                   {study.description}
                 </p>
 
@@ -169,7 +169,7 @@ export default function IndustrySuccessStoriesSection() {
 
       {activeStudy && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#020817]/80 px-4 py-5 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#020817]/80 px-4 py-5 backdrop-blur-sm sm:items-center"
           role="dialog"
           aria-modal="true"
           aria-labelledby="industry-case-title"
@@ -179,7 +179,7 @@ export default function IndustrySuccessStoriesSection() {
             className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-[10px] bg-white shadow-[0_35px_100px_rgba(2,8,23,.4)]"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[260px] overflow-hidden bg-[#061326]">
+            <div className="relative min-h-[230px] overflow-hidden bg-[#061326] sm:min-h-[260px]">
               <img
                 src={activeStudy.image}
                 alt={activeStudy.title}
@@ -196,13 +196,13 @@ export default function IndustrySuccessStoriesSection() {
                 <X size={18} />
               </button>
 
-              <div className="relative z-10 max-w-3xl px-6 py-8 text-white sm:px-8">
+              <div className="relative z-10 max-w-3xl px-5 py-8 text-white sm:px-8">
                 <span className="inline-flex rounded-full bg-[#1767ff] px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide">
                   {activeStudy.tag}
                 </span>
                 <h3
                   id="industry-case-title"
-                  className="mt-5 text-[30px] font-extrabold leading-tight sm:text-[42px]"
+                  className="mt-5 text-[24px] font-extrabold leading-tight sm:text-[42px]"
                 >
                   {activeStudy.title}
                 </h3>
@@ -212,7 +212,7 @@ export default function IndustrySuccessStoriesSection() {
               </div>
             </div>
 
-            <div className="grid gap-7 p-6 text-[#152033] sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="grid gap-7 p-5 text-[#152033] sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
                 {[
                   ["Project Story", activeStudy.story],
@@ -230,7 +230,7 @@ export default function IndustrySuccessStoriesSection() {
 
               <aside className="rounded-[8px] bg-[#061326] p-5 text-white">
                 <h4 className="text-[18px] font-extrabold">Impact Summary</h4>
-                <div className="mt-4 grid grid-cols-3 gap-3">
+                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {activeStudy.stats.map((stat) => (
                     <div
                       key={stat.label}

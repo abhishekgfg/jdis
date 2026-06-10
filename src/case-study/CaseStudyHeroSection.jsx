@@ -21,7 +21,7 @@ export default function CaseStudyHeroSection() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,11,27,.98)_0%,rgba(2,11,27,.92)_42%,rgba(2,11,27,.7)_100%)]" />
       <div className="absolute inset-y-0 right-0 -z-10 w-2/3 bg-[radial-gradient(circle_at_55%_50%,rgba(17,98,255,.34),transparent_31%),radial-gradient(circle_at_88%_45%,rgba(0,145,255,.16),transparent_29%)]" />
 
-      <div className="mx-auto grid  items-center gap-10 px-6 py-10 md:px-10 lg:grid-cols-[.78fr_1.22fr] lg:px-16 lg:py-10">
+      <div className="mx-auto grid items-center gap-10 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.78fr_1.22fr] lg:px-16 lg:py-10">
         <div className="max-w-[620px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <span className="text-white/88">Home</span>
@@ -29,7 +29,7 @@ export default function CaseStudyHeroSection() {
             <span className="text-[#ffb525]">Case Studies</span>
           </div>
 
-          <h1 className="mt-8 text-[42px] font-bold leading-[1.08] tracking-normal sm:text-[56px] lg:text-[40px]">
+          <h1 className="mt-8 text-[34px] font-bold leading-[1.08] tracking-normal sm:text-[56px] lg:text-[40px]">
             Real Challenges.
             <span className="block text-[#18a8ff]">Proven Solutions.</span>
           </h1>
@@ -39,10 +39,10 @@ export default function CaseStudyHeroSection() {
             achieve measurable results through innovative technology solutions.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-7">
+          <div className="mt-8 grid gap-4 sm:flex sm:flex-wrap sm:items-center sm:gap-7">
             <a
               href="/contact"
-              className="inline-flex h-14 items-center gap-4 rounded bg-[#ffb525] px-8 text-[14px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d]"
+              className="inline-flex h-14 w-full items-center justify-center gap-4 rounded bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-8 sm:text-[14px]"
             >
               Discuss Your Project
               <ArrowRight size={17} />
@@ -57,24 +57,24 @@ export default function CaseStudyHeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[760px] lg:ml-auto">
+        <div className="relative mx-auto w-full max-w-[760px] overflow-hidden sm:overflow-visible lg:ml-auto">
           <div className="absolute -inset-4 rounded-[18px] bg-[#0b64ff]/10 blur-2xl" />
-          <div className="relative rotate-[-1deg] rounded-[12px] border border-[#2b66d9]/70 bg-[#061a3d]/80 p-5 shadow-[0_28px_80px_rgba(0,0,0,.38),inset_0_0_44px_rgba(22,104,255,.17)] backdrop-blur-sm">
+          <div className="relative rounded-[12px] border border-[#2b66d9]/70 bg-[#061a3d]/80 p-4 shadow-[0_28px_80px_rgba(0,0,0,.38),inset_0_0_44px_rgba(22,104,255,.17)] backdrop-blur-sm sm:rotate-[-1deg] sm:p-5">
             <div className="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,#2b7dff,transparent)]" />
             <h2 className="text-[16px] font-extrabold text-white">
               Project Overview
             </h2>
 
-            <div className="mt-5 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
               {overviewStats.map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-[8px] border border-[#1f55b8] bg-[#0b3c8d]/52 p-4 shadow-[inset_0_0_24px_rgba(24,144,255,.16)]"
+                  className="rounded-[8px] border border-[#1f55b8] bg-[#0b3c8d]/52 p-3 shadow-[inset_0_0_24px_rgba(24,144,255,.16)] sm:p-4"
                 >
                   <p className="text-[10px] font-extrabold text-[#d9e8ff]">
                     {label}
                   </p>
-                  <p className="mt-4 text-[26px] font-extrabold leading-none text-white">
+                  <p className="mt-3 text-[22px] font-extrabold leading-none text-white sm:mt-4 sm:text-[26px]">
                     {value}
                   </p>
                 </div>
@@ -82,8 +82,8 @@ export default function CaseStudyHeroSection() {
             </div>
 
             <div className="mt-5 grid gap-4 lg:grid-cols-[1.45fr_.85fr]">
-              <div className="rounded-[8px] border border-[#1f55b8] bg-[#031632]/78 p-5">
-                <div className="flex items-center justify-between">
+              <div className="rounded-[8px] border border-[#1f55b8] bg-[#031632]/78 p-4 sm:p-5">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-[13px] font-extrabold text-white">
                     Growth Over Time
                   </h3>
@@ -92,7 +92,7 @@ export default function CaseStudyHeroSection() {
                   </span>
                 </div>
 
-                <div className="relative mt-4 h-[150px] overflow-hidden">
+                <div className="relative mt-4 h-[125px] overflow-hidden sm:h-[150px]">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(61,111,174,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(61,111,174,.12)_1px,transparent_1px)] bg-[size:100%_25%,20%_100%]" />
                   <svg
                     viewBox="0 0 440 150"
@@ -132,12 +132,12 @@ export default function CaseStudyHeroSection() {
                 </div>
               </div>
 
-              <div className="rounded-[8px] border border-[#1f55b8] bg-[#031632]/78 p-5">
+              <div className="rounded-[8px] border border-[#1f55b8] bg-[#031632]/78 p-4 sm:p-5">
                 <h3 className="text-[13px] font-extrabold text-white">
                   Project Success
                 </h3>
 
-                <div className="relative mx-auto mt-5 h-[142px] w-[142px]">
+                <div className="relative mx-auto mt-5 h-[128px] w-[128px] sm:h-[142px] sm:w-[142px]">
                   <div className="absolute inset-0 rounded-full bg-[conic-gradient(#287cff_0_78%,#153d90_78%_100%)] shadow-[0_0_36px_rgba(40,124,255,.25)]" />
                   <div className="absolute inset-[22px] rounded-full bg-[#061a3d] shadow-[inset_0_0_22px_rgba(0,0,0,.42)]" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -150,7 +150,7 @@ export default function CaseStudyHeroSection() {
                   </div>
                 </div>
 
-                <div className="mt-5 flex items-center justify-center gap-5 text-[10px] font-bold text-[#cbd9ee]">
+                <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-[10px] font-bold text-[#cbd9ee] sm:gap-5">
                   <span className="inline-flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-[#168dff]" />
                     Successful

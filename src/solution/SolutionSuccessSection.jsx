@@ -98,14 +98,14 @@ export default function SolutionSuccessSection() {
 
   return (
     <>
-      <section className="bg-[#f8fbff] py-12">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-10">
+      <section className="bg-[#f8fbff] py-10 lg:py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-8 lg:mb-10">
             <p className="text-sm font-bold uppercase tracking-wider text-blue-600">
               Industries We Empower
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">
+            <h2 className="mt-2 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
               Tailored Solutions Built For Unique Industry Challenges
             </h2>
 
@@ -122,7 +122,7 @@ export default function SolutionSuccessSection() {
                   <img
                     src={study.image}
                     alt={study.title}
-                    className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-56"
                   />
                 </div>
 
@@ -151,11 +151,11 @@ export default function SolutionSuccessSection() {
 
       {activeStudy && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 p-4 py-6 sm:items-center"
           onClick={() => setActiveStudy(null)}
         >
           <div
-            className="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl bg-white p-8"
+            className="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-white p-4 sm:rounded-3xl sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -168,10 +168,10 @@ export default function SolutionSuccessSection() {
             <img
               src={activeStudy.image}
               alt={activeStudy.title}
-              className="mb-6 h-72 w-full rounded-2xl object-cover"
+              className="mb-6 h-48 w-full rounded-2xl object-cover sm:h-72"
             />
 
-            <h2 className="mb-4 text-3xl font-bold">
+            <h2 className="mb-4 text-2xl font-bold leading-tight sm:text-3xl">
               {activeStudy.title}
             </h2>
 

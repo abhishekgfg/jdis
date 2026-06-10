@@ -206,43 +206,43 @@ export default function PremiumServicesSection() {
   const closeModal = () => setSelectedService(null);
 
   return (
-    <section className="bg-[#f8fbff] py-16">
-      <div className="mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[300px_1fr_190px] gap-8 items-start mb-8">
+    <section className="bg-[#f8fbff] py-10 lg:py-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="mb-8 grid gap-5 items-start lg:grid-cols-[300px_1fr_190px] lg:gap-8">
           <div>
             <span className="text-[12px] font-bold uppercase tracking-wider text-[#145cff]">
               What We Do
             </span>
 
-            <h2 className="mt-2 text-[34px] lg:text-[24px] leading-tight font-bold text-[#071426]">
+            <h2 className="mt-2 text-[28px] leading-tight font-bold text-[#071426] sm:text-[34px] lg:text-[24px]">
               Our Premium Services
             </h2>
           </div>
 
-          <p className="text-[15px] leading-7 text-[#536174] max-w-[590px] lg:pt-6">
+          <p className="max-w-[590px] text-[14px] leading-7 text-[#536174] sm:text-[15px] lg:pt-6">
             We provide end-to-end digital solutions to help businesses grow,
             automate and scale with the power of technology and innovation.
           </p>
 
           <div className="lg:pt-3 lg:text-right">
-            <button className="h-[52px] text-[13px] px-6 rounded-md bg-[#061326] hover:bg-[#0b1d38] text-white font-semibold inline-flex items-center gap-3 shadow-lg transition-all">
+            <button className="inline-flex h-[50px] w-full items-center justify-center gap-3 rounded-md bg-[#061326] px-6 text-[13px] font-semibold text-white shadow-lg transition-all hover:bg-[#0b1d38] sm:w-auto lg:h-[52px]">
               View All Services
               <ArrowRight size={18} />
             </button>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
           {services.map((service) => {
             const Icon = service.icon;
 
             return (
               <div
                 key={service.title}
-                className="bg-white rounded-xl border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.06)] p-6 min-h-[255px] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-all duration-300"
+                className="flex min-h-[230px] flex-col justify-between rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.10)] sm:min-h-[255px] sm:p-6"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-xl bg-[#f3f7ff] flex items-center justify-center mb-7">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f3f7ff] sm:mb-7 sm:h-14 sm:w-14">
                     <Icon size={28} className="text-[#145cff]" />
                   </div>
 
@@ -250,7 +250,7 @@ export default function PremiumServicesSection() {
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 text-[14px] leading-6 text-[#536174]">
+                  <p className="mt-3 text-[14px] leading-6 text-[#536174] sm:mt-4">
                     {service.desc}
                   </p>
                 </div>
@@ -270,14 +270,14 @@ export default function PremiumServicesSection() {
 
     {selectedService && (
   <div
-    className="fixed inset-0 z-[999] bg-[#020817]/70 backdrop-blur-sm flex items-start justify-center px-4 pt-20 pb-6 overflow-y-auto"
+    className="fixed inset-0 z-[999] flex items-start justify-center overflow-y-auto bg-[#020817]/70 px-4 pb-6 pt-16 backdrop-blur-sm sm:pt-20"
     onClick={closeModal}
   >
     <div
-      className="relative w-full max-w-[720px] bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[78vh] overflow-y-auto"
+      className="relative max-h-[82vh] w-full max-w-[720px] overflow-hidden overflow-y-auto rounded-2xl bg-white shadow-2xl sm:max-h-[78vh]"
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="bg-[#061326] px-6 py-4 text-white relative overflow-hidden">
+      <div className="relative overflow-hidden bg-[#061326] px-5 py-4 text-white sm:px-6">
         <button
           onClick={closeModal}
           className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
@@ -292,19 +292,19 @@ export default function PremiumServicesSection() {
           })()}
         </div>
 
-        <h3 className="text-2xl font-bold">{selectedService.title}</h3>
+        <h3 className="pr-10 text-xl font-bold sm:text-2xl">{selectedService.title}</h3>
 
         <p className="mt-2 text-[#c7d1e0] text-[14px] leading-6 max-w-[620px]">
           {selectedService.desc}
         </p>
       </div>
 
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <h4 className="text-lg font-bold text-[#071426] mb-4">
           What’s Included
         </h4>
 
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {selectedService.includes.map((item) => (
             <div
               key={item}
@@ -321,15 +321,15 @@ export default function PremiumServicesSection() {
           ))}
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-3">
-          <button className="h-[44px] px-5 rounded-md bg-[#145cff] hover:bg-[#004be0] text-white text-[14px] font-semibold inline-flex items-center gap-2 transition-all">
+        <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
+          <button className="inline-flex h-[44px] w-full items-center justify-center gap-2 rounded-md bg-[#145cff] px-5 text-[14px] font-semibold text-white transition-all hover:bg-[#004be0] sm:w-auto">
             Start This Service
             <ArrowRight size={16} />
           </button>
 
           <button
             onClick={closeModal}
-            className="h-[44px] px-5 rounded-md border border-[#d7e2f0] text-[#071426] text-[14px] font-semibold hover:bg-[#f8fbff] transition-all"
+            className="h-[44px] w-full rounded-md border border-[#d7e2f0] px-5 text-[14px] font-semibold text-[#071426] transition-all hover:bg-[#f8fbff] sm:w-auto"
           >
             Close
           </button>

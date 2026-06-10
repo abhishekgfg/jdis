@@ -23,7 +23,7 @@ const contactItems = [
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+91 6200594193, +91 9523435814,+91 6202000340", "Mon - Sat: 9:30 AM - 7:00 PM (IST)"],
+    lines: ["+91 6200594193, +91 9523435814,+91 6202000340, 6209015004", "Mon - Sat: 9:30 AM - 7:00 PM (IST)"],
     color: "text-[#5d7cff]",
   },
   {
@@ -91,11 +91,11 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section className="bg-[#f7faff] py-12 text-[#151d35]">
-      <div className="mx-auto grid max-w-[1480px] gap-7 px-5 sm:px-8 lg:grid-cols-[1.45fr_.95fr] lg:px-10">
+    <section id="contact-form" className="bg-[#f7faff] py-10 text-[#151d35] sm:py-12">
+      <div className="mx-auto grid max-w-[1480px] gap-7 px-4 sm:px-8 lg:grid-cols-[1.45fr_.95fr] lg:px-10">
         <form
           onSubmit={handleSubmit}
-          className="rounded-[8px] border border-[#e0e8f4] bg-white p-6 shadow-[0_14px_36px_rgba(15,55,105,.08)] sm:p-8"
+          className="rounded-[8px] border border-[#e0e8f4] bg-white p-5 shadow-[0_14px_36px_rgba(15,55,105,.08)] sm:p-8"
         >
           <div className="flex items-start gap-3">
             <Send size={27} className="mt-1 text-[#1767ff]" />
@@ -199,7 +199,7 @@ export default function ContactFormSection() {
           <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <button
               type="submit"
-              className="inline-flex h-12 w-fit items-center justify-center gap-3 rounded-[5px] bg-[#1767ff] px-7 text-[13px] font-extrabold text-white shadow-[0_12px_24px_rgba(23,103,255,.22)] transition hover:bg-[#0f55da]"
+              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-[5px] bg-[#1767ff] px-7 text-[13px] font-extrabold text-white shadow-[0_12px_24px_rgba(23,103,255,.22)] transition hover:bg-[#0f55da] sm:w-fit"
             >
               Send Message
               <ArrowRight size={15} />
@@ -211,7 +211,7 @@ export default function ContactFormSection() {
           </div>
         </form>
 
-        <aside className="relative overflow-hidden rounded-[8px] bg-[#020b1b] p-7 text-white shadow-[0_18px_42px_rgba(2,8,23,.18)] sm:p-8">
+        <aside className="relative overflow-hidden rounded-[8px] bg-[#020b1b] p-5 text-white shadow-[0_18px_42px_rgba(2,8,23,.18)] sm:p-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(23,103,255,.22),transparent_35%),radial-gradient(circle_at_0%_90%,rgba(0,153,255,.13),transparent_30%)]" />
           <div className="relative">
             <h2 className="text-[26px] font-extrabold">Get in Touch</h2>
@@ -225,11 +225,11 @@ export default function ContactFormSection() {
               {contactItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="flex gap-4">
+                  <div key={item.title} className="flex min-w-0 gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0b2a6f]/70 shadow-[0_0_24px_rgba(23,103,255,.16)]">
                       <Icon size={22} className={item.color} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h3 className="text-[13px] font-extrabold text-white">
                         {item.title}
                       </h3>
@@ -237,7 +237,7 @@ export default function ContactFormSection() {
                         {item.lines.map((line) => (
                           <p
                             key={line}
-                            className="text-[12px] font-semibold leading-5 text-[#dce8fb]"
+                            className="break-words text-[12px] font-semibold leading-5 text-[#dce8fb]"
                           >
                             {line}
                           </p>

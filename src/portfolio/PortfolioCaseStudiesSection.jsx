@@ -200,17 +200,17 @@ export default function PortfolioCaseStudiesSection() {
   return (
     <section className="bg-[#f7faff] pb-12">
       <div className="border-b border-[#dce8f8] bg-white shadow-[0_12px_30px_rgba(15,23,42,.04)]">
-        <div className="mx-auto max-w-[1440px] px-6 py-6 lg:px-16">
-          <p className="text-center text-[16px] font-extrabold text-[#151d35]">
+        <div className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 lg:px-16">
+          <p className="text-center text-[15px] font-extrabold text-[#151d35] sm:text-[16px]">
             Trusted by <span className="text-[#1265ff]">200+</span> Businesses
             Worldwide
           </p>
 
-          <div className="mt-6 grid grid-cols-2 items-center gap-x-7 gap-y-5 text-[20px] font-bold sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+          <div className="mt-6 grid grid-cols-2 items-center gap-x-4 gap-y-5 text-[16px] font-bold sm:grid-cols-3 sm:gap-x-7 sm:text-[20px] md:grid-cols-5 lg:grid-cols-10">
             {trustedBrands.map((brand) => (
               <div
                 key={brand.name}
-                className={`flex min-h-10 items-center justify-center whitespace-nowrap ${brand.color}`}
+                className={`flex min-h-10 min-w-0 items-center justify-center whitespace-nowrap ${brand.color}`}
               >
                 <BrandLogo brand={brand} />
               </div>
@@ -219,8 +219,8 @@ export default function PortfolioCaseStudiesSection() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-6 pt-8 lg:px-16">
-        <div className="flex items-end justify-between gap-5">
+      <div className="mx-auto max-w-[1440px] px-4 pt-8 sm:px-6 lg:px-16">
+        <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1265ff]">
               Featured Case Studies
@@ -240,13 +240,13 @@ export default function PortfolioCaseStudiesSection() {
           </button>
         </div>
 
-        <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {caseStudies.map((study) => (
             <article
               key={study.title}
               className="overflow-hidden rounded-lg border border-[#dce8f8] bg-white shadow-[0_12px_30px_rgba(15,23,42,.08)]"
             >
-              <div className="relative h-[205px] overflow-hidden">
+              <div className="relative h-[190px] overflow-hidden sm:h-[205px]">
                 <img
                   src={study.image}
                   alt={study.title}
@@ -260,15 +260,15 @@ export default function PortfolioCaseStudiesSection() {
                 </span>
               </div>
 
-              <div className="px-6 pb-6 pt-3">
+              <div className="px-5 pb-6 pt-3 sm:px-6">
                 <h3 className="text-[15px] font-extrabold leading-6 text-[#151d35]">
                   {study.title}
                 </h3>
-                <p className="mt-1 min-h-[48px] text-[11px] font-medium leading-6 text-[#536174]">
+                <p className="mt-1 text-[11px] font-medium leading-6 text-[#536174] sm:min-h-[48px]">
                   {study.desc}
                 </p>
 
-                <div className="mt-5 grid grid-cols-3 gap-4">
+                <div className="mt-5 grid grid-cols-3 gap-3 sm:gap-4">
                   {study.stats.map((stat) => (
                     <div key={stat.label}>
                       <p className="text-[18px] font-extrabold leading-none text-[#151d35]">
@@ -297,17 +297,17 @@ export default function PortfolioCaseStudiesSection() {
 
       {activeStudy && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#020817]/80 px-4 py-5 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#020817]/80 px-3 py-4 backdrop-blur-sm sm:items-center sm:px-4 sm:py-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby="portfolio-case-title"
           onMouseDown={() => setActiveStudy(null)}
         >
           <div
-            className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-lg bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)]"
+            className="max-h-none w-full max-w-5xl overflow-hidden rounded-lg bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)] sm:max-h-[92vh] sm:overflow-y-auto"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[260px] overflow-hidden bg-[#061326]">
+            <div className="relative min-h-[230px] overflow-hidden bg-[#061326] sm:min-h-[260px]">
               <img
                 src={activeStudy.image}
                 alt={activeStudy.title}
@@ -317,13 +317,13 @@ export default function PortfolioCaseStudiesSection() {
               <button
                 type="button"
                 onClick={() => setActiveStudy(null)}
-                className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg"
+                className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg sm:right-5 sm:top-5"
                 aria-label="Close case study"
               >
                 <X size={18} />
               </button>
 
-              <div className="relative z-10 max-w-3xl px-6 py-8 text-white sm:px-8">
+              <div className="relative z-10 max-w-3xl px-5 py-7 text-white sm:px-8 sm:py-8">
                 <span
                   className={`inline-flex rounded-full ${activeStudy.tagColor} px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide`}
                 >
@@ -331,7 +331,7 @@ export default function PortfolioCaseStudiesSection() {
                 </span>
                 <h3
                   id="portfolio-case-title"
-                  className="mt-5 text-[30px] font-extrabold leading-tight sm:text-[42px]"
+                  className="mt-5 pr-8 text-[24px] font-extrabold leading-tight sm:pr-0 sm:text-[42px]"
                 >
                   {activeStudy.title}
                 </h3>
@@ -339,7 +339,7 @@ export default function PortfolioCaseStudiesSection() {
                   {activeStudy.overview}
                 </p>
 
-                <div className="mt-6 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+                <div className="mt-6 grid max-w-xl grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-4">
                   <div className="rounded-lg border border-white/15 bg-white/10 p-3">
                     <p className="text-[10px] font-extrabold uppercase text-[#ffc126]">
                       Client
@@ -373,7 +373,7 @@ export default function PortfolioCaseStudiesSection() {
               </div>
             </div>
 
-            <div className="grid gap-6 p-6 text-[#152033] sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="grid gap-6 p-5 text-[#152033] sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
                 {[
                   ["The Challenge", activeStudy.challenge],
@@ -423,7 +423,7 @@ export default function PortfolioCaseStudiesSection() {
                   ))}
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {activeStudy.stats.map((stat) => (
                     <div
                       key={stat.label}

@@ -169,6 +169,7 @@ import {
   Instagram,
   Youtube,
 } from "lucide-react";
+import logo from "./images/jagdamba.png";
 
 export default function Footer() {
   const quickLinks = [
@@ -208,17 +209,20 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
-              <div className="text-[42px] font-extrabold leading-none">
-                <span className="text-white">J</span>
-                <span className="text-[#ffb700]">D</span>
+              <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-lg">
+                <img
+                  src={logo}
+                  alt="JD Infotech Solutions logo"
+                  className="h-full w-full scale-125 object-cover"
+                />
               </div>
 
               <div>
-                <h3 className="text-[18px] font-bold leading-none">
-                  JD INFOTECH
+                <h3 className="text-sm font-bold leading-tight text-white">
+                  JD Infotech
                 </h3>
-                <p className="text-[12px] tracking-widest font-semibold">
-                  SOLUTIONS
+                <p className="text-sm font-bold leading-tight text-white">
+                  Solutions
                 </p>
               </div>
             </div>

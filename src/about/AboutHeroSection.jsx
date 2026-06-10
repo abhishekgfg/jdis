@@ -44,7 +44,7 @@ export default function AboutHeroSection() {
 
   return (
     <section
-      className="relative min-h-[340px] overflow-hidden bg-[#061326] text-white"
+      className="relative overflow-hidden bg-[#061326] text-white lg:min-h-[340px]"
       style={{
         backgroundImage: `linear-gradient(
           90deg,
@@ -56,8 +56,8 @@ export default function AboutHeroSection() {
         backgroundPosition: "center",
       }}
     >
-      <div className="relative z-10 mx-auto px-6 lg:px-12 py-10">
-        <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-6 items-center">
+      <div className="relative z-10 mx-auto px-4 py-10 sm:px-6 lg:px-12">
+        <div className="grid gap-7 items-center lg:grid-cols-[1.25fr_0.75fr] lg:gap-6">
           {/* Left Content */}
           <div className="max-w-[620px]">
             <div className="flex items-center gap-2 text-[#ffb700] mb-3">
@@ -70,27 +70,27 @@ export default function AboutHeroSection() {
               </span>
             </div>
 
-            <h1 className="text-[40px] lg:text-[46px] leading-[1.05] font-bold tracking-[-1px]">
+            <h1 className="text-[34px] font-bold leading-[1.08] tracking-[-1px] sm:text-[40px] lg:text-[46px] lg:leading-[1.05]">
               About JD Infotech
-              <br />
+              <br className="hidden sm:block" />
               <span className="text-[#ffb700]">Solutions</span>
             </h1>
 
-            <p className="mt-4 text-[14px] leading-6 text-[#d7e2f0] max-w-[560px]">
+            <p className="mt-4 max-w-[560px] text-[14px] leading-6 text-[#d7e2f0]">
               We are a global technology company delivering digital
               transformation solutions that empower businesses to innovate,
               scale and lead in the digital era.
             </p>
 
             {/* Feature Badges */}
-            <div className="mt-5 flex flex-wrap rounded-lg border border-white/15 bg-[#061326]/70 backdrop-blur-md overflow-hidden max-w-[620px]">
+            <div className="mt-5 grid max-w-[620px] grid-cols-1 overflow-hidden rounded-lg border border-white/15 bg-[#061326]/70 backdrop-blur-md sm:grid-cols-2 lg:flex lg:flex-wrap">
               {badges.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.text}
-                    className={`h-[42px] px-4 flex items-center gap-2 text-[11px] font-semibold text-white ${
+                    className={`flex h-[42px] items-center gap-2 border-b border-white/10 px-4 text-[11px] font-semibold text-white sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:[&:nth-child(odd)]:border-r-0 ${
                       index !== badges.length - 1
                         ? "border-r border-white/10"
                         : ""
@@ -108,9 +108,9 @@ export default function AboutHeroSection() {
           </div>
 
           {/* Stats Card */}
-          <div className="lg:justify-self-end w-full max-w-[360px]">
+          <div className="w-full max-w-[360px] lg:justify-self-end">
             <div className="rounded-xl border border-[#2b4770] bg-[#061326]/80 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,.35)]">
-              <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-6">
                 {stats.map((item) => {
                   const Icon = item.icon;
 
@@ -120,7 +120,7 @@ export default function AboutHeroSection() {
                         <Icon size={22} className="text-[#ffb700]" />
                       </div>
 
-                      <h3 className="text-[28px] leading-none font-bold">
+                      <h3 className="text-[24px] font-bold leading-none sm:text-[28px]">
                         {item.value}
                       </h3>
 

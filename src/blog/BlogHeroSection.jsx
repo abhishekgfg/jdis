@@ -14,7 +14,7 @@ export default function BlogHeroSection() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,11,27,.98)_0%,rgba(2,11,27,.92)_44%,rgba(2,11,27,.62)_100%)]" />
       <div className="absolute inset-y-0 right-0 -z-10 w-2/3 bg-[radial-gradient(circle_at_68%_45%,rgba(23,103,255,.3),transparent_31%)]" />
 
-      <div className="mx-auto grid min-h-[420px] max-w-[1480px] items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10">
+      <div className="mx-auto grid min-h-[420px] max-w-[1480px] items-center gap-8 px-4 py-12 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10">
         <div>
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <a href="/" className="text-white/88">
@@ -29,7 +29,7 @@ export default function BlogHeroSection() {
             Digital Growth Insights
           </div>
 
-          <h1 className="mt-5 max-w-[720px] text-[40px] font-bold leading-[1.08] tracking-normal sm:text-[56px] lg:text-[54px]">
+          <h1 className="mt-5 max-w-[720px] text-[33px] font-bold leading-[1.08] tracking-normal sm:text-[56px] lg:text-[54px]">
             Practical Tech Ideas
             <span className="block">
               That Help Your <span className="text-[#18a8ff]">Business Grow</span>
@@ -42,17 +42,17 @@ export default function BlogHeroSection() {
             to help you make smarter technology decisions before you invest.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
             <a
               href="#blog-insights"
-              className="inline-flex h-13 items-center gap-3 rounded bg-[#ffb525] px-7 py-4 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d]"
+              className="inline-flex h-13 w-full items-center justify-center gap-3 rounded bg-[#ffb525] px-5 py-4 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-7"
             >
               Explore Articles
               <ArrowRight size={16} />
             </a>
             <a
               href="/contact"
-              className="inline-flex h-13 items-center gap-3 rounded border border-white/35 bg-white/5 px-7 py-4 text-[13px] font-extrabold text-white transition hover:bg-white/10"
+              className="inline-flex h-13 w-full items-center justify-center gap-3 rounded border border-white/35 bg-white/5 px-5 py-4 text-[13px] font-extrabold text-white transition hover:bg-white/10 sm:w-auto sm:px-7"
             >
               Book Consultation
               <Search size={16} />

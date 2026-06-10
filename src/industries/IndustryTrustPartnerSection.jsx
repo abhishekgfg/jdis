@@ -66,19 +66,50 @@ const features = [
 export default function IndustryTrustPartnerSection() {
   return (
     <section className="bg-[#f8fbff] py-10 sm:py-12 lg:py-14">
-      <div className="mx-auto  px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto px-4 sm:px-8 lg:px-10">
         <div className="mb-5">
           <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#1767ff]">
             Why Choose JD Infotech
           </span>
-          <h2 className="mt-1 text-[28px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
+          <h2 className="mt-1 text-[24px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
             Your Trusted Technology Partner
           </h2>
           <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f6b51f]" />
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[.92fr_1.55fr]">
-          <div className="overflow-hidden rounded-[8px] border border-[#dce7f7] bg-white shadow-[0_10px_28px_rgba(15,55,105,.08)]">
+          <div className="grid gap-3 sm:hidden">
+            {comparisons.map((feature) => (
+              <div
+                key={feature}
+                className="rounded-[8px] border border-[#dce7f7] bg-white p-4 shadow-[0_10px_28px_rgba(15,55,105,.08)]"
+              >
+                <h3 className="text-[13px] font-extrabold text-[#0d1d36]">
+                  {feature}
+                </h3>
+                <div className="mt-3 grid grid-cols-2 gap-3 text-center text-[11px] font-extrabold">
+                  <div className="rounded-lg bg-[#eef4ff] p-3 text-[#1767ff]">
+                    JD Infotech
+                    <CheckCircle2
+                      size={18}
+                      strokeWidth={3}
+                      className="mx-auto mt-2 text-[#1767ff]"
+                    />
+                  </div>
+                  <div className="rounded-lg bg-[#f8fbff] p-3 text-[#475569]">
+                    Others
+                    <X
+                      size={17}
+                      strokeWidth={3}
+                      className="mx-auto mt-2 text-[#111827]"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden overflow-hidden rounded-[8px] border border-[#dce7f7] bg-white shadow-[0_10px_28px_rgba(15,55,105,.08)] sm:block">
             <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-[#dce7f7] bg-white text-[13px] font-extrabold text-[#0d1d36]">
               <div className="px-5 py-4">Feature</div>
               <div className="border-l border-[#dce7f7] px-5 py-4 text-center text-[#1767ff]">

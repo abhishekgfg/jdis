@@ -90,20 +90,20 @@ export default function WhyChooseProcessSection() {
     <section className="bg-[#f8fbff]">
       {/* Why Choose */}
       <div className="border-y border-[#e8eef7] bg-white/70">
-        <div className="mx-auto px-4 lg:px-10">
+        <div className="mx-auto px-4 sm:px-6 lg:px-10">
           <div className="py-6">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Why Choose JD Infotech Solutions?
             </span>
 
-            <div className="mt-3 grid sm:grid-cols-2 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-[#e1e8f2]">
+            <div className="mt-3 grid divide-y divide-[#e1e8f2] sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-6 lg:divide-x">
               {whyChoose.map((item) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className="flex items-start gap-4 py-4 lg:px-6 first:lg:pl-0"
+                    className="flex items-start gap-4 py-4 sm:px-3 lg:px-6 first:lg:pl-0"
                   >
                     <div className="w-11 h-11 min-w-11 rounded-full border border-[#ffc44d]/40 bg-[#fff8e6] flex items-center justify-center">
                       <Icon size={22} className="text-[#ffb700]" />
@@ -127,24 +127,24 @@ export default function WhyChooseProcessSection() {
 
       {/* Process */}
       <div className="py-10">
-        <div className="mx-auto px-6 lg:px-12">
+        <div className="mx-auto px-4 sm:px-6 lg:px-12">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
             Our Process
           </span>
 
-          <h2 className="mt-2 text-[26px] lg:text-[28px] font-bold text-[#071426]">
+          <h2 className="mt-2 text-[24px] font-bold leading-tight text-[#071426] sm:text-[26px] lg:text-[28px]">
             Our Proven Development Process
           </h2>
 
-          <div className="relative mt-9">
+          <div className="relative mt-7 lg:mt-9">
             <div className="hidden lg:block absolute top-[33px] left-[70px] right-[70px] h-px bg-[#c8d8f0]" />
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 lg:gap-4 relative z-10">
+            <div className="relative z-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 lg:gap-4">
               {process.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
-                  <div key={item.title} className="relative text-center">
+                  <div key={item.title} className="relative rounded-xl border border-[#e5edf7] bg-white p-5 text-center shadow-[0_8px_25px_rgba(20,92,255,0.08)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
                     {index < process.length - 1 && (
                       <div className="hidden lg:flex absolute top-[20px] right-[-18px] z-20 text-[#145cff]">
                         →

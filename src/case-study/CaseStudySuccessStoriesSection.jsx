@@ -152,14 +152,14 @@ export default function CaseStudySuccessStoriesSection() {
   }, [activeStudy]);
 
   return (
-    <section id="case-study-list" className="bg-[#f7faff] py-12 text-[#151d35]">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <section id="case-study-list" className="bg-[#f7faff] py-10 text-[#151d35] sm:py-12">
+      <div className="mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <div className="grid gap-5 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
           <div>
             <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1767ff]">
               Our Case Studies
             </span>
-            <h2 className="mt-2 text-[30px] font-extrabold leading-tight sm:text-[36px]">
+            <h2 className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[36px]">
               Explore Our Success Stories
             </h2>
           </div>
@@ -170,8 +170,8 @@ export default function CaseStudySuccessStoriesSection() {
           </p>
         </div>
 
-        <div className="mt-9 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-3 lg:flex-nowrap">
+        <div className="mt-8 flex flex-col gap-4 sm:mt-9 lg:flex-row lg:items-center lg:justify-between">
+          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0 lg:flex-nowrap">
             {filters.map((filter) => {
               const isActive = activeFilter === filter;
 
@@ -180,7 +180,7 @@ export default function CaseStudySuccessStoriesSection() {
                   key={filter}
                   type="button"
                   onClick={() => setActiveFilter(filter)}
-                  className={`h-11 whitespace-nowrap rounded-full border px-5 text-[12px] font-extrabold shadow-[0_8px_20px_rgba(15,55,105,.07)] transition xl:px-6 ${
+                  className={`h-11 shrink-0 whitespace-nowrap rounded-full border px-5 text-[12px] font-extrabold shadow-[0_8px_20px_rgba(15,55,105,.07)] transition xl:px-6 ${
                     isActive
                       ? "border-[#1767ff] bg-[#1767ff] text-white"
                       : "border-[#dce7f7] bg-white text-[#151d35] hover:border-[#1767ff]/55"
@@ -209,13 +209,13 @@ export default function CaseStudySuccessStoriesSection() {
           </label>
         </div>
 
-        <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {visibleStudies.map((study) => (
             <article
               key={study.title}
               className="overflow-hidden rounded-[10px] border border-[#dce7f7] bg-white shadow-[0_14px_34px_rgba(15,55,105,.08)]"
             >
-              <div className="relative h-[218px] overflow-hidden bg-[#061326]">
+              <div className="relative h-[205px] overflow-hidden bg-[#061326] sm:h-[218px]">
                 <img
                   src={study.image}
                   alt={study.title}
@@ -229,8 +229,8 @@ export default function CaseStudySuccessStoriesSection() {
                 </span>
               </div>
 
-              <div className="p-6">
-                <h3 className="min-h-[58px] text-[19px] font-extrabold leading-7 text-[#151d35]">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-[18px] font-extrabold leading-7 text-[#151d35] sm:min-h-[58px] sm:text-[19px]">
                   {study.title}
                 </h3>
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-[12px] font-bold text-[#3f4b63]">
@@ -243,14 +243,14 @@ export default function CaseStudySuccessStoriesSection() {
                   <span className="h-1 w-1 rounded-full bg-[#6d7890]" />
                   <span>{study.industry}</span>
                 </div>
-                <p className="mt-5 min-h-[84px] text-[13px] font-medium leading-7 text-[#536174]">
+                <p className="mt-5 text-[13px] font-medium leading-7 text-[#536174] sm:min-h-[84px]">
                   {study.desc}
                 </p>
 
                 <div className="mt-6 grid grid-cols-3 divide-x divide-[#e8eef7]">
                   {study.stats.map(([value, label]) => (
-                    <div key={label} className="px-3 first:pl-0 last:pr-0">
-                      <p className="text-[22px] font-extrabold leading-none text-[#151d35]">
+                    <div key={label} className="min-w-0 px-2 first:pl-0 last:pr-0 sm:px-3">
+                      <p className="break-words text-[18px] font-extrabold leading-none text-[#151d35] sm:text-[22px]">
                         {value}
                       </p>
                       <p className="mt-2 text-[10px] font-bold leading-4 text-[#5d6a80]">
@@ -276,17 +276,17 @@ export default function CaseStudySuccessStoriesSection() {
 
       {activeStudy && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#020817]/80 px-4 py-5 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#020817]/80 px-3 py-4 backdrop-blur-sm sm:items-center sm:px-4 sm:py-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby="case-study-modal-title"
           onMouseDown={() => setActiveStudy(null)}
         >
           <div
-            className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-[12px] bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)]"
+            className="w-full max-w-5xl overflow-hidden rounded-[12px] bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)] sm:max-h-[92vh] sm:overflow-y-auto"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[290px] overflow-hidden bg-[#061326]">
+            <div className="relative min-h-[245px] overflow-hidden bg-[#061326] sm:min-h-[290px]">
               <img
                 src={activeStudy.image}
                 alt={activeStudy.title}
@@ -296,13 +296,13 @@ export default function CaseStudySuccessStoriesSection() {
               <button
                 type="button"
                 onClick={() => setActiveStudy(null)}
-                className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg"
+                className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg sm:right-5 sm:top-5"
                 aria-label="Close case study"
               >
                 <X size={18} />
               </button>
 
-              <div className="relative z-10 max-w-3xl px-6 py-8 text-white sm:px-8">
+              <div className="relative z-10 max-w-3xl px-5 py-7 text-white sm:px-8 sm:py-8">
                 <span
                   className={`inline-flex rounded-full ${activeStudy.badgeClass} px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide`}
                 >
@@ -310,7 +310,7 @@ export default function CaseStudySuccessStoriesSection() {
                 </span>
                 <h3
                   id="case-study-modal-title"
-                  className="mt-5 text-[30px] font-extrabold leading-tight sm:text-[42px]"
+                  className="mt-5 pr-8 text-[24px] font-extrabold leading-tight sm:pr-0 sm:text-[42px]"
                 >
                   {activeStudy.title}
                 </h3>
@@ -320,7 +320,7 @@ export default function CaseStudySuccessStoriesSection() {
               </div>
             </div>
 
-            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="grid gap-6 p-5 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
                 {[
                   ["The Challenge", activeStudy.challenge],
@@ -358,7 +358,7 @@ export default function CaseStudySuccessStoriesSection() {
                 <h4 className="text-[18px] font-extrabold">
                   Measurable Impact
                 </h4>
-                <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {activeStudy.stats.map(([value, label]) => (
                     <div
                       key={label}

@@ -66,15 +66,15 @@ export default function IndustriesPortfolioSection() {
   ];
 
   return (
-    <section className="bg-[#061426] text-white py-10 overflow-hidden">
-      <div className="mx-auto px-6 lg:px-12">
+    <section className="overflow-hidden bg-[#061426] py-10 text-white">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Industries */}
-        <div className="flex items-start justify-between gap-6 mb-6">
+        <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:gap-6">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#2b8cff]">
               Industries We Serve
             </span>
-            <p className="mt-2 text-[14px] text-white font-medium">
+            <p className="mt-2 max-w-xl text-[14px] font-medium leading-6 text-white">
               We deliver industry-specific solutions that solve real business challenges.
             </p>
           </div>
@@ -85,16 +85,16 @@ export default function IndustriesPortfolioSection() {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 mb-10">
+        <div className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-8">
           {industries.map((item) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={item.title}
-                className="h-[118px] rounded-lg border border-[#1c3558] bg-[#071b34] hover:bg-[#0a2344] hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.18)]"
+                className="flex h-[104px] flex-col items-center justify-center rounded-lg border border-[#1c3558] bg-[#071b34] text-center shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0a2344] sm:h-[118px]"
               >
-                <Icon size={34} className="text-[#4f9bff] mb-4" />
+                <Icon size={30} className="mb-3 text-[#4f9bff] sm:mb-4 sm:h-[34px] sm:w-[34px]" />
                 <h3 className="text-[14px] font-semibold text-white">
                   {item.title}
                 </h3>
@@ -104,12 +104,12 @@ export default function IndustriesPortfolioSection() {
         </div>
 
         {/* Featured Projects */}
-        <div className="flex items-start justify-between gap-6 mb-5">
+        <div className="mb-5 flex flex-col items-start justify-between gap-4 sm:flex-row sm:gap-6">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#2b8cff]">
               Our Recent Work
             </span>
-            <h2 className="mt-1 text-[26px] lg:text-[28px] leading-tight font-bold">
+            <h2 className="mt-1 text-[24px] font-bold leading-tight sm:text-[26px] lg:text-[28px]">
               Featured Projects
             </h2>
           </div>
@@ -135,7 +135,7 @@ export default function IndustriesPortfolioSection() {
           </button>
         </div>
 
-        <div className="lg:hidden flex gap-3 overflow-x-auto pb-4 mb-2">
+        <div className="mb-2 flex gap-3 overflow-x-auto pb-4 lg:hidden">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -155,13 +155,13 @@ export default function IndustriesPortfolioSection() {
             <ChevronLeft size={18} />
           </button>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {projects.map((project) => (
               <div
                 key={project.title}
                 className="rounded-lg border border-[#1c3558] bg-[#071b34] overflow-hidden hover:-translate-y-1 hover:bg-[#0a2344] transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.20)]"
               >
-                <div className="h-[135px] bg-[#0b213d] overflow-hidden">
+                <div className="h-[180px] overflow-hidden bg-[#0b213d] sm:h-[135px]">
                   <img
                     src={project.img}
                     alt={project.title}
@@ -174,7 +174,7 @@ export default function IndustriesPortfolioSection() {
                     {project.title}
                   </h3>
 
-                  <div className="mt-4 flex items-center justify-between gap-3 text-[12px] text-[#9fb0c7]">
+                  <div className="mt-4 flex flex-col gap-2 text-[12px] text-[#9fb0c7] sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                     <span>{project.type}</span>
                     <span className="flex items-center gap-1 text-[#6aa8ff]">
                       <span className="w-2 h-2 rounded-full bg-[#145cff]" />

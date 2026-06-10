@@ -76,9 +76,9 @@ export default function MobileOverviewSection() {
 
   return (
     <section className="bg-white py-8">
-      <div className="mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[.95fr_1.75fr] gap-9 items-start">
-          <div className="relative h-[276px] rounded-lg overflow-hidden bg-[#04162c] shadow-[0_15px_45px_rgba(15,23,42,.12)]">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid gap-7 items-start lg:grid-cols-[.95fr_1.75fr] lg:gap-9">
+          <div className="relative h-[250px] overflow-hidden rounded-lg bg-[#04162c] shadow-[0_15px_45px_rgba(15,23,42,.12)] sm:h-[276px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,190,255,.55),transparent_34%),radial-gradient(circle_at_50%_100%,rgba(20,92,255,.5),transparent_38%)]" />
             <div className="absolute inset-x-14 bottom-5 h-10 rounded-full bg-[#00b7ff]/30 blur-xl" />
 
@@ -138,7 +138,7 @@ export default function MobileOverviewSection() {
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Service Overview
             </span>
-            <h2 className="mt-1 text-[26px] lg:text-[24px] leading-tight font-bold text-[#071426]">
+            <h2 className="mt-1 text-[24px] font-bold leading-tight text-[#071426] sm:text-[26px] lg:text-[24px]">
               Smart Apps for a Digital-First World
             </h2>
             <p className="mt-1 max-w-[760px] text-[13px] leading-6 text-[#536174]">
@@ -148,13 +148,13 @@ export default function MobileOverviewSection() {
               to your unique requirements.
             </p>
 
-            <div className="mt-2 grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
               {overviewCards.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.title}
-                    className="min-h-[150px] rounded-lg border border-[#e5edf7] bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,.06)]"
+                    className="min-h-[135px] rounded-lg border border-[#e5edf7] bg-white p-4 shadow-[0_10px_30px_rgba(15,23,42,.06)] sm:min-h-[150px] sm:p-5"
                   >
                     <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-lg bg-[#f3f7ff]">
                       <Icon size={24} className="text-[#145cff]" />
@@ -177,7 +177,7 @@ export default function MobileOverviewSection() {
             Key Benefits
           </span>
 
-          <div className="mt-4 grid md:grid-cols-5 gap-0 rounded-lg bg-white">
+          <div className="mt-4 grid gap-3 rounded-lg bg-white md:grid-cols-5 md:gap-0">
             {benefits.map((item, index) => {
               const Icon = item.icon;
               return (

@@ -13,7 +13,7 @@ export default function PortfolioHeroSection() {
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_45%,rgba(16,92,180,.26),transparent_32%),linear-gradient(90deg,rgba(2,11,27,.94)_0%,rgba(2,11,27,.78)_45%,rgba(2,11,27,.42)_100%)]" />
 
-      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[.82fr_1.18fr] lg:px-16 lg:py-12">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.82fr_1.18fr] lg:px-16 lg:py-12">
         <div className="max-w-[570px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <span className="text-white/88">Home</span>
@@ -25,7 +25,7 @@ export default function PortfolioHeroSection() {
             Our Portfolio
           </div>
 
-          <h1 className="mt-5 text-[30px] font-bold leading-[1.08] tracking-normal sm:text-[40x] lg:text-[40px]">
+          <h1 className="mt-5 text-[30px] font-bold leading-[1.08] tracking-normal sm:text-[40px] lg:text-[40px]">
             Innovative Solutions.
             <span className="block text-[#2d9cff]">Proven Results.</span>
           </h1>
@@ -35,17 +35,17 @@ export default function PortfolioHeroSection() {
             and commitment to delivering outstanding digital solutions.
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-5">
+          <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-5">
             <a
               href="/casestudy"
-              className="inline-flex h-14 items-center gap-4 rounded bg-[#ffb525] px-8 text-[14px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d]"
+              className="inline-flex h-14 w-full items-center justify-center gap-4 rounded bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-8 sm:text-[14px]"
             >
               View Case Studies
               <ArrowRight size={17} />
             </a>
             <a
               href="/contact"
-              className="inline-flex h-14 items-center gap-4 rounded border border-white/40 bg-[#061326]/40 px-8 text-[14px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10"
+              className="inline-flex h-14 w-full items-center justify-center gap-4 rounded border border-white/40 bg-[#061326]/40 px-5 text-[13px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10 sm:w-auto sm:px-8 sm:text-[14px]"
             >
               Discuss Your Project
               <MessageCircle size={18} />
@@ -53,11 +53,11 @@ export default function PortfolioHeroSection() {
           </div>
         </div>
 
-        <div className="relative min-h-[265px] lg:min-h-[330px]">
-          <div className="absolute left-[5%] top-[8%] w-[78%] max-w-[640px] rounded-[20px] border-[5px] border-[#8f98a6] bg-[#0b1220] p-2 shadow-[0_28px_70px_rgba(0,0,0,.55)]">
+        <div className="relative mx-auto min-h-[265px] w-full max-w-[390px] overflow-hidden sm:max-w-none lg:min-h-[330px]">
+          <div className="absolute left-0 top-[12%] w-[78%] max-w-[640px] rounded-[20px] border-[4px] border-[#8f98a6] bg-[#0b1220] p-1.5 shadow-[0_28px_70px_rgba(0,0,0,.55)] sm:left-[5%] sm:top-[8%] sm:border-[5px] sm:p-2">
             <div className="overflow-hidden rounded-[12px] bg-[#f6f9ff]">
-              <div className="flex h-[236px]">
-                <div className="w-[86px] bg-[#071833] px-3 py-4 text-white">
+              <div className="flex h-[190px] sm:h-[236px]">
+                <div className="hidden w-[86px] bg-[#071833] px-3 py-4 text-white sm:block">
                   <div className="mb-5 flex items-center gap-2">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f3f7ff] text-[10px] font-black text-[#1265ff]">
                       D
@@ -77,24 +77,24 @@ export default function PortfolioHeroSection() {
                   )}
                 </div>
 
-                <div className="flex-1 px-6 py-5 text-[#071426]">
+                <div className="min-w-0 flex-1 px-3 py-4 text-[#071426] sm:px-6 sm:py-5">
                   <div className="mb-5 flex items-center justify-between">
                     <div>
                       <div className="text-[14px] font-black">Dashboard</div>
                       <div className="mt-1 h-1.5 w-28 rounded bg-[#d9e4f5]" />
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="hidden items-center gap-3 sm:flex">
                       <span className="h-7 w-24 rounded-full bg-white shadow-sm" />
                       <span className="h-7 w-14 rounded-full bg-[#1265ff]" />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-[1.25fr_.75fr] gap-4">
+                  <div className="grid gap-3 sm:grid-cols-[1.25fr_.75fr] sm:gap-4">
                     <div className="rounded-lg bg-white p-4 shadow-[0_6px_18px_rgba(44,76,120,.12)]">
                       <div className="mb-3 flex items-start justify-between">
                         <div>
                           <div className="h-2 w-24 rounded bg-[#d7e2f1]" />
-                          <div className="mt-3 text-[24px] font-black">
+                          <div className="mt-3 text-[18px] font-black sm:text-[24px]">
                             $98,765.43
                           </div>
                         </div>
@@ -102,7 +102,7 @@ export default function PortfolioHeroSection() {
                           +8.45%
                         </span>
                       </div>
-                      <div className="relative h-24 overflow-hidden rounded-md bg-[#f3f7ff]">
+                      <div className="relative h-16 overflow-hidden rounded-md bg-[#f3f7ff] sm:h-24">
                         <svg
                           viewBox="0 0 280 100"
                           className="h-full w-full"
@@ -123,7 +123,7 @@ export default function PortfolioHeroSection() {
                       </div>
                     </div>
 
-                    <div className="rounded-lg bg-white p-4 shadow-[0_6px_18px_rgba(44,76,120,.12)]">
+                    <div className="hidden rounded-lg bg-white p-4 shadow-[0_6px_18px_rgba(44,76,120,.12)] sm:block">
                       <div className="mb-4 flex items-center justify-between">
                         <div className="h-2 w-20 rounded bg-[#d7e2f1]" />
                         <span className="rounded-full bg-[#1265ff] px-3 py-1 text-[9px] font-black text-white">
@@ -139,14 +139,14 @@ export default function PortfolioHeroSection() {
                     </div>
                   </div>
 
-                  <div className="mt-4 grid grid-cols-3 gap-4">
+                  <div className="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:gap-4">
                     {["12,456", "8,764", "4.32%"].map((value) => (
                       <div
                         key={value}
-                        className="rounded-lg bg-white p-3 shadow-[0_5px_15px_rgba(44,76,120,.1)]"
+                        className="rounded-lg bg-white p-2 shadow-[0_5px_15px_rgba(44,76,120,.1)] sm:p-3"
                       >
                         <div className="h-1.5 w-12 rounded bg-[#d7e2f1]" />
-                        <div className="mt-2 text-[15px] font-black">{value}</div>
+                        <div className="mt-2 text-[11px] font-black sm:text-[15px]">{value}</div>
                         <div className="mt-1 h-1.5 w-16 rounded bg-[#bfead6]" />
                       </div>
                     ))}
@@ -157,13 +157,13 @@ export default function PortfolioHeroSection() {
             <div className="absolute -bottom-5 left-1/2 h-6 w-[112%] -translate-x-1/2 rounded-b-[50%] bg-gradient-to-b from-[#c9cdd4] to-[#515966] shadow-[0_12px_22px_rgba(0,0,0,.38)]" />
           </div>
 
-          <div className="absolute right-[3%] top-[21%] w-[150px] rounded-[24px] border-[5px] border-[#596575] bg-[#071426] p-2 shadow-[0_24px_52px_rgba(0,0,0,.58)] sm:w-[172px] lg:right-[2%]">
-            <div className="overflow-hidden rounded-[18px] bg-[#08162b] px-4 py-5 text-white">
+          <div className="absolute right-0 top-[30%] w-[112px] rounded-[22px] border-[4px] border-[#596575] bg-[#071426] p-1.5 shadow-[0_24px_52px_rgba(0,0,0,.58)] sm:right-[3%] sm:top-[21%] sm:w-[172px] sm:border-[5px] sm:p-2 lg:right-[2%]">
+            <div className="overflow-hidden rounded-[18px] bg-[#08162b] px-3 py-4 text-white sm:px-4 sm:py-5">
               <div className="mx-auto mb-4 h-1 w-11 rounded-full bg-white/30" />
               <div className="text-[10px] font-bold text-[#8ea0bd]">Statistics</div>
-              <div className="mt-4 text-[18px] font-black">$98,765.43</div>
+              <div className="mt-3 text-[13px] font-black sm:mt-4 sm:text-[18px]">$98,765.43</div>
               <div className="text-[9px] font-bold text-[#15b66d]">+8.45%</div>
-              <div className="mt-5 flex h-28 items-end gap-2">
+              <div className="mt-4 flex h-20 items-end gap-1.5 sm:mt-5 sm:h-28 sm:gap-2">
                 {[34, 52, 44, 66, 74, 89].map((height, index) => (
                   <span
                     key={height}
@@ -172,7 +172,7 @@ export default function PortfolioHeroSection() {
                   />
                 ))}
               </div>
-              <div className="mt-5 text-[10px] font-bold text-[#8ea0bd]">
+              <div className="mt-4 text-[10px] font-bold text-[#8ea0bd] sm:mt-5">
                 Recent Activity
               </div>
               <div className="mt-3 space-y-2">

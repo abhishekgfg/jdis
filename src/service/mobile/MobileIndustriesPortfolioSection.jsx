@@ -114,21 +114,21 @@ export default function MobileIndustriesPortfolioSection() {
   };
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto px-6 lg:px-12 pt-8">
+    <section className="overflow-hidden bg-white">
+      <div className="mx-auto max-w-full overflow-hidden px-4 pt-8 sm:px-6 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[.75fr_1fr]">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Industries We Serve
             </span>
 
-            <div className="mt-5 grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-4 lg:grid-cols-4">
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-7 lg:grid-cols-4">
               {industries.map((industry) => {
                 const Icon = industry.icon;
                 return (
                   <div
                     key={industry.name}
-                    className="flex items-center gap-2   text-[12px] font-bold text-[#233149]"
+                    className="flex items-center gap-2 rounded-lg border border-[#e5edf7] bg-white p-3 text-[12px] font-bold text-[#233149] shadow-[0_8px_22px_rgba(15,23,42,.04)] sm:border-0 sm:p-0 sm:shadow-none"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1f6ff] text-[#145cff]">
                       <Icon size={16} />
@@ -148,7 +148,7 @@ export default function MobileIndustriesPortfolioSection() {
             </a>
           </div>
 
-          <div className="relative">
+          <div className="relative min-w-0 overflow-hidden">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
                 Related Portfolio
@@ -175,15 +175,15 @@ export default function MobileIndustriesPortfolioSection() {
 
             <div
               ref={portfolioRef}
-              className="overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="-mx-4 overflow-x-auto px-4 scroll-smooth [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden"
             >
               <div
-                className="flex gap-3"
+                className="flex w-max gap-3 sm:w-auto"
               >
                 {projects.map((project) => (
                   <article
                     key={project.title}
-                    className="relative h-[176px] min-w-full overflow-hidden rounded-lg bg-[#061326] p-4 text-white shadow-[0_14px_30px_rgba(2,8,23,.13)] sm:min-w-[calc((100%_-_24px)/3)]"
+                    className="relative h-[220px] w-[calc(100vw-32px)] flex-none overflow-hidden rounded-lg bg-[#061326] p-4 text-white shadow-[0_14px_30px_rgba(2,8,23,.13)] sm:h-[176px] sm:w-auto sm:min-w-[calc((100%_-_24px)/3)]"
                   >
                     <img
                       src={project.image}
@@ -191,7 +191,7 @@ export default function MobileIndustriesPortfolioSection() {
                       className="absolute inset-0 h-full w-full object-cover object-right"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#061326] via-[#061326]/88 to-[#061326]/12" />
-                    <div className="relative z-20 max-w-[54%]">
+                    <div className="relative z-20 max-w-[72%] sm:max-w-[54%]">
                       <h3 className="text-[14px] font-bold leading-5">
                         {project.title}
                       </h3>
@@ -227,7 +227,7 @@ export default function MobileIndustriesPortfolioSection() {
       </div>
 
       <div className="mt-8 bg-[#020b18]">
-        <div className="mx-auto grid gap-7 px-6 py-5 lg:grid-cols-[1.05fr_.95fr] lg:px-12">
+        <div className="mx-auto grid gap-7 px-4 py-6 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-12">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#1e8bff]">
               Frequently Asked Questions
@@ -264,7 +264,7 @@ export default function MobileIndustriesPortfolioSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-lg border border-[#0f315d] bg-[#061a36] px-7 py-6 text-white shadow-[0_16px_36px_rgba(0,0,0,.22)]">
+          <div className="relative overflow-hidden rounded-lg border border-[#0f315d] bg-[#061a36] px-5 py-6 text-white shadow-[0_16px_36px_rgba(0,0,0,.22)] sm:px-7">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(31,139,255,.55),transparent_34%),linear-gradient(90deg,#061a36_0%,#061a36_45%,rgba(5,28,56,.72)_100%)]" />
             <div className="relative z-10 max-w-[310px]">
               <h2 className="text-[22px] font-bold leading-tight lg:text-[25px]">
@@ -273,17 +273,17 @@ export default function MobileIndustriesPortfolioSection() {
               <p className="mt-3 text-[12px] leading-5 text-[#d2dcec]">
                 Let's turn your idea into a powerful mobile application.
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
                 <a
                   href="/contact"
-                  className="inline-flex h-10 items-center gap-3 rounded bg-[#ffc126] px-5 text-[12px] font-bold text-[#071426] shadow-[0_10px_22px_rgba(255,193,38,.25)]"
+                  className="inline-flex h-10 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-5 text-[12px] font-bold text-[#071426] shadow-[0_10px_22px_rgba(255,193,38,.25)] sm:w-auto"
                 >
                   Discuss Your Project
                   <ArrowRight size={15} />
                 </a>
                 <a
                   href="tel:+919999999999"
-                  className="inline-flex h-10 items-center gap-3 rounded border border-white/25 px-5 text-[12px] font-bold text-white"
+                  className="inline-flex h-10 w-full items-center justify-center gap-3 rounded border border-white/25 px-5 text-[12px] font-bold text-white sm:w-auto"
                 >
                   Schedule a Call
                   <Phone size={15} />

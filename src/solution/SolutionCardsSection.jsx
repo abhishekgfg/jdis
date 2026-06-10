@@ -136,12 +136,12 @@ export default function SolutionCardsSection() {
 
   return (
     <section className="bg-[#f8fbff] py-8">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center">
           <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#145cff]">
             Our Solutions
           </span>
-          <h2 className="mx-auto mt-1 max-w-[720px] text-[24px] font-extrabold leading-tight text-[#071426] lg:text-[31px]">
+          <h2 className="mx-auto mt-1 max-w-[720px] text-[22px] font-extrabold leading-tight text-[#071426] sm:text-[24px] lg:text-[31px]">
             End-to-End Solutions for Every Business Need
           </h2>
           <div className="mx-auto mt-3 h-[2px] w-12 rounded-full bg-[#ffc126]" />
@@ -153,9 +153,9 @@ export default function SolutionCardsSection() {
             return (
               <article
                 key={solution.title}
-                className="min-h-[150px] rounded-lg border border-[#e4edf8] bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,.06)] transition-transform duration-200 hover:-translate-y-1"
+                className="min-h-[145px] rounded-lg border border-[#e4edf8] bg-white p-4 shadow-[0_10px_28px_rgba(15,23,42,.06)] transition-transform duration-200 hover:-translate-y-1 sm:min-h-[150px] sm:p-5"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div
                     className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full ${solution.bg} shadow-[0_10px_24px_rgba(15,23,42,.08)]`}
                   >
@@ -186,8 +186,8 @@ export default function SolutionCardsSection() {
       </div>
 
       {activeSolution && (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#020814]/75 px-4 py-6 backdrop-blur-sm">
-          <div className="relative max-h-[88vh] w-full max-w-[760px] overflow-y-auto rounded-xl border border-[#dbe7f5] bg-white p-6 shadow-[0_24px_70px_rgba(2,8,20,.28)]">
+        <div className="fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto bg-[#020814]/75 px-4 py-6 backdrop-blur-sm sm:items-center">
+          <div className="relative max-h-[88vh] w-full max-w-[760px] overflow-y-auto rounded-xl border border-[#dbe7f5] bg-white p-4 shadow-[0_24px_70px_rgba(2,8,20,.28)] sm:p-6">
             <button
               type="button"
               aria-label="Close solution details"
@@ -197,7 +197,7 @@ export default function SolutionCardsSection() {
               <X size={18} />
             </button>
 
-            <div className="flex items-start gap-4 pr-10">
+            <div className="flex flex-col gap-4 pr-10 sm:flex-row sm:items-start">
               <div
                 className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full ${activeSolution.bg}`}
               >
@@ -212,7 +212,7 @@ export default function SolutionCardsSection() {
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#145cff]">
                   Solution Details
                 </span>
-                <h3 className="mt-1 text-[26px] font-extrabold text-[#071426]">
+                <h3 className="mt-1 text-[22px] font-extrabold leading-tight text-[#071426] sm:text-[26px]">
                   {activeSolution.title}
                 </h3>
                 <p className="mt-3 text-[14px] leading-7 text-[#536174]">
@@ -221,7 +221,7 @@ export default function SolutionCardsSection() {
               </div>
             </div>
 
-            <div className="mt-7 grid gap-5 md:grid-cols-2">
+            <div className="mt-7 grid gap-4 md:grid-cols-2 md:gap-5">
               <div className="rounded-lg bg-[#f8fbff] p-5">
                 <h4 className="text-[15px] font-extrabold text-[#071426]">
                   What It Includes
@@ -257,10 +257,10 @@ export default function SolutionCardsSection() {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
               <a
                 href="/contact"
-                className="inline-flex h-11 items-center gap-3 rounded bg-[#ffc126] px-6 text-[13px] font-extrabold text-[#071426]"
+                className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-6 text-[13px] font-extrabold text-[#071426] sm:w-auto"
               >
                 Discuss This Solution
                 <ArrowRight size={15} />
@@ -268,7 +268,7 @@ export default function SolutionCardsSection() {
               <button
                 type="button"
                 onClick={() => setActiveSolution(null)}
-                className="inline-flex h-11 items-center rounded border border-[#d8e5f5] px-6 text-[13px] font-extrabold text-[#071426]"
+                className="inline-flex h-11 w-full items-center justify-center rounded border border-[#d8e5f5] px-6 text-[13px] font-extrabold text-[#071426] sm:w-auto"
               >
                 Close
               </button>

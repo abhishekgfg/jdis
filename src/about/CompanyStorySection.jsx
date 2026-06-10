@@ -4,16 +4,16 @@ import storyImg from "../about/image/story.png";
 export default function CompanyStorySection() {
   return (
     <section className="bg-[#f8fbff] py-10">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Top Story */}
-        <div className="grid lg:grid-cols-[0.9fr_1.5fr] gap-10 items-center">
+        <div className="grid gap-7 items-center lg:grid-cols-[0.9fr_1.5fr] lg:gap-10">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Our Story
             </span>
 
-            <h2 className="mt-3 text-[34px] lg:text-[34px] leading-[1.1] font-bold text-[#071426]">
-              Technology Partner for <br />
+            <h2 className="mt-3 text-[28px] font-bold leading-[1.12] text-[#071426] sm:text-[34px] lg:text-[34px] lg:leading-[1.1]">
+              Technology Partner for <br className="hidden sm:block" />
               Global{" "}
               <span className="text-[#145cff]">Digital Growth</span>
             </h2>
@@ -31,21 +31,21 @@ export default function CompanyStorySection() {
               business problems.
             </p>
 
-            <button className="mt-6 h-[48px] px-6 rounded-md bg-[#145cff] hover:bg-[#004be0] text-white text-[14px] font-semibold inline-flex items-center gap-3 shadow-lg shadow-blue-500/20 transition-all">
+            <button className="mt-6 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#145cff] px-6 text-[14px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-[#004be0] sm:w-auto">
               Our Journey
               <ArrowRight size={17} />
             </button>
           </div>
 
-          <div className="relative rounded-xl overflow-hidden shadow-[0_15px_45px_rgba(15,23,42,0.14)] border border-[#dbe7f5] h-[285px]">
+          <div className="relative h-[300px] overflow-hidden rounded-xl border border-[#dbe7f5] shadow-[0_15px_45px_rgba(15,23,42,0.14)] sm:h-[285px]">
             <img
               src={storyImg}
               alt="JD Infotech office workspace"
               className="w-full h-full object-cover"
             />
 
-            <div className="absolute right-5 bottom-5 w-[210px] h-[95px] rounded-xl bg-[#061326]/90 border border-white/20 backdrop-blur-md text-white flex items-center gap-5 px-6 shadow-xl">
-              <div className="w-12 h-12 rounded-full border border-[#ffb700]/40 bg-[#ffb700]/10 flex items-center justify-center">
+            <div className="absolute bottom-4 left-4 right-4 flex h-[88px] items-center gap-4 rounded-xl border border-white/20 bg-[#061326]/90 px-4 text-white shadow-xl backdrop-blur-md sm:left-auto sm:right-5 sm:bottom-5 sm:h-[95px] sm:w-[210px] sm:gap-5 sm:px-6">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-[#ffb700]/40 bg-[#ffb700]/10 sm:h-12 sm:w-12">
                 <Gem size={23} className="text-[#ffb700]" />
               </div>
 
@@ -60,9 +60,9 @@ export default function CompanyStorySection() {
         </div>
 
         {/* Mission Vision Values */}
-        <div className="grid md:grid-cols-3 gap-5 mt-10">
-          <div className="bg-white rounded-xl border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.06)] p-4 flex items-center gap-5">
-            <div className="w-16 h-12 min-w-12 rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)] flex items-center justify-center">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="flex items-start gap-4 rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] sm:items-center lg:p-4">
+            <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)] lg:w-16">
               <Target size={30} className="text-white" />
             </div>
 
@@ -77,8 +77,8 @@ export default function CompanyStorySection() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.06)] p-6 flex items-center gap-5">
-            <div className="w-12 h-12 min-w-12 rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)] flex items-center justify-center">
+          <div className="flex items-start gap-4 rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] sm:items-center lg:gap-5 lg:p-6">
+            <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)]">
               <Eye size={30} className="text-white" />
             </div>
 
@@ -93,8 +93,8 @@ export default function CompanyStorySection() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.06)] p-6 flex items-center gap-5">
-            <div className="w-10 h-12 min-w-12 rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)] flex items-center justify-center">
+          <div className="flex items-start gap-4 rounded-xl border border-[#e5edf7] bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.06)] sm:items-center lg:gap-5 lg:p-6">
+            <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#145cff] to-[#6aa8ff] shadow-[0_12px_30px_rgba(20,92,255,0.35)] lg:w-10">
               <Gem size={30} className="text-white" />
             </div>
 
@@ -104,7 +104,7 @@ export default function CompanyStorySection() {
               </span>
 
 
-              <div className="mt-2 grid grid-cols-2 gap-x-5 gap-y-2 text-[10px] text-[#536174]">
+              <div className="mt-2 grid grid-cols-1 gap-x-5 gap-y-2 text-[11px] text-[#536174] sm:grid-cols-2 lg:text-[10px]">
                 {[
                   "Integrity & Transparency",
                   "Client Success",

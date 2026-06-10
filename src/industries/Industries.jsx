@@ -56,7 +56,7 @@ export default function Industries() {
     >
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,11,27,.96)_0%,rgba(2,11,27,.86)_42%,rgba(2,11,27,.34)_100%)]" />
 
-      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[.82fr_1.18fr] lg:px-16 lg:py-14">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.82fr_1.18fr] lg:px-16 lg:py-14">
         <div className="max-w-[650px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <span className="text-white/88">Home</span>
@@ -71,22 +71,22 @@ export default function Industries() {
             Our Industries
           </div>
 
-          <h1 className="mt-5 text-[38px] font-bold leading-[1.08] tracking-normal sm:text-[50px] lg:text-[46px]">
+          <h1 className="mt-5 text-[32px] font-bold leading-[1.08] tracking-normal sm:text-[50px] lg:text-[46px]">
             Industries We Serve
             <span className="block font-medium">Digital Solutions For</span>
             <span className="block text-[#158dff]">Every Industry</span>
           </h1>
 
-          <p className="mt-6 max-w-[620px] text-[15px] font-medium leading-8 text-[#e7eef9] sm:text-[16px]">
+          <p className="mt-5 max-w-[620px] text-[14px] font-medium leading-7 text-[#e7eef9] sm:mt-6 sm:text-[16px] sm:leading-8">
             We deliver customized software, web, mobile, AI, CRM, ERP and
             automation solutions for businesses across multiple industries
             worldwide.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-5">
+          <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:gap-5">
             <a
               href="#industries-list"
-              className="inline-flex h-14 items-center gap-4 rounded bg-[#ffb525] px-8 text-[14px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d]"
+              className="inline-flex h-12 w-full items-center justify-center gap-4 rounded bg-[#ffb525] px-6 text-[14px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:h-14 sm:w-auto sm:px-8"
             >
               Explore Industries
               <ArrowRight size={17} />
@@ -101,17 +101,17 @@ export default function Industries() {
           </div>
         </div>
 
-        <div className="relative min-h-[330px] lg:min-h-[410px]">
-          <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#27c4ff]/30 bg-[#0b57c7]/10 shadow-[0_0_80px_rgba(21,141,255,.42)] sm:h-[360px] sm:w-[360px] lg:h-[430px] lg:w-[430px]" />
+        <div className="relative mx-auto min-h-[280px] w-full max-w-[360px] overflow-hidden sm:min-h-[330px] sm:max-w-none lg:min-h-[410px]">
+          <div className="absolute left-1/2 top-1/2 h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#27c4ff]/30 bg-[#0b57c7]/10 shadow-[0_0_80px_rgba(21,141,255,.42)] sm:h-[360px] sm:w-[360px] lg:h-[430px] lg:w-[430px]" />
           {industries.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.label}
-                className={`absolute ${item.className} flex h-[96px] w-[96px] flex-col items-center justify-center rounded-full border border-[#2d7bff]/40 bg-[#071a3a]/88 text-center shadow-[0_16px_38px_rgba(0,0,0,.35),inset_0_0_24px_rgba(45,123,255,.18)] backdrop-blur-sm sm:h-[112px] sm:w-[112px]`}
+                className={`absolute ${item.className} flex h-[78px] w-[78px] flex-col items-center justify-center rounded-full border border-[#2d7bff]/40 bg-[#071a3a]/88 text-center shadow-[0_16px_38px_rgba(0,0,0,.35),inset_0_0_24px_rgba(45,123,255,.18)] backdrop-blur-sm sm:h-[112px] sm:w-[112px]`}
               >
-                <Icon size={32} className="text-white" />
-                <span className="mt-2 text-[12px] font-extrabold text-white">
+                <Icon size={24} className="text-white sm:h-8 sm:w-8" />
+                <span className="mt-1 text-[10px] font-extrabold leading-tight text-white sm:mt-2 sm:text-[12px]">
                   {item.label}
                 </span>
               </div>

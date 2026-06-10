@@ -49,16 +49,16 @@ export default function SolutionHeroSection() {
   ];
 
   return (
-    <section className="relative min-h-[430px] overflow-hidden bg-[#020814] text-white">
+    <section className="relative overflow-hidden bg-[#020814] text-white lg:min-h-[430px]">
       <img
         src={heroBg}
         alt="Digital globe solutions background"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#020814] via-[#020814]/58 to-[#020814]/12" />
-      <div className="absolute inset-y-0 left-0 w-[45%] bg-[#020814]/35" />
+      <div className="absolute inset-y-0 left-0 w-full bg-[#020814]/45 sm:w-[45%] sm:bg-[#020814]/35" />
 
-      <div className="relative z-10 mx-auto grid min-h-[430px] items-center px-6 py-10 lg:grid-cols-[.9fr_1.1fr] lg:px-12">
+      <div className="relative z-10 mx-auto grid items-center px-4 py-10 sm:px-6 lg:min-h-[430px] lg:grid-cols-[.9fr_1.1fr] lg:px-12">
         <div>
           <div className="mb-7 flex items-center gap-2 text-[11px] font-semibold">
             <a href="/" className="text-white/82">
@@ -68,30 +68,30 @@ export default function SolutionHeroSection() {
             <span className="text-[#ffc126]">Solutions</span>
           </div>
 
-          <h1 className="max-w-[470px] text-[36px] font-bold leading-[1.08] tracking-normal sm:text-[44px] lg:text-[42px]">
+          <h1 className="max-w-[470px] text-[32px] font-bold leading-[1.08] tracking-normal sm:text-[44px] lg:text-[42px]">
             Smart Solutions
             <span className="block">
               For a <span className="text-[#ffba19]">Digital World</span>
             </span>
           </h1>
 
-          <p className="mt-3 max-w-[520px] text-[14px] leading-5 text-[#e0e8f5]">
+          <p className="mt-3 max-w-[520px] text-[14px] leading-6 text-[#e0e8f5] sm:leading-5">
             We design and deliver innovative, scalable and future-ready solutions
             that help businesses streamline operations, enhance customer
             experience and accelerate growth.
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-4">
+          <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
             <a
               href="/solutions"
-              className="inline-flex h-12 items-center gap-4 rounded bg-[#ffc126] px-7 text-[13px] font-bold text-[#071426] shadow-[0_12px_30px_rgba(255,193,38,.23)]"
+              className="inline-flex h-12 w-full items-center justify-center gap-4 rounded bg-[#ffc126] px-7 text-[13px] font-bold text-[#071426] shadow-[0_12px_30px_rgba(255,193,38,.23)] sm:w-auto"
             >
               Explore Solutions
               <ArrowRight size={16} />
             </a>
             <a
               href="/contact"
-              className="inline-flex h-12 items-center gap-4 rounded border border-white/30 bg-white/5 px-7 text-[13px] font-bold text-white"
+              className="inline-flex h-12 w-full items-center justify-center gap-4 rounded border border-white/30 bg-white/5 px-7 text-[13px] font-bold text-white sm:w-auto"
             >
               Talk to Experts
               <Headphones size={16} />

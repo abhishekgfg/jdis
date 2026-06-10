@@ -22,9 +22,9 @@ export default function MobileDevelopmentHero() {
   ];
 
   return (
-    <section className="relative min-h-[430px] overflow-hidden bg-[#020b18] text-white">
+    <section className="relative overflow-hidden bg-[#020b18] text-white lg:min-h-[430px]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_90%,rgba(20,92,255,.4),transparent_32%),linear-gradient(90deg,rgba(2,11,24,1)_0%,rgba(2,11,24,.98)_38%,rgba(2,11,24,.9)_100%)]" />
-      <div className="absolute inset-y-0 left-[38%] right-0 opacity-70">
+      <div className="absolute inset-y-0 left-[18%] right-0 opacity-40 sm:left-[38%] sm:opacity-70">
         <div className="absolute top-[120px] left-0 h-px w-full bg-gradient-to-r from-transparent via-[#145cff] to-transparent" />
         <div className="absolute top-[190px] left-[-40px] h-px w-[760px] rotate-[8deg] bg-gradient-to-r from-transparent via-[#0ea5ff] to-transparent" />
         <div className="absolute top-[250px] left-[-70px] h-px w-[820px] -rotate-[7deg] bg-gradient-to-r from-transparent via-[#145cff] to-transparent" />
@@ -35,10 +35,10 @@ export default function MobileDevelopmentHero() {
         <div className="absolute left-[62%] top-[300px] w-[220px] border-t border-dashed border-[#145cff]/45" />
       </div>
 
-      <div className="relative z-10 mx-auto px-6 lg:px-12 py-8">
-        <div className="grid lg:grid-cols-[1fr_1.25fr] gap-8 items-center">
+      <div className="relative z-10 mx-auto px-4 py-8 sm:px-6 lg:px-12">
+        <div className="grid gap-8 items-center lg:grid-cols-[1fr_1.25fr]">
           <div className="max-w-[650px]">
-            <div className="flex items-center gap-3 text-[13px] font-semibold mb-5">
+            <div className="mb-5 flex flex-wrap items-center gap-2 text-[12px] font-semibold sm:gap-3 sm:text-[13px]">
               <span className="text-white/80">Home</span>
               <ChevronRight size={14} className="text-white/35" />
               <span className="text-white/80">Services</span>
@@ -50,26 +50,26 @@ export default function MobileDevelopmentHero() {
               Our Service
             </span>
 
-            <h1 className="text-[38px] sm:text-[46px] lg:text-[36px] leading-[1.08] font-bold">
+            <h1 className="text-[33px] font-bold leading-[1.08] sm:text-[46px] lg:text-[36px]">
               Mobile App Development
-              <br />
+              <br className="hidden sm:block" />
               Engaging Apps.{" "}
               <span className="text-[#ffb700]">Powerful Impact.</span>
             </h1>
 
-            <p className="mt-5 max-w-[690px] text-[13px] sm:text-[13px] leading-5 text-[#d7e2f0]">
+            <p className="mt-5 max-w-[690px] text-[13px] leading-6 text-[#d7e2f0] sm:text-[13px] sm:leading-5">
               We build high-performance mobile applications for Android, iOS and
               cross-platform that deliver exceptional user experiences and drive
               your business growth.
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-3 gap-3 max-w-[560px]">
+            <div className="mt-6 grid max-w-[560px] gap-3 sm:grid-cols-3">
               {features.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.text}
-                    className="h-[42px] px-4 rounded-md border border-white/12 bg-[#05152b]/80 backdrop-blur flex items-center gap-3 text-[10px] font-semibold"
+                    className="flex h-[42px] items-center justify-center gap-3 rounded-md border border-white/12 bg-[#05152b]/80 px-4 text-[10px] font-semibold backdrop-blur"
                   >
                     <Icon size={18} className="text-[#4f9bff]" />
                     {item.text}
@@ -78,24 +78,24 @@ export default function MobileDevelopmentHero() {
               })}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-4">
-              <button className="h-[50px] px-7 rounded-md bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] text-[14px] font-bold inline-flex items-center gap-4 shadow-lg shadow-yellow-500/20 transition-all">
+            <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
+              <button className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md bg-[#ffb700] px-7 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Discuss Your Project
                 <ArrowRight size={18} />
               </button>
 
-              <button className="h-[50px] px-7 rounded-md border border-white/25 bg-white/5 hover:bg-white/10 text-white text-[14px] font-semibold inline-flex items-center gap-4 transition-all">
+              <button className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md border border-white/25 bg-white/5 px-7 text-[14px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 View Our Work
                 <PlayCircle size={20} className="text-[#ffb700]" />
               </button>
             </div>
           </div>
 
-          <div className="relative min-h-[360px] lg:min-h-[380px]">
-            <div className="absolute left-1/2 bottom-2 h-[54px] w-[360px] -translate-x-1/2 rounded-full border border-[#00b7ff] bg-[#145cff]/20 shadow-[0_0_45px_rgba(0,183,255,.9)]" />
-            <div className="absolute left-1/2 bottom-5 h-[18px] w-[310px] -translate-x-1/2 rounded-full bg-[#00c8ff]/55 blur-lg" />
+          <div className="relative mx-auto min-h-[330px] w-full max-w-[390px] overflow-hidden sm:min-h-[360px] sm:max-w-none lg:min-h-[380px]">
+            <div className="absolute bottom-2 left-1/2 h-[46px] w-[280px] -translate-x-1/2 rounded-full border border-[#00b7ff] bg-[#145cff]/20 shadow-[0_0_45px_rgba(0,183,255,.9)] sm:h-[54px] sm:w-[360px]" />
+            <div className="absolute bottom-5 left-1/2 h-[18px] w-[240px] -translate-x-1/2 rounded-full bg-[#00c8ff]/55 blur-lg sm:w-[310px]" />
 
-            <div className="absolute left-[19%] top-2 w-[164px] rotate-[-7deg] rounded-[30px] border-[7px] border-[#101827] bg-white shadow-[0_24px_60px_rgba(0,0,0,.45)]">
+            <div className="absolute left-[3%] top-4 w-[145px] rotate-[-7deg] rounded-[30px] border-[7px] border-[#101827] bg-white shadow-[0_24px_60px_rgba(0,0,0,.45)] sm:left-[19%] sm:top-2 sm:w-[164px]">
               <div className="mx-auto mt-1 h-4 w-20 rounded-b-xl bg-[#101827]" />
               <div className="px-4 pb-4 pt-3 text-[#091426]">
                 <div className="flex items-center justify-between text-[9px] font-bold">
@@ -139,7 +139,7 @@ export default function MobileDevelopmentHero() {
               </div>
             </div>
 
-            <div className="absolute left-[43%] top-1 w-[178px] rotate-[5deg] rounded-[32px] border-[7px] border-[#101827] bg-[#071326] shadow-[0_24px_60px_rgba(0,0,0,.55)]">
+            <div className="absolute left-[43%] top-2 w-[155px] rotate-[5deg] rounded-[32px] border-[7px] border-[#101827] bg-[#071326] shadow-[0_24px_60px_rgba(0,0,0,.55)] sm:top-1 sm:w-[178px]">
               <div className="mx-auto mt-1 h-4 w-20 rounded-b-xl bg-[#101827]" />
               <div className="px-4 pb-4 pt-3 text-white">
                 <div className="flex items-center justify-between text-[9px] font-bold">

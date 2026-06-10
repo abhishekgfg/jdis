@@ -271,14 +271,14 @@ export default function BlogInsightsSection() {
   }, [activePost]);
 
   return (
-    <section id="blog-insights" className="bg-[#f7faff] py-12 text-[#151d35]">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <section id="blog-insights" className="bg-[#f7faff] py-10 text-[#151d35] sm:py-12">
+      <div className="mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <div className="grid gap-5 lg:grid-cols-[.92fr_1.08fr] lg:items-end">
           <div>
             <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1767ff]">
               Latest Insights
             </span>
-            <h2 className="mt-2 text-[30px] font-extrabold leading-tight sm:text-[38px]">
+            <h2 className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[38px]">
               Digital Strategy, SEO and Technology Articles
             </h2>
           </div>
@@ -289,7 +289,7 @@ export default function BlogInsightsSection() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="-mx-4 mt-8 flex gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
           {categories.map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -297,7 +297,7 @@ export default function BlogInsightsSection() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`h-11 rounded-full border px-5 text-[12px] font-extrabold shadow-[0_8px_20px_rgba(15,55,105,.07)] transition ${
+                className={`h-11 shrink-0 rounded-full border px-5 text-[12px] font-extrabold shadow-[0_8px_20px_rgba(15,55,105,.07)] transition ${
                   isActive
                     ? "border-[#1767ff] bg-[#1767ff] text-white"
                     : "border-[#dce7f7] bg-white text-[#151d35] hover:border-[#1767ff]/55"
@@ -309,13 +309,13 @@ export default function BlogInsightsSection() {
           })}
         </div>
 
-        <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {visiblePosts.map((post) => (
             <article
               key={post.title}
               className="overflow-hidden rounded-[10px] border border-[#dce7f7] bg-white shadow-[0_14px_34px_rgba(15,55,105,.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,55,105,.12)]"
             >
-              <div className="relative h-[230px] overflow-hidden bg-[#061326]">
+              <div className="relative h-[210px] overflow-hidden bg-[#061326] sm:h-[230px]">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -328,7 +328,7 @@ export default function BlogInsightsSection() {
                 </span>
               </div>
 
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <div className="flex flex-wrap items-center gap-4 text-[11px] font-bold text-[#536174]">
                   <span className="inline-flex items-center gap-2">
                     <CalendarDays size={14} className="text-[#1767ff]" />
@@ -339,10 +339,10 @@ export default function BlogInsightsSection() {
                     {post.readTime}
                   </span>
                 </div>
-                <h3 className="mt-4 min-h-[72px] text-[21px] font-extrabold leading-7">
+                <h3 className="mt-4 text-[19px] font-extrabold leading-7 sm:min-h-[72px] sm:text-[21px]">
                   {post.title}
                 </h3>
-                <p className="mt-3 min-h-[72px] text-[13px] font-medium leading-7 text-[#536174]">
+                <p className="mt-3 text-[13px] font-medium leading-7 text-[#536174] sm:min-h-[72px]">
                   {post.excerpt}
                 </p>
                 <button
@@ -359,7 +359,7 @@ export default function BlogInsightsSection() {
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[.85fr_1.15fr]">
-          <div className="rounded-[8px] bg-[#020b1b] p-6 text-white shadow-[0_14px_34px_rgba(2,8,23,.18)]">
+          <div className="rounded-[8px] bg-[#020b1b] p-5 text-white shadow-[0_14px_34px_rgba(2,8,23,.18)] sm:p-6">
             <h2 className="text-[22px] font-extrabold">
               Frequently Asked Questions
             </h2>
@@ -400,13 +400,13 @@ export default function BlogInsightsSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[8px] bg-[#1767ff] p-8 text-white shadow-[0_16px_36px_rgba(23,103,255,.22)]">
+          <div className="relative overflow-hidden rounded-[8px] bg-[#1767ff] p-5 text-white shadow-[0_16px_36px_rgba(23,103,255,.22)] sm:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_86%_18%,rgba(255,255,255,.24),transparent_15%),radial-gradient(circle_at_85%_95%,rgba(2,11,27,.28),transparent_30%)]" />
             <div className="relative max-w-[680px]">
               <span className="text-[12px] font-extrabold uppercase tracking-wide text-white/85">
                 Need a Growth Plan?
               </span>
-              <h2 className="mt-2 text-[30px] font-extrabold leading-tight sm:text-[36px]">
+              <h2 className="mt-2 text-[25px] font-extrabold leading-tight sm:text-[36px]">
                 Turn Your Website Into a Lead-Generating Asset
               </h2>
               <p className="mt-4 max-w-[640px] text-[14px] font-semibold leading-7 text-[#e7efff]">
@@ -414,17 +414,17 @@ export default function BlogInsightsSection() {
                 your design, speed, SEO structure and content, then suggest a
                 practical improvement plan.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex h-12 items-center gap-3 rounded bg-white px-7 text-[13px] font-extrabold text-[#1767ff]"
+                  className="inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-white px-5 text-[13px] font-extrabold text-[#1767ff] sm:w-auto sm:px-7"
                 >
                   Get Free Consultation
                   <ArrowRight size={15} />
                 </a>
                 <a
                   href="/case-study"
-                  className="inline-flex h-12 items-center gap-3 rounded border border-white/40 bg-white/10 px-7 text-[13px] font-extrabold text-white"
+                  className="inline-flex h-12 w-full items-center justify-center gap-3 rounded border border-white/40 bg-white/10 px-5 text-[13px] font-extrabold text-white sm:w-auto sm:px-7"
                 >
                   See Case Studies
                   <Search size={15} />
@@ -437,17 +437,17 @@ export default function BlogInsightsSection() {
 
       {activePost && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#020817]/80 px-4 py-5 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#020817]/80 px-3 py-4 backdrop-blur-sm sm:items-center sm:px-4 sm:py-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby="blog-modal-title"
           onMouseDown={() => setActivePost(null)}
         >
           <div
-            className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-[12px] bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)]"
+            className="w-full max-w-5xl overflow-hidden rounded-[12px] bg-white shadow-[0_35px_100px_rgba(2,8,23,.38)] sm:max-h-[92vh] sm:overflow-y-auto"
             onMouseDown={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[310px] overflow-hidden bg-[#061326]">
+            <div className="relative min-h-[250px] overflow-hidden bg-[#061326] sm:min-h-[310px]">
               <img
                 src={activePost.image}
                 alt={activePost.title}
@@ -457,19 +457,19 @@ export default function BlogInsightsSection() {
               <button
                 type="button"
                 onClick={() => setActivePost(null)}
-                className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg"
+                className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded bg-white text-[#071426] shadow-lg sm:right-5 sm:top-5"
                 aria-label="Close blog details"
               >
                 <X size={18} />
               </button>
 
-              <div className="relative z-10 max-w-3xl px-6 py-8 text-white sm:px-8">
+              <div className="relative z-10 max-w-3xl px-5 py-7 text-white sm:px-8 sm:py-8">
                 <span className="inline-flex rounded-full bg-[#1767ff] px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide">
                   {activePost.category}
                 </span>
                 <h3
                   id="blog-modal-title"
-                  className="mt-5 text-[30px] font-extrabold leading-tight sm:text-[42px]"
+                  className="mt-5 pr-8 text-[24px] font-extrabold leading-tight sm:pr-0 sm:text-[42px]"
                 >
                   {activePost.title}
                 </h3>
@@ -479,7 +479,7 @@ export default function BlogInsightsSection() {
               </div>
             </div>
 
-            <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
+            <div className="grid gap-6 p-5 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
                 {activePost.sections.map(([heading, text]) => (
                   <div key={heading}>

@@ -238,7 +238,7 @@ export default function TechnologyStackSection() {
       className="relative overflow-hidden bg-[#031632] py-10 text-white sm:py-12 lg:py-14"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_11%_3%,rgba(255,255,255,.24),transparent_15%),radial-gradient(circle_at_58%_42%,rgba(22,141,255,.22),transparent_20%),radial-gradient(circle_at_90%_8%,rgba(80,160,255,.15),transparent_24%)]" />
-      <div className="relative mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow="Technology Categories"
           title="Technologies We Use"
@@ -250,11 +250,11 @@ export default function TechnologyStackSection() {
             return (
               <article
                 key={category.title}
-                className="rounded-[10px] border border-[#23456e] bg-[#071c3c]/86 p-6 shadow-[0_16px_34px_rgba(0,0,0,.2)]"
+                className="rounded-[10px] border border-[#23456e] bg-[#071c3c]/86 p-5 shadow-[0_16px_34px_rgba(0,0,0,.2)] sm:p-6"
               >
-                <div className="flex items-start gap-5">
+                <div className="flex items-start gap-4 sm:gap-5">
                   <div
-                    className={`flex h-[74px] w-[74px] shrink-0 items-center justify-center rounded-[10px] border ${category.border} bg-white/5 ${category.glow}`}
+                    className={`flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[10px] border ${category.border} bg-white/5 ${category.glow} sm:h-[74px] sm:w-[74px]`}
                   >
                     <Icon size={43} strokeWidth={2.1} className={category.color} />
                   </div>
@@ -303,16 +303,16 @@ export default function TechnologyStackSection() {
               {stackRows.map((row) => (
                 <div
                   key={row.label}
-                  className="grid min-h-[60px] grid-cols-[120px_1fr] border-b border-[#23456e] last:border-b-0"
+                  className="grid min-h-[60px] border-b border-[#23456e] last:border-b-0 sm:grid-cols-[120px_1fr]"
                 >
-                  <div className="flex items-center justify-center bg-white/8 px-4 text-[13px] font-extrabold text-white">
+                  <div className="flex items-center bg-white/8 px-4 py-3 text-[13px] font-extrabold text-white sm:justify-center sm:py-0">
                     {row.label}
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8">
                     {row.items.map(([name, Icon, color]) => (
                       <div
                         key={name}
-                        className="flex min-h-[60px] flex-col items-center justify-center border-l border-[#23456e] px-3 text-center"
+                        className="flex min-h-[60px] flex-col items-center justify-center border-l border-t border-[#23456e] px-3 text-center sm:border-t-0"
                       >
                         <Icon size={28} className={color} />
                         <span className="mt-1 text-[11px] font-bold text-[#dbe9fb]">
@@ -369,7 +369,7 @@ export default function TechnologyStackSection() {
               title="Compare Top Technologies"
             />
 
-            <div className="mt-5 overflow-hidden rounded-[10px] border border-[#23456e] bg-[#071c3c]/80">
+            <div className="mt-5 hidden overflow-hidden rounded-[10px] border border-[#23456e] bg-[#071c3c]/80 sm:block">
               <div className="grid grid-cols-[1.1fr_1.6fr_1fr_1fr_1fr_1fr] bg-white/10 text-[11px] font-extrabold text-[#dbe9fb]">
                 {[
                   "Technology",
@@ -400,6 +400,42 @@ export default function TechnologyStackSection() {
                     </div>
                   ))}
                 </div>
+              ))}
+            </div>
+
+            <div className="mt-5 grid gap-4 sm:hidden">
+              {comparisons.map((row) => (
+                <article
+                  key={row[0]}
+                  className="rounded-[10px] border border-[#23456e] bg-[#071c3c]/80 p-4"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-[15px] font-extrabold text-white">
+                        {row[0]}
+                      </h3>
+                      <p className="mt-1 text-[11px] font-semibold text-[#c8d6ea]">
+                        {row[1]}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid grid-cols-2 gap-3 text-[11px] font-semibold">
+                    {[
+                      ["Performance", row[2]],
+                      ["Scalability", row[3]],
+                      ["Learning Curve", row[4]],
+                      ["Community", row[5]],
+                    ].map(([label, value]) => (
+                      <div
+                        key={label}
+                        className="rounded-[8px] border border-[#23456e] bg-white/5 p-3"
+                      >
+                        <p className="text-[#c8d6ea]">{label}</p>
+                        <p className="mt-1 text-[#f6b51f]">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </article>
               ))}
             </div>
           </div>

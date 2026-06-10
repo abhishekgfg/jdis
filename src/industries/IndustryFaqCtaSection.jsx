@@ -50,13 +50,13 @@ export default function IndustryFaqCtaSection() {
 
   return (
     <section className="bg-[#f8fbff] py-10 sm:py-12 lg:py-14">
-      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-10">
         <div className="mb-4 flex items-start justify-between gap-5">
           <div>
             <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#1767ff]">
               Frequently Asked Questions
             </span>
-            <h2 className="mt-1 text-[28px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
+            <h2 className="mt-1 text-[24px] font-extrabold leading-tight text-[#0a1830] sm:text-[34px] lg:text-[36px]">
               Have Questions? We Have Answers!
             </h2>
             <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f6b51f]" />
@@ -116,9 +116,9 @@ export default function IndustryFaqCtaSection() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,18,48,.96)_0%,rgba(3,29,76,.9)_44%,rgba(6,45,122,.58)_100%)]" />
           <div className="absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_78%_28%,rgba(37,143,255,.72),transparent_13%),radial-gradient(circle_at_62%_58%,rgba(0,110,255,.4),transparent_34%)]" />
 
-          <div className="relative z-10 flex min-h-[138px] flex-col items-start justify-between gap-5 px-6 py-6 sm:px-8 lg:flex-row lg:items-center">
-            <div className="flex items-center gap-5">
-              <div className="flex h-[76px] w-[76px] shrink-0 items-center justify-center rounded-full border border-[#2293ff]/55 bg-[#1265ff]/18 shadow-[inset_0_0_28px_rgba(23,103,255,.28),0_0_34px_rgba(23,103,255,.24)]">
+          <div className="relative z-10 flex min-h-[138px] flex-col items-stretch justify-between gap-5 px-5 py-6 text-center sm:px-8 lg:flex-row lg:items-center lg:text-left">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-5">
+              <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-full border border-[#2293ff]/55 bg-[#1265ff]/18 shadow-[inset_0_0_28px_rgba(23,103,255,.28),0_0_34px_rgba(23,103,255,.24)] sm:h-[76px] sm:w-[76px]">
                 <MessageSquareText
                   size={34}
                   strokeWidth={2.2}
@@ -127,7 +127,7 @@ export default function IndustryFaqCtaSection() {
               </div>
 
               <div>
-                <h2 className="text-[28px] font-bold leading-tight text-white sm:text-[34px] lg:text-[28px]">
+                <h2 className="text-[22px] font-bold leading-tight text-white sm:text-[34px] lg:text-[28px]">
                   Ready To{" "}
                   <span className="text-[#36a8ff]">
                     Transform Your Industry?
@@ -140,17 +140,17 @@ export default function IndustryFaqCtaSection() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 lg:pr-6">
+            <div className="grid gap-3 sm:flex sm:flex-wrap lg:pr-6">
               <a
                 href="/contact"
-                className="inline-flex h-[43px] items-center justify-center gap-3 rounded-[5px] bg-[#f6b51f] px-6 text-[12px] font-extrabold text-[#061326] shadow-[0_10px_24px_rgba(246,181,31,.22)] transition hover:bg-[#ffc83d]"
+                className="inline-flex h-[43px] w-full items-center justify-center gap-3 rounded-[5px] bg-[#f6b51f] px-6 text-[12px] font-extrabold text-[#061326] shadow-[0_10px_24px_rgba(246,181,31,.22)] transition hover:bg-[#ffc83d] sm:w-auto"
               >
                 Start Your Project
                 <ArrowRight size={15} />
               </a>
               <a
                 href="/contact"
-                className="inline-flex h-[43px] items-center justify-center gap-3 rounded-[5px] border border-white/35 bg-white/5 px-6 text-[12px] font-extrabold text-white transition hover:bg-white/10"
+                className="inline-flex h-[43px] w-full items-center justify-center gap-3 rounded-[5px] border border-white/35 bg-white/5 px-6 text-[12px] font-extrabold text-white transition hover:bg-white/10 sm:w-auto"
               >
                 Schedule A Call
                 <Phone size={15} />

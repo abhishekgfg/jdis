@@ -67,24 +67,66 @@ export default function ServiceComparisonSection() {
   ];
 
   return (
-    <section className="bg-[#061326] text-white py-12">
-      <div className="mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[0.85fr_1.35fr] gap-10 items-start">
+    <section className="bg-[#061326] py-10 text-white lg:py-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid gap-8 items-start lg:grid-cols-[0.85fr_1.35fr] lg:gap-10">
           {/* Comparison */}
           <div>
             <span className="text-[12px] font-bold uppercase tracking-wider text-[#2b8cff]">
               Service Comparison
             </span>
 
-            <h2 className="mt-2 text-[30px] lg:text-[28px] leading-tight font-bold">
-              Why Businesses Choose <br />
+            <h2 className="mt-2 text-[24px] font-bold leading-tight sm:text-[30px] lg:text-[28px]">
+              Why Businesses Choose <br className="hidden sm:block" />
               <span className="text-[#ffb700]">JD Infotech</span> Solutions
             </h2>
 
-            <div className="mt-6 rounded-lg border border-[#294469] overflow-hidden bg-[#071b34]">
+            <div className="mt-6 grid gap-3 sm:hidden">
+              {comparison.map(([feature, jd, other]) => (
+                <div
+                  key={feature}
+                  className="rounded-lg border border-[#294469] bg-[#071b34] p-4"
+                >
+                  <h3 className="text-[13px] font-bold text-white">
+                    {feature}
+                  </h3>
+
+                  <div className="mt-3 grid grid-cols-2 gap-3 text-[12px]">
+                    <div className="rounded-lg border border-[#145cff]/40 bg-[#145cff]/25 p-3">
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#9fc2ff]">
+                        JD Infotech
+                      </p>
+                      <div className="mt-2 flex items-center gap-2 font-semibold text-white">
+                        <CheckCircle2 size={14} className="text-[#22c55e]" />
+                        {jd}
+                      </div>
+                    </div>
+
+                    <div className="rounded-lg border border-[#294469] bg-[#061326] p-3">
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#9fb0c7]">
+                        Others
+                      </p>
+                      <div className="mt-2 flex items-center gap-2 text-[#d7e2f0]">
+                        {other === "No" ||
+                        other === "Limited" ||
+                        other === "Outdated" ? (
+                          <XCircle size={14} className="text-[#ef4444]" />
+                        ) : (
+                          <AlertCircle size={14} className="text-[#ffb700]" />
+                        )}
+                        {other}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 hidden overflow-x-auto rounded-lg border border-[#294469] bg-[#071b34] sm:block">
+              <div className="min-w-[520px]">
               <div className="grid grid-cols-3 text-[12px] font-bold">
-                <div className="p-3 border-r border-[#294469]">Features</div>
-                <div className="p-3 border-r border-[#294469] text-center bg-[#145cff]">
+                <div className="border-r border-[#294469] p-3">Features</div>
+                <div className="border-r border-[#294469] bg-[#145cff] p-3 text-center">
                   JD Infotech Solutions
                 </div>
                 <div className="p-3 text-center">Other Agencies</div>
@@ -99,16 +141,16 @@ export default function ServiceComparisonSection() {
                       : "border-t border-[#294469]"
                   }`}
                 >
-                  <div className="p-2 border-r border-[#294469] text-[#d7e2f0]">
+                  <div className="border-r border-[#294469] p-2 text-[#d7e2f0]">
                     {feature}
                   </div>
 
-                  <div className="p-2 border-r border-[#294469] bg-[#145cff]/35 text-center flex items-center justify-center gap-2 font-semibold">
+                  <div className="flex items-center justify-center gap-2 border-r border-[#294469] bg-[#145cff]/35 p-2 text-center font-semibold">
                     <CheckCircle2 size={14} className="text-[#22c55e]" />
                     {jd}
                   </div>
 
-                  <div className="p-3 text-center flex items-center justify-center gap-2 text-[#d7e2f0]">
+                  <div className="flex items-center justify-center gap-2 p-3 text-center text-[#d7e2f0]">
                     {other === "No" || other === "Limited" || other === "Outdated" ? (
                       <XCircle size={14} className="text-[#ef4444]" />
                     ) : (
@@ -118,6 +160,7 @@ export default function ServiceComparisonSection() {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
 
@@ -127,14 +170,14 @@ export default function ServiceComparisonSection() {
               Why Choose Us
             </span>
 
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {features.map((item) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className="min-h-[155px] rounded-lg border border-[#294469] bg-[#071b34] p-5 text-center hover:-translate-y-1 hover:border-[#2b8cff]/70 transition-all duration-300"
+                    className="min-h-[145px] rounded-lg border border-[#294469] bg-[#071b34] p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2b8cff]/70 sm:min-h-[155px]"
                   >
                     <Icon
                       size={36}

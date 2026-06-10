@@ -83,20 +83,20 @@ export default function WebsiteOverviewSection() {
   ];
 
   return (
-    <section className="bg-[#f8fbff] py-12">
-      <div className="mx-auto px-6 lg:px-12">
+    <section className="bg-[#f8fbff] py-10 lg:py-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Top Overview */}
-        <div className="grid lg:grid-cols-[0.9fr_1.25fr] gap-10 items-center">
+        <div className="grid gap-7 items-center lg:grid-cols-[0.9fr_1.25fr] lg:gap-10">
           {/* Image */}
-          <div className="relative h-[290px] rounded-xl overflow-hidden border border-[#dbe7f5] shadow-[0_12px_35px_rgba(15,23,42,0.12)]">
+          <div className="relative h-[260px] overflow-hidden rounded-xl border border-[#dbe7f5] shadow-[0_12px_35px_rgba(15,23,42,0.12)] sm:h-[290px]">
             <img
               src={websiteOverview}
               alt="Website development workspace"
               className="w-full h-full object-cover"
             />
 
-            <div className="absolute left-6 bottom-6 bg-[#061326]/90 border border-white/15 backdrop-blur-md rounded-xl px-5 py-4 flex items-center gap-4 text-white shadow-xl">
-              <div className="w-12 h-12 rounded-full bg-[#ffb700]/15 flex items-center justify-center">
+            <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-xl border border-white/15 bg-[#061326]/90 px-4 py-3 text-white shadow-xl backdrop-blur-md sm:left-6 sm:right-auto sm:bottom-6 sm:gap-4 sm:px-5 sm:py-4">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#ffb700]/15 sm:h-12 sm:w-12">
                 <Zap size={25} className="text-[#ffb700]" fill="#ffb700" />
               </div>
 
@@ -117,7 +117,7 @@ export default function WebsiteOverviewSection() {
               Service Overview
             </span>
 
-            <h2 className="mt-1 text-[32px] lg:text-[28px] leading-tight font-bold text-[#071426]">
+            <h2 className="mt-1 text-[24px] font-bold leading-tight text-[#071426] sm:text-[32px] lg:text-[28px]">
               Powerful Websites That Build Your Brand
             </h2>
 
@@ -129,14 +129,14 @@ export default function WebsiteOverviewSection() {
               scale.
             </p>
 
-            <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 border-y border-[#e1e8f2]">
+            <div className="mt-5 grid border-y border-[#e1e8f2] sm:grid-cols-2 lg:grid-cols-4">
               {overviewCards.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className={`py-3 px-4 ${
+                    className={`border-b border-[#e1e8f2] px-3 py-4 sm:px-4 lg:border-b-0 ${
                       index !== overviewCards.length - 1
                         ? "lg:border-r border-[#e1e8f2]"
                         : ""
@@ -161,28 +161,28 @@ export default function WebsiteOverviewSection() {
         </div>
 
         {/* Key Features */}
-        <div className="mt-10 pt-6 border-t border-[#e1e8f2]">
-          <div className="grid lg:grid-cols-[0.65fr_1.35fr] gap-8">
+        <div className="mt-10 border-t border-[#e1e8f2] pt-6">
+          <div className="grid gap-7 lg:grid-cols-[0.65fr_1.35fr] lg:gap-8">
             <div>
               <span className="text-[12px] font-bold uppercase tracking-wider text-[#145cff]">
                 Key Features
               </span>
 
-              <h2 className="mt-2 text-[30px] lg:text-[28px] leading-tight font-bold text-[#071426]">
-                Everything You Need in a <br />
+              <h2 className="mt-2 text-[24px] font-bold leading-tight text-[#071426] sm:text-[30px] lg:text-[28px]">
+                Everything You Need in a <br className="hidden sm:block" />
                 Modern Website
               </h2>
 
               <div className="mt-5 w-10 h-[3px] bg-[#ffb700] rounded-full" />
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-6">
               {features.map((item) => {
                 const Icon = item.icon;
 
                 return (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="w-12 h-12 min-w-12 rounded-xl bg-[#f3f7ff] border border-[#dbe7f5] flex items-center justify-center">
+                  <div key={item.title} className="flex gap-4 rounded-xl border border-[#e5edf7] bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.04)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+                    <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-xl border border-[#dbe7f5] bg-[#f3f7ff]">
                       <Icon size={22} className="text-[#145cff]" />
                     </div>
 

@@ -91,14 +91,14 @@ export default function IndustriesGridSection() {
   ];
 
   return (
-    <section id="industries-list" className="bg-[#f7f9fd] py-16 lg:py-10">
-      <div className="mx-auto  px-5 lg:px-10">
-        <div className="mb-10">
+    <section id="industries-list" className="bg-[#f7f9fd] py-10 sm:py-16 lg:py-10">
+      <div className="mx-auto px-4 sm:px-5 lg:px-10">
+        <div className="mb-8 lg:mb-10">
           <span className="text-[12px] font-bold uppercase tracking-wider text-[#2563eb]">
             Industries We Empower
           </span>
 
-          <h2 className="mt-2 text-[28px] font-bold leading-tight text-[#0f172a] md:text-[28px]">
+          <h2 className="mt-2 text-[24px] font-bold leading-tight text-[#0f172a] sm:text-[28px] md:text-[28px]">
             Tailored Solutions Built For Unique Industry Challenges
           </h2>
 
@@ -112,7 +112,7 @@ export default function IndustriesGridSection() {
             return (
               <div
                 key={industry.title}
-                className="group rounded-2xl border border-[#e8edf7] bg-white p-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group rounded-xl border border-[#e8edf7] bg-white p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-2xl sm:p-3"
               >
                 <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-2xl bg-gradient-to-b from-[#2d7cff] to-[#0047ff] shadow-[0_12px_25px_rgba(37,99,235,.35)]">
                   <Icon size={30} className="text-white" />
@@ -122,7 +122,7 @@ export default function IndustriesGridSection() {
                   {industry.title}
                 </h3>
 
-                <p className="mt-3 min-h-[70px] text-[14px] leading-5 text-[#64748b]">
+                <p className="mt-3 text-[14px] leading-5 text-[#64748b] sm:min-h-[70px]">
                   {industry.description}
                 </p>
 

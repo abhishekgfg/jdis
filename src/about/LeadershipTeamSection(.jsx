@@ -36,16 +36,16 @@ export default function LeadershipTeamSection() {
   ];
 
   return (
-    <section className="bg-[#f8fbff] py-12">
-      <div className="mx-auto px-6 lg:px-12">
+    <section className="bg-[#f8fbff] py-10 lg:py-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
-        <div className="flex items-start justify-between gap-6 mb-6">
+        <div className="mb-6 flex items-start justify-between gap-6">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Our Leadership
             </span>
 
-            <h2 className="mt-2 text-[28px] lg:text-[32px] leading-tight font-bold text-[#071426]">
+            <h2 className="mt-2 text-[24px] font-bold leading-tight text-[#071426] sm:text-[28px] lg:text-[32px]">
               Meet Our Leadership Team
             </h2>
           </div>
@@ -57,13 +57,13 @@ export default function LeadershipTeamSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
+        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-7">
           {leaders.map((member) => (
             <div
               key={member.name}
-              className="bg-white rounded-xl overflow-hidden border border-[#e5edf7] shadow-[0_10px_35px_rgba(15,23,42,0.08)] hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.12)] transition-all duration-300"
+              className="overflow-hidden rounded-xl border border-[#e5edf7] bg-white shadow-[0_10px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
             >
-              <div className="h-[150px] overflow-hidden bg-[#eaf1fb]">
+              <div className="h-[260px] overflow-hidden bg-[#eaf1fb] sm:h-[210px] md:h-[170px] lg:h-[150px]">
                 <img
                   src={member.img}
                   alt={member.name}
@@ -96,7 +96,7 @@ export default function LeadershipTeamSection() {
           ))}
         </div>
 
-        <button className="sm:hidden mt-6 h-[42px] px-5 rounded-md border border-[#9aa8bd] bg-white text-[#071426] text-[13px] font-semibold inline-flex items-center gap-3">
+        <button className="mt-6 inline-flex h-[42px] w-full items-center justify-center gap-3 rounded-md border border-[#9aa8bd] bg-white px-5 text-[13px] font-semibold text-[#071426] sm:hidden">
           Join Our Team
           <ArrowRight size={16} />
         </button>

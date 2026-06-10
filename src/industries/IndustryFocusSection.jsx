@@ -46,12 +46,12 @@ export default function IndustryFocusSection() {
   return (
     <section className="relative overflow-hidden bg-[#011734] py-10 text-white sm:py-12 lg:py-14">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(23,125,255,.24),transparent_24%),radial-gradient(circle_at_87%_3%,rgba(0,198,255,.12),transparent_22%)]" />
-      <div className="relative mx-auto  px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto px-4 sm:px-8 lg:px-10">
         <div className="mb-5">
           <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1598ff]">
             Industry Focus
           </span>
-          <h2 className="mt-1 text-[27px] font-extrabold leading-tight text-white sm:text-[34px] lg:text-[36px]">
+          <h2 className="mt-1 text-[24px] font-extrabold leading-tight text-white sm:text-[34px] lg:text-[36px]">
             Solutions Built For Your Industry
           </h2>
           <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f8b51d]" />
@@ -61,9 +61,9 @@ export default function IndustryFocusSection() {
           {industries.map((industry) => (
             <article
               key={industry.title}
-              className="group grid min-h-[260px] overflow-hidden rounded-[8px] border border-[#245183] bg-[#071f42]/95 shadow-[0_20px_50px_rgba(0,0,0,.28)] backdrop-blur sm:grid-cols-[1fr_1fr]"
+              className="group grid overflow-hidden rounded-[8px] border border-[#245183] bg-[#071f42]/95 shadow-[0_20px_50px_rgba(0,0,0,.28)] backdrop-blur sm:min-h-[260px] sm:grid-cols-[1fr_1fr]"
             >
-              <div className="relative min-h-[220px] overflow-hidden sm:min-h-full">
+              <div className="relative min-h-[190px] overflow-hidden sm:min-h-full">
                 <img
                   src={industry.image}
                   alt={`${industry.title} digital solutions`}
@@ -72,7 +72,7 @@ export default function IndustryFocusSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,23,52,.06),rgba(1,23,52,.26))]" />
               </div>
 
-              <div className="flex min-h-[260px] flex-col justify-center px-5 py-6 sm:px-6">
+              <div className="flex flex-col justify-center px-5 py-6 sm:min-h-[260px] sm:px-6">
                 <h3 className="text-[18px] font-extrabold text-white">
                   {industry.title}
                 </h3>

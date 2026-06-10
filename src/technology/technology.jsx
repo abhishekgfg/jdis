@@ -67,7 +67,7 @@ export default function TechnologyHeroSection() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,11,27,.96)_0%,rgba(2,11,27,.9)_34%,rgba(2,11,27,.42)_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_45%,rgba(24,144,255,.22),transparent_28%)]" />
 
-      <div className="mx-auto grid  items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[.76fr_1.24fr] lg:px-16 lg:py-10">
+      <div className="mx-auto grid items-center gap-8 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.76fr_1.24fr] lg:px-16 lg:py-10">
         <div className="relative z-20 max-w-[640px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <span className="text-white/90">Home</span>
@@ -82,7 +82,7 @@ export default function TechnologyHeroSection() {
             Our Technology Stack
           </div>
 
-          <h1 className="mt-6 text-[42px] font-bold leading-[1.08] tracking-normal sm:text-[58px] lg:text-[44px]">
+          <h1 className="mt-6 text-[34px] font-bold leading-[1.08] tracking-normal sm:text-[58px] lg:text-[44px]">
             Technologies That
             <span className="block text-[#158dff]">Power Innovation</span>
           </h1>
@@ -92,10 +92,10 @@ export default function TechnologyHeroSection() {
             tools and enterprise solutions to build scalable digital products.
           </p>
 
-          <div className="mt-8 flex flex-nowrap items-center gap-3 sm:gap-5">
+          <div className="mt-8 grid gap-3 sm:flex sm:flex-nowrap sm:items-center sm:gap-5">
             <a
               href="#technology-stack"
-              className="inline-flex h-14 items-center gap-2 rounded bg-[#ffb525] px-4 text-[12px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:gap-4 sm:px-8 sm:text-[14px]"
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded bg-[#ffb525] px-4 text-[12px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:gap-4 sm:px-8 sm:text-[14px]"
             >
               Explore Technologies
               <ArrowRight size={17} />
@@ -103,7 +103,7 @@ export default function TechnologyHeroSection() {
 
             <a
               href="/contact"
-              className="inline-flex h-14 items-center gap-2 rounded border border-white/35 bg-[#061326]/40 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10 sm:gap-4 sm:px-8 sm:text-[14px]"
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded border border-white/35 bg-[#061326]/40 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10 sm:w-auto sm:gap-4 sm:px-8 sm:text-[14px]"
             >
               Start Project
               <Rocket size={17} />
@@ -111,7 +111,7 @@ export default function TechnologyHeroSection() {
           </div>
         </div>
 
-        <div className="relative min-h-[360px] lg:min-h-[500px]">
+        <div className="relative mx-auto min-h-[320px] w-full max-w-[390px] overflow-hidden sm:max-w-none sm:overflow-visible lg:min-h-[500px]">
           <div className="absolute left-[53%] top-1/2 hidden h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#27c4ff]/30 bg-[#0b57c7]/10 shadow-[0_0_80px_rgba(21,141,255,.42)] lg:block" />
 
           <div className="absolute left-[53%] top-1/2 hidden h-[145px] w-[145px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#45a7ff]/30 bg-[#031a3d]/45 text-[23px] font-extrabold tracking-wide shadow-[inset_0_0_35px_rgba(21,141,255,.18)] lg:flex">
@@ -127,10 +127,10 @@ export default function TechnologyHeroSection() {
                   className={`absolute hidden origin-left border-t border-dashed border-[#2094ff]/55 lg:block ${tech.line}`}
                 />
                 <div
-                  className={`absolute ${tech.className} flex h-[100px] w-[100px] flex-col items-center justify-center rounded-full border border-[#2d7bff]/35 bg-[#061a3b]/82 text-center shadow-[0_16px_38px_rgba(0,0,0,.35),inset_0_0_24px_rgba(45,123,255,.18)] backdrop-blur-sm sm:h-[112px] sm:w-[112px]`}
+                  className={`absolute ${tech.className} flex h-[82px] w-[82px] flex-col items-center justify-center rounded-full border border-[#2d7bff]/35 bg-[#061a3b]/82 text-center shadow-[0_16px_38px_rgba(0,0,0,.35),inset_0_0_24px_rgba(45,123,255,.18)] backdrop-blur-sm sm:h-[112px] sm:w-[112px]`}
                 >
-                  <Icon size={34} className={tech.color} />
-                  <span className="mt-2 text-[12px] font-extrabold text-white">
+                  <Icon size={28} className={tech.color} />
+                  <span className="mt-2 text-[10px] font-extrabold text-white sm:text-[12px]">
                     {tech.name}
                   </span>
                 </div>

@@ -492,31 +492,31 @@ export default function DigitalSolutionsSection() {
 
   return (
     <>
-      <section className="bg-[#061426] text-white py-14">
-        <div className="mx-auto px-6 lg:px-12">
-          <div className="text-center mb-8">
+      <section className="bg-[#061426] py-10 text-white lg:py-14">
+        <div className="mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="mb-8 text-center">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#2b8cff]">
               What We Offer
             </span>
-            <h2 className="mt-2 text-[32px] lg:text-[30px] font-bold leading-tight">
+            <h2 className="mt-2 text-[24px] font-bold leading-tight sm:text-[32px] lg:text-[30px]">
               Complete Digital Solutions For Your Business
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
             {services.map((service) => {
               const Icon = service.icon;
 
               return (
                 <div
                   key={service.title}
-                  className="min-h-[245px] rounded-xl border border-[#1c3558] bg-[#071b34]/80 p-6 hover:-translate-y-1 hover:border-[#2b8cff]/60 transition-all duration-300 cursor-pointer group"
+                  className="group min-h-[220px] cursor-pointer rounded-xl border border-[#1c3558] bg-[#071b34]/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2b8cff]/60 sm:min-h-[245px] sm:p-6"
                   onClick={() => openModal(service)}
                 >
                   <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${
+                    className={`mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br shadow-lg sm:h-16 sm:w-16 ${
                       colorClasses[service.color]
-                    } flex items-center justify-center shadow-lg mb-5`}
+                    }`}
                   >
                     <Icon size={30} className="text-white" />
                   </div>
@@ -538,7 +538,7 @@ export default function DigitalSolutionsSection() {
             })}
           </div>
 
-          <div className="mt-6 rounded-xl border border-[#1c3558] bg-[#071b34]/80 overflow-hidden">
+          <div className="mt-6 overflow-hidden rounded-xl border border-[#1c3558] bg-[#071b34]/80">
             <div className="grid sm:grid-cols-2 lg:grid-cols-5">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
@@ -546,20 +546,20 @@ export default function DigitalSolutionsSection() {
                 return (
                   <div
                     key={stat.label}
-                    className={`p-6 flex items-center gap-5 ${
-                      index !== stats.length - 1 ? "lg:border-r border-[#1c3558]" : ""
+                    className={`flex items-center gap-4 p-5 sm:gap-5 sm:p-6 ${
+                      index !== stats.length - 1 ? "border-b border-[#1c3558] sm:border-b-0 lg:border-r" : ""
                     }`}
                   >
                     <div
-                      className={`w-16 h-16 min-w-16 rounded-full bg-gradient-to-br ${
+                      className={`flex h-14 w-14 min-w-14 items-center justify-center rounded-full bg-gradient-to-br shadow-lg sm:h-16 sm:w-16 sm:min-w-16 ${
                         colorClasses[stat.color]
-                      } flex items-center justify-center shadow-lg`}
+                      }`}
                     >
                       <Icon size={30} className="text-white" />
                     </div>
 
                     <div>
-                      <h3 className="text-[30px] font-semibold leading-none">
+                      <h3 className="text-[26px] font-semibold leading-none sm:text-[30px]">
                         {stat.value}
                       </h3>
                       <p className="mt-2 text-[13px] text-[#c7d1e0]">
@@ -576,8 +576,8 @@ export default function DigitalSolutionsSection() {
 
       {/* Modal */}
       {isModalOpen && selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-[#071b34] rounded-2xl border border-[#1c3558] max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300">
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-3 pt-16 backdrop-blur-sm animate-in fade-in duration-300 sm:items-center sm:p-4">
+          <div className="relative max-h-[84vh] w-full max-w-4xl overflow-y-auto rounded-2xl border border-[#1c3558] bg-[#071b34] animate-in zoom-in-95 duration-300 sm:max-h-[90vh]">
             {/* Close Button */}
             <button
               onClick={closeModal}
@@ -587,13 +587,13 @@ export default function DigitalSolutionsSection() {
             </button>
 
             {/* Modal Content */}
-            <div className="p-8">
+            <div className="p-5 sm:p-8">
               {/* Header */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                 <div
-                  className={`w-20 h-20 rounded-full bg-gradient-to-br ${
+                  className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-lg sm:h-20 sm:w-20 ${
                     colorClasses[selectedService.color]
-                  } flex items-center justify-center shadow-lg`}
+                  }`}
                 >
                   {(() => {
                     const Icon = selectedService.icon;
@@ -601,7 +601,7 @@ export default function DigitalSolutionsSection() {
                   })()}
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold">{selectedService.title}</h2>
+                  <h2 className="pr-10 text-2xl font-bold sm:pr-0 sm:text-3xl">{selectedService.title}</h2>
                   <p className="text-[#2b8cff] mt-1">Complete Solution Overview</p>
                 </div>
               </div>
@@ -623,7 +623,7 @@ export default function DigitalSolutionsSection() {
                   <Settings size={20} className="text-[#2b8cff]" />
                   Key Features & Services
                 </h3>
-                <div className="grid md:grid-cols-2 gap-3">
+                <div className="grid gap-3 md:grid-cols-2">
                   {selectedService.details.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-[#e6efff]">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#2b8cff]"></div>
@@ -659,7 +659,7 @@ export default function DigitalSolutionsSection() {
                   <Award size={20} className="text-[#ffb700]" />
                   Benefits You Get
                 </h3>
-                <div className="grid md:grid-cols-2 gap-3">
+                <div className="grid gap-3 md:grid-cols-2">
                   {selectedService.details.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-[#e6efff]">
                       <Zap size={16} className="text-[#00ff99]" />
@@ -670,10 +670,10 @@ export default function DigitalSolutionsSection() {
               </div>
 
               {/* CTA Button */}
-              <div className="flex justify-end pt-4 border-t border-[#1c3558]">
+              <div className="flex justify-end border-t border-[#1c3558] pt-4">
                 <button
                   onClick={closeModal}
-                  className="px-6 py-2 bg-gradient-to-r from-[#145cff] to-[#00d4ff] rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="w-full rounded-lg bg-gradient-to-r from-[#145cff] to-[#00d4ff] px-6 py-2 font-semibold transition-all hover:shadow-lg sm:w-auto"
                 >
                   Get Started
                 </button>

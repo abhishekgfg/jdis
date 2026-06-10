@@ -102,23 +102,23 @@ export default function MobileProcessDetailsSection() {
 
   return (
     <section className="bg-white py-8">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12">
         <div className="border-t border-[#dbe7f5] pt-5">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
             Our Development Process
           </span>
-          <h2 className="mt-1 text-[22px] lg:text-[24px] leading-tight font-bold text-[#071426]">
+          <h2 className="mt-1 text-[22px] font-bold leading-tight text-[#071426] lg:text-[24px]">
             From Idea to Successful App
           </h2>
 
           <div className="relative mt-4">
             <div className="hidden lg:block absolute left-[85px] right-[85px] top-[39px] border-t border-dashed border-[#9dbbff]" />
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-5 relative z-10">
+            <div className="relative z-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 lg:gap-5">
               {process.map((item, index) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="text-center">
+                  <div key={item.title} className="rounded-xl border border-[#e5edf7] bg-white p-4 text-center shadow-[0_8px_24px_rgba(20,92,255,.08)] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
                     {index < process.length - 1 && (
                       <ArrowRight
                         size={13}
@@ -146,13 +146,13 @@ export default function MobileProcessDetailsSection() {
           </div>
         </div>
 
-        <div className="mt-8 grid lg:grid-cols-[1fr_1.08fr] gap-8">
+        <div className="mt-8 grid gap-7 lg:grid-cols-[1fr_1.08fr] lg:gap-8">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Technologies We Use
             </span>
 
-            <div className="mt-5 grid grid-cols-2 sm:grid-cols-5 gap-4">
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-4">
               {technologies.map((tech) => {
                 const Icon = tech.icon;
                 return (
@@ -168,18 +168,18 @@ export default function MobileProcessDetailsSection() {
             </div>
           </div>
 
-          <div className="lg:border-l border-[#dbe7f5] lg:pl-8">
+          <div className="border-t border-[#dbe7f5] pt-7 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">
               Platforms We Develop For
             </span>
 
-            <div className="mt-5 grid sm:grid-cols-3 gap-4">
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {platforms.map((platform) => {
                 const Icon = platform.icon;
                 return (
                   <div
                     key={platform.title}
-                    className="min-h-[170px] rounded-lg bg-[#061326] p-5 text-white shadow-[0_15px_35px_rgba(2,8,23,.16)]"
+                    className="min-h-[150px] rounded-lg bg-[#061326] p-5 text-white shadow-[0_15px_35px_rgba(2,8,23,.16)] sm:min-h-[170px]"
                   >
                     <Icon
                       size={28}

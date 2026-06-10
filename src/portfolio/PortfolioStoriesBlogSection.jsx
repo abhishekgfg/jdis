@@ -70,8 +70,8 @@ export default function PortfolioStoriesBlogSection() {
   return (
     <section className="bg-[#f7faff]">
       <div className="bg-[#020b1b] py-8 text-white">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="mb-5 flex items-start justify-between gap-5">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-16">
+          <div className="mb-5 flex flex-col items-start justify-between gap-5 sm:flex-row">
             <div>
               <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1265ff]">
                 What Our Clients Say
@@ -94,9 +94,9 @@ export default function PortfolioStoriesBlogSection() {
             {testimonials.map((item) => (
               <article
                 key={item.name}
-                className="rounded-lg border border-white/5 bg-[#0b182b] p-6 shadow-[0_14px_36px_rgba(0,0,0,.24)]"
+                className="rounded-lg border border-white/5 bg-[#0b182b] p-5 shadow-[0_14px_36px_rgba(0,0,0,.24)] sm:p-6"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <Quote
                     size={32}
                     className="shrink-0 fill-[#1265ff] text-[#1265ff]"
@@ -106,7 +106,7 @@ export default function PortfolioStoriesBlogSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between gap-4">
+                <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
                   <div className="flex items-center gap-4">
                     <img
                       src={item.image}
@@ -135,8 +135,8 @@ export default function PortfolioStoriesBlogSection() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16">
-        <div className="mb-5 flex items-end justify-between gap-5">
+      <div className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 lg:px-16">
+        <div className="mb-5 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1265ff]">
               From Our Blog
@@ -161,7 +161,7 @@ export default function PortfolioStoriesBlogSection() {
               key={blog.title}
               className="overflow-hidden rounded-lg border border-[#dce8f8] bg-white shadow-[0_12px_30px_rgba(15,23,42,.08)]"
             >
-              <div className="relative h-[152px] overflow-hidden">
+              <div className="relative h-[210px] overflow-hidden sm:h-[152px]">
                 <img
                   src={blog.image}
                   alt={blog.title}
@@ -175,10 +175,10 @@ export default function PortfolioStoriesBlogSection() {
               </div>
 
               <div className="p-5">
-                <h3 className="min-h-[54px] text-[16px] font-bold leading-5 text-[#151d35]">
+                <h3 className="text-[16px] font-bold leading-5 text-[#151d35] sm:min-h-[54px]">
                   {blog.title}
                 </h3>
-                <div className="mt-3 flex items-center gap-3 text-[12px] font-semibold text-[#66758b]">
+                <div className="mt-3 flex flex-wrap items-center gap-3 text-[12px] font-semibold text-[#66758b]">
                   <span>{blog.meta}</span>
                   <span className="h-1 w-1 rounded-full bg-[#9aa8ba]" />
                   <span>{blog.read}</span>
@@ -189,12 +189,12 @@ export default function PortfolioStoriesBlogSection() {
         </div>
 
         <div className="mt-8 overflow-hidden rounded-lg bg-[#061326] text-white shadow-[0_18px_42px_rgba(2,8,23,.16)]">
-          <div className="relative flex flex-col gap-6 px-6 py-7 lg:flex-row lg:items-center lg:justify-between lg:px-12">
+          <div className="relative flex flex-col gap-6 px-5 py-7 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_9%_50%,rgba(124,77,255,.48),transparent_16%),linear-gradient(90deg,#21107a_0%,#071633_35%,#020b1b_100%)]" />
 
-            <div className="relative z-10 flex items-center gap-6">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#875cff]/50 bg-[#421b88]/45 text-white shadow-[0_0_34px_rgba(124,77,255,.42)]">
-                <Rocket size={44} />
+            <div className="relative z-10 flex flex-col items-center gap-5 text-center sm:flex-row sm:gap-6 sm:text-left">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-[#875cff]/50 bg-[#421b88]/45 text-white shadow-[0_0_34px_rgba(124,77,255,.42)] sm:h-24 sm:w-24">
+                <Rocket size={38} className="sm:h-11 sm:w-11" />
               </div>
               <div>
                 <h2 className="text-[22px] font-bold leading-tight">
@@ -207,17 +207,17 @@ export default function PortfolioStoriesBlogSection() {
               </div>
             </div>
 
-            <div className="relative z-10 flex flex-nowrap gap-3 sm:gap-5">
+            <div className="relative z-10 grid gap-3 sm:flex sm:flex-nowrap sm:gap-5">
               <a
                 href="/contact"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded bg-[#ffb525] px-2 text-[10px] font-bold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] sm:px-9 sm:text-[12px]"
+                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded bg-[#ffb525] px-5 text-[12px] font-bold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] sm:w-auto sm:px-9"
               >
                 Start Your Project
                 <ArrowRight size={17} />
               </a>
               <a
                 href="tel:+919523435814"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded border border-white/35 bg-white/5 px-4 text-[12px] font-extrabold text-white sm:gap-4 sm:px-9 sm:text-[14px]"
+                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded border border-white/35 bg-white/5 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:gap-4 sm:px-9 sm:text-[14px]"
               >
                 Schedule a Call
                 <Phone size={17} />
