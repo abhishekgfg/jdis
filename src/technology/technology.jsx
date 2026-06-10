@@ -57,7 +57,7 @@ const technologies = [
 
 export default function TechnologyHeroSection() {
   return (
-    <section className="relative isolate min-h-[520px] overflow-hidden bg-[#020b1b] text-white lg:min-h-[610px]">
+    <section className="relative isolate min-h-[520px] overflow-hidden bg-[#020b1b] text-white lg:min-h-[550px]">
       <img
         src={technologyBg}
         alt=""
@@ -67,7 +67,7 @@ export default function TechnologyHeroSection() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,11,27,.96)_0%,rgba(2,11,27,.9)_34%,rgba(2,11,27,.42)_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_45%,rgba(24,144,255,.22),transparent_28%)]" />
 
-      <div className="mx-auto grid max-w-[1480px] items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[.76fr_1.24fr] lg:px-16 lg:py-12">
+      <div className="mx-auto grid  items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[.76fr_1.24fr] lg:px-16 lg:py-10">
         <div className="relative z-20 max-w-[640px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
             <span className="text-white/90">Home</span>

@@ -12,11 +12,11 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import project1 from "../components/images/project1.png";
-import project2 from "../components/images/project2.png";
-import project3 from "../components/images/project3.png";
-import project4 from "../components/images/project4.png";
-import project5 from "../components/images/project5.png";
+import healthcareProject from "../components/images/solution-success-healthcare.png";
+import ecommerceProject from "../components/images/solution-success-ecommerce.png";
+import educationProject from "../components/images/corporate-business-website.png";
+import realEstateProject from "../industries/image/industry-real-estate.png";
+import aiProject from "../technology/image/technology-project-ai.png";
 
 export default function IndustriesPortfolioSection() {
   const industries = [
@@ -34,31 +34,31 @@ export default function IndustriesPortfolioSection() {
 
   const projects = [
     {
-      img: project1,
+      img: healthcareProject,
       title: "Healthcare CRM Platform",
       type: "Web Application",
       tech: "React / Node.js",
     },
     {
-      img: project2,
+      img: ecommerceProject,
       title: "Ecommerce Marketplace",
       type: "Web Application",
       tech: "Next.js / Laravel",
     },
     {
-      img: project3,
+      img: educationProject,
       title: "Education LMS Portal",
       type: "Web Application",
       tech: "React / Node.js",
     },
     {
-      img: project4,
+      img: realEstateProject,
       title: "Real Estate Platform",
       type: "Web Application",
       tech: "Next.js / MongoDB",
     },
     {
-      img: project5,
+      img: aiProject,
       title: "AI Chatbot Assistant",
       type: "AI Solution",
       tech: "Python / OpenAI",

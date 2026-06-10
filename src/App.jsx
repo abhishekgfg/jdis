@@ -6,10 +6,10 @@ import Footer from './components/Footer'
 // import ChatWidget from './components/ChatWidget'
 
 import HomePage from './components/HomePage'
-import CaseStudy from './components/CaseStudy'
-import ContactFormWithInfo from './components/ContactFormWithInfo'
+import CaseStudyPage from './case-study/CaseStudyPage'
+import ContactPage from './contact/ContactPage'
 import ScrollToTop from './components/ScrollToTop' // ✅ import
-import BlogPage from './components/BlogPage'
+import BlogPage from './blog/BlogPage'
 import MeetOurTeam from './pages/teams/MeetOurTeam'
 // import Services from './components/Services'
 import About from './about/About'
@@ -30,11 +30,12 @@ export default function App() {
       <ScrollToTop /> {/* ✅ Scroll to top on route change */}
       <div className="font-sans text-slate-800">
         <Navbar />
-        <main className="pt-16 md:pt-20">
+        <main className="pt-24 md:pt-28">
           <Routes>
             <Route path="/" element={<HomePage />} /> 
-            <Route path="/casestudy" element={<CaseStudy />} /> 
-            <Route path="/contact" element={<ContactFormWithInfo />} /> 
+            <Route path="/case-study" element={<CaseStudyPage />} />
+            <Route path="/casestudy" element={<CaseStudyPage />} /> 
+            <Route path="/contact" element={<ContactPage />} /> 
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/meet-our-team" element={<MeetOurTeam />} />
             <Route path="/portfolio" element={<Portfolio />} />
