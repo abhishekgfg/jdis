@@ -183,12 +183,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#061326] text-white overflow-hidden">
+    <footer className="relative overflow-hidden bg-[#061326] text-white">
       {/* Top CTA */}
-      <div className="bg-gradient-to-r from-[#061326] via-[#0b2a66] to-[#061326] border-b border-[#183456]">
-        <div className="mx-auto px-6 lg:px-12 py-3 flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div className="text-center">
-            <h2 className="text-[24px] leading-tight font-bold">
+      <div className="border-b border-[#183456] bg-gradient-to-r from-[#061326] via-[#0b2a66] to-[#061326]">
+        <div className="mx-auto flex flex-col items-center justify-between gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:gap-6 lg:px-12 lg:py-3">
+          <div className="text-center lg:text-left">
+            <h2 className="text-[20px] font-bold leading-tight sm:text-[24px]">
               Ready to Build Your Next Digital Product?
             </h2>
             <p className="text-[13px] text-[#c7d1e0] mt-1">
@@ -196,7 +196,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <button className="h-[44px] px-7 rounded-md bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] text-[14px] font-bold inline-flex items-center gap-3 transition-all shadow-lg shadow-yellow-500/20">
+          <button className="inline-flex h-[44px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-7 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
             Start Your Project
             <ArrowRight size={17} />
           </button>
@@ -204,10 +204,10 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="mx-auto px-6 lg:px-12 py-5">
-        <div className="grid lg:grid-cols-[1.25fr_0.85fr_1fr_1fr_1.55fr] gap-6">
+      <div className="mx-auto px-4 py-8 sm:px-6 lg:px-12 lg:py-5">
+        <div className="grid grid-cols-2 gap-7 lg:grid-cols-[1.25fr_0.85fr_1fr_1fr_1.55fr] lg:gap-6">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-lg">
                 <img
@@ -227,12 +227,12 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="mt-3 max-w-[270px] text-[13px] leading-6 text-[#c7d1e0]">
+            <p className="mt-3 max-w-[520px] text-[13px] leading-6 text-[#c7d1e0] lg:max-w-[270px]">
               We help businesses grow with innovative technology solutions.
               Your success is our mission.
             </p>
 
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-5 flex w-full max-w-[360px] items-center justify-between gap-3 lg:max-w-[270px]">
               {[
                 { Icon: Facebook, url: "https://www.facebook.com/profile.php?id=61579891453524" },
                 { Icon: Linkedin, url: "https://www.linkedin.com/company/jd-infotech-solutions" },
@@ -245,16 +245,16 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/8 hover:bg-[#145cff] flex items-center justify-center transition-all"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/8 transition-all hover:bg-[#145cff]"
                 >
-                  <Icon size={15} />
+                  <Icon size={18} />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="border-l border-white/10 pl-8">
+          <div className="border-t border-white/10 pt-5 sm:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
             <h4 className="text-[15px] font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-[13px] text-[#c7d1e0]">
               {quickLinks.map((item) => (
@@ -268,7 +268,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="border-l border-white/10 pl-8">
+          <div className="border-t border-white/10 pt-5 sm:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
             <h4 className="text-[15px] font-bold mb-4">Our Services</h4>
             <ul className="space-y-2 text-[13px] text-[#c7d1e0]">
               {[
@@ -291,7 +291,7 @@ export default function Footer() {
           </div>
 
           {/* Solutions */}
-          <div className="border-l border-white/10 pl-8">
+          <div className="border-t border-white/10 pt-5 sm:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
             <h4 className="text-[15px] font-bold mb-4">Solutions</h4>
             <ul className="space-y-2 text-[13px] text-[#c7d1e0]">
               {[
@@ -312,39 +312,39 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="border-l border-white/10 pl-8">
+          <div className="col-span-2 border-t border-white/10 pt-5 lg:col-span-1 lg:border-l lg:pl-8 lg:pt-0">
             <h4 className="text-[15px] font-bold mb-4">Newsletter</h4>
 
-            <p className="text-[13px] leading-6 text-[#c7d1e0] max-w-[280px]">
+            <p className="max-w-[520px] text-[13px] leading-6 text-[#c7d1e0] lg:max-w-[280px]">
               Subscribe to our newsletter for the latest updates & insights.
             </p>
 
-            <div className="mt-3 flex h-[44px] rounded-md overflow-hidden border border-white/10 bg-[#071b34] max-w-[330px]">
+            <div className="mt-3 flex h-[44px] max-w-[520px] overflow-hidden rounded-md border border-white/10 bg-[#071b34] lg:max-w-[330px]">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 bg-transparent px-4 text-[13px] outline-none text-white placeholder:text-[#71829c]"
+                className="min-w-0 flex-1 bg-transparent px-4 text-[13px] text-white outline-none placeholder:text-[#71829c]"
               />
 
-              <button className="w-[48px] bg-[#ffb700] hover:bg-[#ffc329] text-[#061326] flex items-center justify-center transition">
+              <button className="flex w-[48px] shrink-0 items-center justify-center bg-[#ffb700] text-[#061326] transition hover:bg-[#ffc329]">
                 <ArrowRight size={18} />
               </button>
             </div>
 
             <div className="mt-3 space-y-2 text-[13px] text-[#c7d1e0]">
               <p className="flex items-center gap-2">
-                <Phone size={14} className="text-[#ffb700]" />
+                <Phone size={14} className="shrink-0 text-[#ffb700]" />
                 +91 9523435814
               </p>
 
-              <p className="flex items-center gap-2">
-                <Mail size={14} className="text-[#ffb700]" />
-                info@jdinfotechsolutions.in
+              <p className="flex min-w-0 items-center gap-2">
+                <Mail size={14} className="shrink-0 text-[#ffb700]" />
+                <span className="break-all">info@jdinfotechsolutions.in</span>
               </p>
 
-              <p className="flex items-center gap-2">
-                <Globe size={14} className="text-[#ffb700]" />
-                www.jdinfotechsolutions.in
+              <p className="flex min-w-0 items-center gap-2">
+                <Globe size={14} className="shrink-0 text-[#ffb700]" />
+                <span className="break-all">www.jdinfotechsolutions.in</span>
               </p>
             </div>
           </div>
@@ -353,7 +353,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/10">
-        <div className="mx-auto px-6 lg:px-12 py-2 flex flex-col md:flex-row items-center justify-between gap-2 text-[12px] text-[#c7d1e0]">
+        <div className="mx-auto flex flex-col items-center justify-between gap-2 px-4 py-4 text-center text-[12px] text-[#c7d1e0] sm:px-6 md:flex-row lg:px-12 lg:py-2">
           <p>© 2024 JD Infotech Solutions. All Rights Reserved.</p>
           <p>
             Made with <span className="text-red-500">♥</span> in India
@@ -362,12 +362,12 @@ export default function Footer() {
       </div>
 
       <a
-        href="https://wa.me/916200594193"
+        href="https://wa.me/919523435814"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-5 bottom-5 z-50 w-14 h-14 rounded-full bg-[#25D366] border-4 border-white flex items-center justify-center shadow-xl hover:scale-110 transition-all"
+        className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-[#25D366] shadow-xl transition-all hover:scale-110 sm:bottom-5 sm:right-5 sm:h-14 sm:w-14"
       >
-        <Phone size={28} className="text-white" />
+        <Phone size={24} className="text-white sm:h-7 sm:w-7" />
       </a>
     </footer>
   );
