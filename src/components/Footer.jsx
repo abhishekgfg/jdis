@@ -176,7 +176,7 @@ export default function Footer() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Case Studies", href: "/casestudy" },
+    { label: "Case Studies", href: "/case-study" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 // import ChatWidget from './components/ChatWidget'
+import Seo from './seo/Seo'
 
 import HomePage from './components/HomePage'
 import CaseStudyPage from './case-study/CaseStudyPage'
@@ -27,6 +28,7 @@ import TechnologyPage from "./technology/technology-page/TechnologyPage";
 export default function App() {
   return (
     <Router>
+      <Seo />
       <ScrollToTop /> {/* ✅ Scroll to top on route change */}
       <div className="font-sans text-slate-800">
         <Navbar />
@@ -34,7 +36,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} /> 
             <Route path="/case-study" element={<CaseStudyPage />} />
-            <Route path="/casestudy" element={<CaseStudyPage />} /> 
+            <Route path="/casestudy" element={<Navigate to="/case-study" replace />} /> 
             <Route path="/contact" element={<ContactPage />} /> 
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/meet-our-team" element={<MeetOurTeam />} />

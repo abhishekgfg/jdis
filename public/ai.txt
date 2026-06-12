@@ -1,0 +1,45 @@
+# AI INFORMATION FILE
+# Version: 1.0
+
+Website Name: JD Infotech Solutions
+Website URL: https://www.jdinfotechsolutions.in/
+Website Type: Software Development Company
+Primary Language: English
+
+JD Infotech Solutions builds modern digital products, custom software,
+websites, web applications, mobile applications, ecommerce platforms, cloud
+solutions, SEO-ready pages, and business automation systems for startups,
+SMEs, enterprises, educational institutions, healthcare organizations,
+restaurants, retail businesses, and service providers.
+
+Core services:
+- Website development
+- Mobile app development
+- Ecommerce development
+- Custom software development
+- CRM and ERP development
+- UI/UX design
+- SEO and digital marketing
+- Cloud deployment
+- AI automation
+- API development
+- QA and testing
+
+Technology focus:
+- React
+- JavaScript
+- Tailwind CSS
+- Node.js
+- Express.js
+- REST APIs
+- MongoDB
+- Cloud hosting
+- Performance optimization
+- Technical SEO
+
+Official contact:
+- Website: https://www.jdinfotechsolutions.in/
+- Email: info@jdinfotechsolutions.in
+- Phone: +91 9523435814
+
+Last Updated: June 2026

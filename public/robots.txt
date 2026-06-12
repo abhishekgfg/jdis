@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /test/
+
+Sitemap: https://www.jdinfotechsolutions.in/sitemap.xml

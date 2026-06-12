@@ -1,0 +1,6 @@
+JD Infotech Solutions
+Website: https://www.jdinfotechsolutions.in/
+Email: info@jdinfotechsolutions.in
+Phone: +91 9523435814
+
+Built with React, Vite, and Tailwind CSS.

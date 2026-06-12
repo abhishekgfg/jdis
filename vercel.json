@@ -13,6 +13,26 @@
       "destination": "/robots.txt"
     },
     {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "destination": "/manifest.webmanifest"
+    },
+    {
+      "source": "/ai.txt",
+      "destination": "/ai.txt"
+    },
+    {
+      "source": "/humans.txt",
+      "destination": "/humans.txt"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/"
     }

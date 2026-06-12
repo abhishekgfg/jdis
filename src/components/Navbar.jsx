@@ -39,7 +39,7 @@ export default function Navbar() {
     { href: "/solutions", label: "Solutions" },
     { href: "/industries", label: "Industries" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/casestudy", label: "Case Studies" },
+    { href: "/case-study", label: "Case Studies" },
     { href: "/technologies", label: "Technologies" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
