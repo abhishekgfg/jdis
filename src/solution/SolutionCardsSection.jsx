@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BarChart3,
@@ -135,7 +136,7 @@ export default function SolutionCardsSection() {
   ];
 
   return (
-    <section className="bg-[#f8fbff] py-8">
+    <section id="solutions-list" className="scroll-mt-28 bg-[#f8fbff] py-8">
       <div className="mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center">
           <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#145cff]">
@@ -258,13 +259,13 @@ export default function SolutionCardsSection() {
             </div>
 
             <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-6 text-[13px] font-extrabold text-[#071426] sm:w-auto"
               >
                 Discuss This Solution
                 <ArrowRight size={15} />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setActiveSolution(null)}

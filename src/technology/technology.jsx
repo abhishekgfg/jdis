@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import { FaAws, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import { SiFlutter, SiLaravel, SiNextdotjs } from "react-icons/si";
 import technologyBg from "./image/technology-hero-bg.png";
@@ -70,7 +71,9 @@ export default function TechnologyHeroSection() {
       <div className="mx-auto grid items-center gap-8 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.76fr_1.24fr] lg:px-16 lg:py-10">
         <div className="relative z-20 max-w-[640px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
-            <span className="text-white/90">Home</span>
+            <Link to="/" className="text-white/90">
+              Home
+            </Link>
             <ChevronRight size={15} className="text-white/45" />
             <span className="text-white/90">Technologies</span>
           </div>
@@ -101,13 +104,13 @@ export default function TechnologyHeroSection() {
               <ArrowRight size={17} />
             </a>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex h-14 w-full items-center justify-center gap-2 rounded border border-white/35 bg-[#061326]/40 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10 sm:w-auto sm:gap-4 sm:px-8 sm:text-[14px]"
             >
               Start Project
               <Rocket size={17} />
-            </a>
+            </Link>
           </div>
         </div>
 

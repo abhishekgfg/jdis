@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import ecommerceImg from "../components/images/solution-success-ecommerce.png";
 import fintechImg from "../components/images/mobile-portfolio-ecommerce.png";
 import healthcareImg from "../components/images/solution-success-healthcare.png";
@@ -198,7 +199,7 @@ export default function PortfolioCaseStudiesSection() {
   }, [activeStudy]);
 
   return (
-    <section className="bg-[#f7faff] pb-12">
+    <section id="portfolio-case-studies" className="scroll-mt-28 bg-[#f7faff] pb-12">
       <div className="border-b border-[#dce8f8] bg-white shadow-[0_12px_30px_rgba(15,23,42,.04)]">
         <div className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 lg:px-16">
           <p className="text-center text-[15px] font-extrabold text-[#151d35] sm:text-[16px]">
@@ -230,14 +231,13 @@ export default function PortfolioCaseStudiesSection() {
             </h2>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setActiveStudy(caseStudies[0])}
+          <Link
+            to="/case-study"
             className="hidden items-center gap-3 text-[12px] font-extrabold text-[#1265ff] sm:inline-flex"
           >
             View All Case Studies
             <ArrowRight size={15} />
-          </button>
+          </Link>
         </div>
 
         <div className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
@@ -439,13 +439,13 @@ export default function PortfolioCaseStudiesSection() {
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="mt-6 inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-5 text-[13px] font-extrabold text-[#061326]"
                 >
                   Discuss Similar Project
                   <ArrowRight size={15} />
-                </a>
+                </Link>
               </aside>
             </div>
           </div>

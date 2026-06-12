@@ -8,6 +8,7 @@ import {
   Search,
   ShieldCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   SiAmazon,
   SiAndroid,
@@ -197,10 +198,10 @@ export default function MobileProcessDetailsSection() {
                     <p className="mt-3 text-[12px] leading-5 text-[#c7d1e0]">
                       {platform.desc}
                     </p>
-                    <button className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-white">
+                    <Link to="/contact" className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-white">
                       Learn More
                       <ArrowRight size={14} />
-                    </button>
+                    </Link>
                   </div>
                 );
               })}

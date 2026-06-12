@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Aviraj from "../components/images/aviraj.jpeg";
 import Abhishek from "../components/images/Abhishek.jpeg";
@@ -35,6 +36,24 @@ export default function LeadershipTeamSection() {
     },
   ];
 
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/search/results/companies/?keywords=JD%20Infotech%20Solutions",
+      label: "Find JD Infotech Solutions on LinkedIn",
+    },
+    {
+      icon: Twitter,
+      href: "https://twitter.com/search?q=JD%20Infotech%20Solutions",
+      label: "Find JD Infotech Solutions on X",
+    },
+    {
+      icon: Mail,
+      href: "mailto:jdinfotechsolution@gmail.com",
+      label: "Email JD Infotech Solutions",
+    },
+  ];
+
   return (
     <section className="bg-[#f8fbff] py-10 lg:py-12">
       <div className="mx-auto px-4 sm:px-6 lg:px-12">
@@ -50,10 +69,13 @@ export default function LeadershipTeamSection() {
             </h2>
           </div>
 
-          <button className="hidden sm:inline-flex h-[42px] px-5 rounded-md border border-[#9aa8bd] bg-white hover:bg-[#f3f7ff] text-[#071426] text-[13px] font-semibold items-center gap-3 transition-all">
+          <Link
+            to="/meet-our-team"
+            className="hidden sm:inline-flex h-[42px] px-5 rounded-md border border-[#9aa8bd] bg-white hover:bg-[#f3f7ff] text-[#071426] text-[13px] font-semibold items-center gap-3 transition-all"
+          >
             Join Our Team
             <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
 
         {/* Cards */}
@@ -81,25 +103,35 @@ export default function LeadershipTeamSection() {
                 </p>
 
                 <div className="mt-4 flex items-center justify-center gap-3">
-                  {[Linkedin, Twitter, Mail].map((Icon, index) => (
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+
+                    return (
                     <a
-                      key={index}
-                      href="#"
+                      key={social.label}
+                      href={social.href}
+                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      rel={social.href.startsWith("http") ? "noreferrer" : undefined}
+                      aria-label={`${social.label} for ${member.name}`}
                       className="w-8 h-8 rounded-full bg-[#f3f7ff] hover:bg-[#145cff] text-[#071426] hover:text-white flex items-center justify-center transition-all"
                     >
                       <Icon size={14} />
                     </a>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <button className="mt-6 inline-flex h-[42px] w-full items-center justify-center gap-3 rounded-md border border-[#9aa8bd] bg-white px-5 text-[13px] font-semibold text-[#071426] sm:hidden">
+        <Link
+          to="/meet-our-team"
+          className="mt-6 inline-flex h-[42px] w-full items-center justify-center gap-3 rounded-md border border-[#9aa8bd] bg-white px-5 text-[13px] font-semibold text-[#071426] sm:hidden"
+        >
           Join Our Team
           <ArrowRight size={16} />
-        </button>
+        </Link>
       </div>
     </section>
   );

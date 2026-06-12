@@ -10,6 +10,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const contactWays = [
   {
@@ -17,7 +18,7 @@ const contactWays = [
     title: "Schedule a Call",
     desc: "Book a free consultation call with our solution experts.",
     action: "Schedule Now",
-    href: "/contact",
+    href: "tel:+919523435814",
     color: "text-[#4f63ff]",
     bg: "bg-[#eef0ff]",
   },
@@ -35,7 +36,7 @@ const contactWays = [
     title: "Live Chat",
     desc: "Chat with our team for instant assistance.",
     action: "Start Chat",
-    href: "/contact",
+    href: "https://wa.me/919523435814",
     color: "text-[#ff7a32]",
     bg: "bg-[#fff1e9]",
   },
@@ -53,7 +54,7 @@ const contactWays = [
     title: "Request a Quote",
     desc: "Share your project details and get a custom quote.",
     action: "Request Now",
-    href: "/contact",
+    href: "#contact-form",
     color: "text-[#8b5cf6]",
     bg: "bg-[#f2ecff]",
   },
@@ -102,6 +103,8 @@ export default function ContactSupportSection() {
               <a
                 key={item.title}
                 href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 className="rounded-[6px] border border-[#e1e9f5] bg-white px-4 py-5 text-center shadow-[0_10px_28px_rgba(15,55,105,.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,55,105,.1)] sm:px-5"
               >
                 <div
@@ -217,19 +220,19 @@ export default function ContactSupportSection() {
               </p>
               <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
                 <a
-                  href="/contact"
+                  href="#contact-form"
                   className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-white px-5 text-[12px] font-extrabold text-[#1767ff] sm:w-auto sm:px-6"
                 >
                   Discuss Your Project
                   <ArrowRight size={14} />
                 </a>
-                <a
-                  href="/services"
+                <Link
+                  to="/services"
                   className="inline-flex h-11 w-full items-center justify-center gap-3 rounded border border-white/40 bg-white/10 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:px-6"
                 >
                   View Our Services
                   <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

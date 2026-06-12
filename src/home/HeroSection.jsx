@@ -1,4 +1,5 @@
 import { ArrowRight, Globe, Briefcase, Users, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import img from "../components/images/jhero.png";
 
 export default function HeroSection() {
@@ -60,15 +61,21 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:gap-4 lg:mt-10">
-            <button className="flex h-[52px] w-full items-center justify-center gap-3 rounded-lg bg-[#ffb700] px-6 font-semibold text-black shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:bg-[#ffc329] sm:w-auto sm:px-8 lg:h-[58px]">
+            <Link
+              to="/contact"
+              className="flex h-[52px] w-full items-center justify-center gap-3 rounded-lg bg-[#ffb700] px-6 font-semibold text-black shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:bg-[#ffc329] sm:w-auto sm:px-8 lg:h-[58px]"
+            >
               Start Your Project
               <ArrowRight size={18} />
-            </button>
+            </Link>
 
-            <button className="flex h-[52px] w-full items-center justify-center gap-3 rounded-lg border border-[#2a3b5c] bg-[#081528]/80 px-6 font-medium transition-all duration-300 hover:bg-[#0d1e38] sm:w-auto sm:px-8 lg:h-[58px]">
+            <Link
+              to="/portfolio"
+              className="flex h-[52px] w-full items-center justify-center gap-3 rounded-lg border border-[#2a3b5c] bg-[#081528]/80 px-6 font-medium transition-all duration-300 hover:bg-[#0d1e38] sm:w-auto sm:px-8 lg:h-[58px]"
+            >
               View Portfolio
               <ArrowRight size={18} className="text-[#ffb700]" />
-            </button>
+            </Link>
           </div>
 
           <div className="mt-8 max-w-[760px] lg:mt-12">

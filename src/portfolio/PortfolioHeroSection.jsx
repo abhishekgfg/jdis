@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "./portfolio-hero-bg.svg";
 
 export default function PortfolioHeroSection() {
@@ -16,7 +17,9 @@ export default function PortfolioHeroSection() {
       <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.82fr_1.18fr] lg:px-16 lg:py-12">
         <div className="max-w-[570px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
-            <span className="text-white/88">Home</span>
+            <Link to="/" className="text-white/88">
+              Home
+            </Link>
             <ChevronRight size={15} className="text-white/45" />
             <span className="text-[#ffc126]">Portfolio</span>
           </div>
@@ -37,19 +40,19 @@ export default function PortfolioHeroSection() {
 
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-5">
             <a
-              href="/casestudy"
+              href="#portfolio-case-studies"
               className="inline-flex h-14 w-full items-center justify-center gap-4 rounded bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-8 sm:text-[14px]"
             >
               View Case Studies
               <ArrowRight size={17} />
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex h-14 w-full items-center justify-center gap-4 rounded border border-white/40 bg-[#061326]/40 px-5 text-[13px] font-extrabold text-white shadow-[0_12px_30px_rgba(0,0,0,.18)] transition hover:border-white/70 hover:bg-white/10 sm:w-auto sm:px-8 sm:text-[14px]"
             >
               Discuss Your Project
               <MessageCircle size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 

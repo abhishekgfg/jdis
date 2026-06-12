@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Search,
   ClipboardList,
@@ -247,10 +248,10 @@ export default function WebsiteProcessDetailsSection() {
                     );
                   })}
 
-                  <button className="inline-flex pt-2 text-[13px] font-bold text-[#145cff] items-center gap-2">
+                  <Link to="/industries" className="inline-flex pt-2 text-[13px] font-bold text-[#145cff] items-center gap-2">
                     View All Industries
                     <ArrowRight size={15} />
-                  </button>
+                  </Link>
                 </div>
 
                 <img
@@ -283,10 +284,10 @@ export default function WebsiteProcessDetailsSection() {
               })}
             </div>
 
-            <button className="mt-4 text-[#145cff] text-[13px] font-bold inline-flex items-center gap-2">
+            <Link to="/technologies" className="mt-4 text-[#145cff] text-[13px] font-bold inline-flex items-center gap-2">
               Explore All Technologies
               <ArrowRight size={15} />
-            </button>
+            </Link>
           </div>
 
           {/* Related Portfolio */}
@@ -296,13 +297,13 @@ export default function WebsiteProcessDetailsSection() {
                 Related Portfolio
               </span>
 
-              <a
-                href="/portfolio"
+              <Link
+                to="/portfolio"
                 className="inline-flex shrink-0 items-center gap-2 text-[12px] font-bold text-[#145cff]"
               >
                 View All Projects
                 <ArrowRight size={14} />
-              </a>
+              </Link>
             </div>
 
             <div className="relative mt-4">
@@ -382,7 +383,11 @@ export default function WebsiteProcessDetailsSection() {
               </h2>
             </div>
 
-            <button className="hidden sm:inline-flex text-[#145cff] text-[13px] font-bold items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setOpenFaq("all")}
+              className="hidden sm:inline-flex text-[#145cff] text-[13px] font-bold items-center gap-2"
+            >
               View All FAQs
               <ArrowRight size={15} />
             </button>
@@ -390,7 +395,7 @@ export default function WebsiteProcessDetailsSection() {
 
           <div className="grid gap-4 items-start md:grid-cols-3">
             {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
+              const isOpen = openFaq === index || openFaq === "all";
               return (
                 <div
                   key={faq.question}
@@ -441,15 +446,15 @@ export default function WebsiteProcessDetailsSection() {
             </div>
 
             <div className="grid gap-3 sm:flex sm:flex-wrap sm:justify-center">
-              <button className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-7 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
+              <Link to="/contact" className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-7 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Start Your Project
                 <ArrowRight size={17} />
-              </button>
+              </Link>
 
-              <button className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
+              <a href="tel:+919523435814" className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 Schedule a Call
                 <Phone size={17} />
-              </button>
+              </a>
             </div>
           </div>
         </div>

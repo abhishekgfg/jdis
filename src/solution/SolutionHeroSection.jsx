@@ -7,6 +7,7 @@ import {
   Lightbulb,
   ShieldCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "../components/images/solutions-hero-globe.png";
 
 export default function SolutionHeroSection() {
@@ -61,9 +62,9 @@ export default function SolutionHeroSection() {
       <div className="relative z-10 mx-auto grid items-center px-4 py-10 sm:px-6 lg:min-h-[430px] lg:grid-cols-[.9fr_1.1fr] lg:px-12">
         <div>
           <div className="mb-7 flex items-center gap-2 text-[11px] font-semibold">
-            <a href="/" className="text-white/82">
+            <Link to="/" className="text-white/82">
               Home
-            </a>
+            </Link>
             <ChevronRight size={13} className="text-white/45" />
             <span className="text-[#ffc126]">Solutions</span>
           </div>
@@ -83,19 +84,19 @@ export default function SolutionHeroSection() {
 
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
             <a
-              href="/solutions"
+              href="#solutions-list"
               className="inline-flex h-12 w-full items-center justify-center gap-4 rounded bg-[#ffc126] px-7 text-[13px] font-bold text-[#071426] shadow-[0_12px_30px_rgba(255,193,38,.23)] sm:w-auto"
             >
               Explore Solutions
               <ArrowRight size={16} />
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex h-12 w-full items-center justify-center gap-4 rounded border border-white/30 bg-white/5 px-7 text-[13px] font-bold text-white sm:w-auto"
             >
               Talk to Experts
               <Headphones size={16} />
-            </a>
+            </Link>
           </div>
         </div>
 

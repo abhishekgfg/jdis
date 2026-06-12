@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   CalendarDays,
@@ -415,20 +416,20 @@ export default function BlogInsightsSection() {
                 practical improvement plan.
               </p>
               <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-white px-5 text-[13px] font-extrabold text-[#1767ff] sm:w-auto sm:px-7"
                 >
                   Get Free Consultation
                   <ArrowRight size={15} />
-                </a>
-                <a
-                  href="/case-study"
+                </Link>
+                <Link
+                  to="/case-study"
                   className="inline-flex h-12 w-full items-center justify-center gap-3 rounded border border-white/40 bg-white/10 px-5 text-[13px] font-extrabold text-white sm:w-auto sm:px-7"
                 >
                   See Case Studies
                   <Search size={15} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -520,13 +521,13 @@ export default function BlogInsightsSection() {
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="mt-7 inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-5 text-[13px] font-extrabold text-[#061326]"
                 >
                   Discuss This for My Business
                   <ArrowRight size={15} />
-                </a>
+                </Link>
               </aside>
             </div>
           </div>

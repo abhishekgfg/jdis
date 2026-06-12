@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -278,18 +279,19 @@ export default function TechnologyShowcaseSection() {
               eyebrow="Frequently Asked Questions"
               title="Have Questions? We Have Answers!"
             />
-            <a
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => setOpenFaq("all")}
               className="inline-flex items-center gap-2 text-[12px] font-extrabold text-[#168dff]"
             >
               View All FAQs
               <ArrowRight size={14} />
-            </a>
+            </button>
           </div>
 
           <div className="mt-4 grid gap-4 lg:grid-cols-2">
             {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
+              const isOpen = openFaq === index || openFaq === "all";
 
               return (
                 <div
@@ -337,15 +339,15 @@ export default function TechnologyShowcaseSection() {
                 technologies.
               </p>
               <div className="mt-4 grid gap-3 sm:flex sm:flex-wrap">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex h-11 w-full items-center justify-center gap-3 rounded bg-[#ffb525] px-5 text-[12px] font-extrabold text-[#061326] shadow-[0_12px_28px_rgba(255,181,37,.25)] sm:w-auto sm:px-6"
                 >
                   Start Your Project
                   <ArrowRight size={15} />
-                </a>
+                </Link>
                 <a
-                  href="/contact"
+                  href="tel:+919523435814"
                   className="inline-flex h-11 w-full items-center justify-center gap-3 rounded border border-white/35 bg-[#061326]/45 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:px-6"
                 >
                   Schedule A Call
@@ -501,13 +503,13 @@ export default function TechnologyShowcaseSection() {
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="mt-6 inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326]"
                 >
                   Discuss Similar Project
                   <ArrowRight size={15} />
-                </a>
+                </Link>
               </aside>
             </div>
           </div>

@@ -7,6 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { SiAndroid, SiApple, SiFlutter, SiVisa } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 export default function MobileDevelopmentHero() {
   const features = [
@@ -79,15 +80,15 @@ export default function MobileDevelopmentHero() {
             </div>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
-              <button className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md bg-[#ffb700] px-7 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
+              <Link to="/contact" className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md bg-[#ffb700] px-7 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Discuss Your Project
                 <ArrowRight size={18} />
-              </button>
+              </Link>
 
-              <button className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md border border-white/25 bg-white/5 px-7 text-[14px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
+              <Link to="/portfolio" className="inline-flex h-[50px] w-full items-center justify-center gap-4 rounded-md border border-white/25 bg-white/5 px-7 text-[14px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 View Our Work
                 <PlayCircle size={20} className="text-[#ffb700]" />
-              </button>
+              </Link>
             </div>
           </div>
 

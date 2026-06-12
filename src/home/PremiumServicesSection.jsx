@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Code2,
@@ -225,10 +226,13 @@ export default function PremiumServicesSection() {
           </p>
 
           <div className="lg:pt-3 lg:text-right">
-            <button className="inline-flex h-[50px] w-full items-center justify-center gap-3 rounded-md bg-[#061326] px-6 text-[13px] font-semibold text-white shadow-lg transition-all hover:bg-[#0b1d38] sm:w-auto lg:h-[52px]">
+            <Link
+              to="/services"
+              className="inline-flex h-[50px] w-full items-center justify-center gap-3 rounded-md bg-[#061326] px-6 text-[13px] font-semibold text-white shadow-lg transition-all hover:bg-[#0b1d38] sm:w-auto lg:h-[52px]"
+            >
               View All Services
               <ArrowRight size={18} />
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -322,10 +326,13 @@ export default function PremiumServicesSection() {
         </div>
 
         <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
-          <button className="inline-flex h-[44px] w-full items-center justify-center gap-2 rounded-md bg-[#145cff] px-5 text-[14px] font-semibold text-white transition-all hover:bg-[#004be0] sm:w-auto">
+          <Link
+            to={`/contact?service=${encodeURIComponent(selectedService.title)}`}
+            className="inline-flex h-[44px] w-full items-center justify-center gap-2 rounded-md bg-[#145cff] px-5 text-[14px] font-semibold text-white transition-all hover:bg-[#004be0] sm:w-auto"
+          >
             Start This Service
             <ArrowRight size={16} />
-          </button>
+          </Link>
 
           <button
             onClick={closeModal}

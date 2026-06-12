@@ -1,4 +1,5 @@
 import { ArrowRight, Phone, Quote, Rocket, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import blogAi from "../components/images/b1.png";
 import blogCloud from "../components/images/b2.png";
 import blogSecurity from "../components/images/b3.png";
@@ -81,13 +82,13 @@ export default function PortfolioStoriesBlogSection() {
               </h2>
             </div>
 
-            <a
-              href="/casestudy"
+            <Link
+              to="/case-study"
               className="hidden items-center gap-3 text-[12px] font-extrabold text-white sm:inline-flex"
             >
               View All Testimonials
               <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -146,13 +147,13 @@ export default function PortfolioStoriesBlogSection() {
             </h2>
           </div>
 
-          <a
-            href="/blog"
+          <Link
+            to="/blog"
             className="hidden items-center gap-3 text-[12px] font-extrabold text-[#1265ff] sm:inline-flex"
           >
             View All Articles
             <ArrowRight size={15} />
-          </a>
+          </Link>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -183,6 +184,14 @@ export default function PortfolioStoriesBlogSection() {
                   <span className="h-1 w-1 rounded-full bg-[#9aa8ba]" />
                   <span>{blog.read}</span>
                 </div>
+
+                <Link
+                  to="/blog"
+                  className="mt-4 inline-flex items-center gap-2 text-[12px] font-extrabold text-[#1265ff]"
+                >
+                  Read Article
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             </article>
           ))}
@@ -208,13 +217,13 @@ export default function PortfolioStoriesBlogSection() {
             </div>
 
             <div className="relative z-10 grid gap-3 sm:flex sm:flex-nowrap sm:gap-5">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex h-14 w-full items-center justify-center gap-2 rounded bg-[#ffb525] px-5 text-[12px] font-bold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] sm:w-auto sm:px-9"
               >
                 Start Your Project
                 <ArrowRight size={17} />
-              </a>
+              </Link>
               <a
                 href="tel:+919523435814"
                 className="inline-flex h-14 w-full items-center justify-center gap-2 rounded border border-white/35 bg-white/5 px-5 text-[12px] font-extrabold text-white sm:w-auto sm:gap-4 sm:px-9 sm:text-[14px]"

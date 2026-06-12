@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   UserRoundCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import globeBg from "../components/images/solutions-hero-globe.png";
 
 const heroIcons = [
@@ -63,9 +64,9 @@ export default function ContactHeroSection() {
       <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-9 sm:px-6 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:px-16">
         <div>
           <div className="mb-7 flex items-center gap-2 text-[12px] font-bold">
-            <a href="/" className="text-white/88">
+            <Link to="/" className="text-white/88">
               Home
-            </a>
+            </Link>
             <ChevronRight size={15} className="text-white/45" />
             <span className="text-[#158dff]">Contact Us</span>
           </div>

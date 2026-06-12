@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
@@ -231,15 +232,15 @@ export default function CaseStudyApproachTestimonialsSection() {
             </div>
 
             <div className="relative grid gap-3 sm:flex sm:flex-wrap sm:gap-4 lg:pr-8">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-[5px] bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_28px_rgba(255,181,37,.24)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-7"
               >
                 Discuss Your Project
                 <ArrowRight size={15} />
-              </a>
+              </Link>
               <a
-                href="/contact"
+                href="tel:+919523435814"
                 className="inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-[5px] border border-white/35 bg-white/5 px-5 text-[13px] font-extrabold text-white transition hover:bg-white/10 sm:w-auto sm:px-7"
               >
                 Schedule a Call

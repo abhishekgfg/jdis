@@ -34,8 +34,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function DigitalSolutionsSection() {
+  const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -45,6 +47,7 @@ export default function DigitalSolutionsSection() {
       title: "Website Development",
       desc: "Responsive, fast & SEO-friendly websites that create a powerful online presence.",
       color: "blue",
+      path: "/services/website",
       details: {
         overview: "We build modern, responsive websites that load fast, rank well on search engines, and provide an exceptional user experience.",
         features: [
@@ -71,6 +74,7 @@ export default function DigitalSolutionsSection() {
       title: "Mobile App Development",
       desc: "Scalable mobile apps for Android, iOS & cross-platform for maximum reach.",
       color: "purple",
+      path: "/services/mobile-application",
       details: {
         overview: "We create powerful, user-friendly mobile applications that help you connect with your customers on the go.",
         features: [
@@ -490,6 +494,20 @@ export default function DigitalSolutionsSection() {
     document.body.style.overflow = "auto";
   };
 
+  const handleLearnMore = (event, service) => {
+    event.stopPropagation();
+    if (service.path) {
+      navigate(service.path);
+      return;
+    }
+    openModal(service);
+  };
+
+  const handleGetStarted = () => {
+    document.body.style.overflow = "auto";
+    navigate("/contact");
+  };
+
   return (
     <>
       <section className="bg-[#061426] py-10 text-white lg:py-14">
@@ -529,7 +547,11 @@ export default function DigitalSolutionsSection() {
                     {service.desc}
                   </p>
 
-                  <button className="mt-5 text-[#2b8cff] group-hover:text-[#ffb700] text-[14px] font-semibold inline-flex items-center gap-2 transition-colors">
+                  <button
+                    type="button"
+                    onClick={(event) => handleLearnMore(event, service)}
+                    className="mt-5 text-[#2b8cff] group-hover:text-[#ffb700] text-[14px] font-semibold inline-flex items-center gap-2 transition-colors"
+                  >
                     Learn More
                     <ArrowRight size={17} />
                   </button>
@@ -672,7 +694,8 @@ export default function DigitalSolutionsSection() {
               {/* CTA Button */}
               <div className="flex justify-end border-t border-[#1c3558] pt-4">
                 <button
-                  onClick={closeModal}
+                  type="button"
+                  onClick={handleGetStarted}
                   className="w-full rounded-lg bg-gradient-to-r from-[#145cff] to-[#00d4ff] px-6 py-2 font-semibold transition-all hover:shadow-lg sm:w-auto"
                 >
                   Get Started

@@ -62,18 +62,19 @@ export default function IndustryFaqCtaSection() {
             <div className="mt-2 h-[3px] w-[35px] rounded-full bg-[#f6b51f]" />
           </div>
 
-          <a
-            href="/contact"
+          <button
+            type="button"
+            onClick={() => setOpenFaq("all")}
             className="hidden items-center gap-2 pt-5 text-[12px] font-extrabold text-[#1767ff] sm:inline-flex"
           >
             View All FAQs
             <ArrowRight size={15} />
-          </a>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
           {faqs.map((faq, index) => {
-            const isOpen = openFaq === index;
+            const isOpen = openFaq === index || openFaq === "all";
 
             return (
               <div
@@ -149,7 +150,7 @@ export default function IndustryFaqCtaSection() {
                 <ArrowRight size={15} />
               </a>
               <a
-                href="/contact"
+                href="tel:+919523435814"
                 className="inline-flex h-[43px] w-full items-center justify-center gap-3 rounded-[5px] border border-white/35 bg-white/5 px-6 text-[12px] font-extrabold text-white transition hover:bg-white/10 sm:w-auto"
               >
                 Schedule A Call

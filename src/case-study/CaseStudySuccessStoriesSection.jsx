@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, ChevronDown, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import ecommerceImg from "../components/images/solution-success-ecommerce.png";
 import fintechImg from "../components/images/solution-success-fintech.png";
 import healthcareImg from "../components/images/solution-success-healthcare.png";
@@ -392,13 +393,13 @@ export default function CaseStudySuccessStoriesSection() {
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="mt-6 inline-flex h-12 w-full items-center justify-center gap-3 rounded bg-[#ffc126] px-5 text-[13px] font-extrabold text-[#061326]"
                 >
                   Discuss Similar Project
                   <ArrowRight size={15} />
-                </a>
+                </Link>
               </aside>
             </div>
           </div>

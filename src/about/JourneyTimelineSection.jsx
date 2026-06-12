@@ -55,7 +55,7 @@ export default function JourneyTimelineSection() {
   ];
 
   return (
-    <section className="bg-[#f8fbff] py-10">
+    <section id="journey" className="scroll-mt-28 bg-[#f8fbff] py-10">
       <div className="mx-auto px-4 sm:px-6 lg:px-12">
         <div className="mb-8 text-center">
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#145cff]">

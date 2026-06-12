@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Block internal/system paths if they exist
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+Disallow: /tmp/
+Disallow: /test/
+
+# AI and search crawlers are allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.jdinfotechsolutions.in/sitemap.xml

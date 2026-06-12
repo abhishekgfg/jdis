@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import blog1 from "../components/images/b1.png";
 import blog2 from "../components/images/b2.png";
@@ -46,15 +47,19 @@ export default function LatestBlogSection() {
             </h2>
           </div>
 
-          <button className="hidden sm:inline-flex h-[44px] px-6 rounded-md border border-[#d7e2f0] bg-white hover:bg-[#f3f7ff] text-[#071426] text-[14px] font-semibold items-center gap-3 shadow-sm transition-all">
+          <Link
+            to="/blog"
+            className="hidden sm:inline-flex h-[44px] px-6 rounded-md border border-[#d7e2f0] bg-white hover:bg-[#f3f7ff] text-[#071426] text-[14px] font-semibold items-center gap-3 shadow-sm transition-all"
+          >
             View All Blogs
             <ArrowRight size={17} />
-          </button>
+          </Link>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
           {blogs.map((blog) => (
-            <div
+            <Link
+              to="/blog"
               key={blog.title}
               className="group relative h-[260px] overflow-hidden rounded-xl border border-[#d7e2f0] shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:h-[220px] md:h-[165px]"
             >
@@ -83,14 +88,17 @@ export default function LatestBlogSection() {
                   <span>{blog.time}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        <button className="mt-5 inline-flex h-[44px] w-full items-center justify-center gap-3 rounded-md border border-[#d7e2f0] bg-white px-6 text-[14px] font-semibold text-[#071426] shadow-sm sm:hidden">
+        <Link
+          to="/blog"
+          className="mt-5 inline-flex h-[44px] w-full items-center justify-center gap-3 rounded-md border border-[#d7e2f0] bg-white px-6 text-[14px] font-semibold text-[#071426] shadow-sm sm:hidden"
+        >
           View All Blogs
           <ArrowRight size={17} />
-        </button>
+        </Link>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import globeMap from "../components/images/global-map.png";
 
@@ -219,18 +220,24 @@ export default function TrustGlobalCTASection() {
               Let’s turn your ideas into powerful digital solutions.
             </p>
 
-            <button className="mt-5 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-6 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-fit">
+            <Link
+              to="/contact"
+              className="mt-5 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-6 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-fit"
+            >
               Start Your Project
               <ArrowRight size={17} />
-            </button>
+            </Link>
 
             <p className="mt-5 text-[12px] text-[#536174]">
               Or schedule a free consultation
             </p>
 
-            <button className="mt-2 text-[#145cff] text-[13px] font-bold text-left">
+            <a
+              href="tel:+919523435814"
+              className="mt-2 text-left text-[13px] font-bold text-[#145cff]"
+            >
               Schedule a Call
-            </button>
+            </a>
           </div>
         </div>
       </div>

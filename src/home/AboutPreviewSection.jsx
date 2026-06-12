@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle, Cloud, ShieldCheck, Gem } from "lucide-react";
+import { Link } from "react-router-dom";
 import aboutImg from "../components/images/aboutj.png";
 
 export default function AboutPreviewSection() {
@@ -52,10 +53,13 @@ export default function AboutPreviewSection() {
               ))}
             </ul>
 
-            <button className="mt-7 flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#061326] px-6 font-semibold text-white shadow-lg transition-all hover:bg-[#0b1d38] sm:w-fit">
+            <Link
+              to="/about"
+              className="mt-7 flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#061326] px-6 font-semibold text-white shadow-lg transition-all hover:bg-[#0b1d38] sm:w-fit"
+            >
               Know More About Us
               <ArrowRight size={18} />
-            </button>
+            </Link>
           </div>
 
           {/* Image */}
@@ -98,10 +102,13 @@ export default function AboutPreviewSection() {
                     </p>
                   </div>
 
-                  <button className="mt-8 text-[#145cff] font-semibold flex items-center gap-2">
+                  <Link
+                    to="/about"
+                    className="mt-8 text-[#145cff] font-semibold flex items-center gap-2"
+                  >
                     Learn More
                     <ArrowRight size={17} />
-                  </button>
+                  </Link>
                 </div>
               );
             })}

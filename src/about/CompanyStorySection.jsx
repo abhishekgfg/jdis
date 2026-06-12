@@ -1,4 +1,5 @@
 import { ArrowRight, Target, Eye, Gem, Check } from "lucide-react";
+import { HashLink } from "react-router-hash-link";
 import storyImg from "../about/image/story.png";
 
 export default function CompanyStorySection() {
@@ -31,10 +32,14 @@ export default function CompanyStorySection() {
               business problems.
             </p>
 
-            <button className="mt-6 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#145cff] px-6 text-[14px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-[#004be0] sm:w-auto">
+            <HashLink
+              smooth
+              to="/about#journey"
+              className="mt-6 inline-flex h-[48px] w-full items-center justify-center gap-3 rounded-md bg-[#145cff] px-6 text-[14px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-[#004be0] sm:w-auto"
+            >
               Our Journey
               <ArrowRight size={17} />
-            </button>
+            </HashLink>
           </div>
 
           <div className="relative h-[300px] overflow-hidden rounded-xl border border-[#dbe7f5] shadow-[0_15px_45px_rgba(15,23,42,0.14)] sm:h-[285px]">

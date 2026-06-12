@@ -7,6 +7,7 @@ import {
   Settings,
   BarChart3,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import servicesHero from "./image/services-hero.png";
 
@@ -43,15 +44,15 @@ export default function ServicesHeroSection() {
             </p>
 
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap sm:gap-5">
-              <button className="inline-flex h-[52px] w-full items-center justify-center gap-4 rounded-md bg-[#ffb700] px-6 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto sm:px-8 lg:h-[54px]">
+              <Link to="/contact" className="inline-flex h-[52px] w-full items-center justify-center gap-4 rounded-md bg-[#ffb700] px-6 text-[14px] font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto sm:px-8 lg:h-[54px]">
                 Discuss Your Project
                 <ArrowRight size={18} />
-              </button>
+              </Link>
 
-              <button className="inline-flex h-[52px] w-full items-center justify-center gap-4 rounded-md border border-white/25 bg-white/5 px-6 text-[14px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto sm:px-8 lg:h-[54px]">
+              <Link to="/portfolio" className="inline-flex h-[52px] w-full items-center justify-center gap-4 rounded-md border border-white/25 bg-white/5 px-6 text-[14px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto sm:px-8 lg:h-[54px]">
                 View Our Work
                 <PlayCircle size={20} className="text-[#ffb700]" />
-              </button>
+              </Link>
             </div>
           </div>
 

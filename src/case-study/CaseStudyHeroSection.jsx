@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, CircleArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "../portfolio/portfolio-hero-bg.svg";
 
 const overviewStats = [
@@ -24,7 +25,9 @@ export default function CaseStudyHeroSection() {
       <div className="mx-auto grid items-center gap-10 px-4 py-10 sm:px-6 md:px-10 lg:grid-cols-[.78fr_1.22fr] lg:px-16 lg:py-10">
         <div className="max-w-[620px]">
           <div className="flex items-center gap-2 text-[12px] font-bold">
-            <span className="text-white/88">Home</span>
+            <Link to="/" className="text-white/88">
+              Home
+            </Link>
             <ChevronRight size={15} className="text-white/45" />
             <span className="text-[#ffb525]">Case Studies</span>
           </div>
@@ -40,20 +43,20 @@ export default function CaseStudyHeroSection() {
           </p>
 
           <div className="mt-8 grid gap-4 sm:flex sm:flex-wrap sm:items-center sm:gap-7">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex h-14 w-full items-center justify-center gap-4 rounded bg-[#ffb525] px-5 text-[13px] font-extrabold text-[#061326] shadow-[0_12px_30px_rgba(255,181,37,.28)] transition hover:bg-[#ffc84d] sm:w-auto sm:px-8 sm:text-[14px]"
             >
               Discuss Your Project
               <ArrowRight size={17} />
-            </a>
-            {/* <a
-              href="/services"
+            </Link>
+            <Link
+              to="/services"
               className="inline-flex h-14 items-center gap-3 text-[14px] font-extrabold text-white transition hover:text-[#18a8ff]"
             >
               View Our Services
               <CircleArrowRight size={21} />
-            </a> */}
+            </Link>
           </div>
         </div>
 

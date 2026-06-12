@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProcessCTASection() {
   const process = [
@@ -120,15 +121,15 @@ export default function ProcessCTASection() {
             </p>
 
             <div className="relative z-10 grid gap-3 sm:flex sm:flex-wrap sm:justify-center lg:justify-end">
-              <button className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-5 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
+              <Link to="/contact" className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md bg-[#ffb700] px-5 font-bold text-[#061326] shadow-lg shadow-yellow-500/20 transition-all hover:bg-[#ffc329] sm:w-auto">
                 Start Your Project
                 <ArrowRight size={17} />
-              </button>
+              </Link>
 
-              <button className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
+              <a href="tel:+919523435814" className="inline-flex h-[52px] w-full items-center justify-center gap-3 rounded-md border border-white/25 bg-white/5 px-7 font-semibold text-white transition-all hover:bg-white/10 sm:w-auto">
                 Schedule a Call
                 <Phone size={17} />
-              </button>
+              </a>
             </div>
           </div>
         </div>

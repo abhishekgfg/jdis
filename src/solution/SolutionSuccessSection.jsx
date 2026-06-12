@@ -136,6 +136,7 @@ export default function SolutionSuccessSection() {
                   </p>
 
                   <button
+                    type="button"
                     onClick={() => setActiveStudy(study)}
                     className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700"
                   >
@@ -159,6 +160,7 @@ export default function SolutionSuccessSection() {
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              type="button"
               onClick={() => setActiveStudy(null)}
               className="mb-6 rounded-lg border px-4 py-2"
             >

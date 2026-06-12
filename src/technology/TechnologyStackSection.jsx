@@ -49,6 +49,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -280,13 +281,13 @@ export default function TechnologyStackSection() {
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className={`mt-6 inline-flex items-center gap-3 text-[13px] font-extrabold ${category.color}`}
                 >
                   Explore
                   <ArrowRight size={15} />
-                </a>
+                </Link>
               </article>
             );
           })}

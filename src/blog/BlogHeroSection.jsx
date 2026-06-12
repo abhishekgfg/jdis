@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, Search, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "../portfolio/portfolio-hero-bg.svg";
 
 export default function BlogHeroSection() {
@@ -17,9 +18,9 @@ export default function BlogHeroSection() {
       <div className="mx-auto grid min-h-[420px] max-w-[1480px] items-center gap-8 px-4 py-12 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10">
         <div>
           <div className="flex items-center gap-2 text-[12px] font-bold">
-            <a href="/" className="text-white/88">
+            <Link to="/" className="text-white/88">
               Home
-            </a>
+            </Link>
             <ChevronRight size={15} className="text-white/45" />
             <span className="text-[#ffb525]">Blog</span>
           </div>
@@ -50,13 +51,13 @@ export default function BlogHeroSection() {
               Explore Articles
               <ArrowRight size={16} />
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex h-13 w-full items-center justify-center gap-3 rounded border border-white/35 bg-white/5 px-5 py-4 text-[13px] font-extrabold text-white transition hover:bg-white/10 sm:w-auto sm:px-7"
             >
               Book Consultation
               <Search size={16} />
-            </a>
+            </Link>
           </div>
         </div>
 

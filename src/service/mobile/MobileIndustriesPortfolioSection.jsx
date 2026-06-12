@@ -140,7 +140,7 @@ export default function MobileIndustriesPortfolioSection() {
             </div>
 
             <a
-              href="/contact"
+              href="/industries"
               className="mt-8 inline-flex items-center gap-2 text-[12px] font-bold text-[#145cff]"
             >
               View All Industries
@@ -282,7 +282,7 @@ export default function MobileIndustriesPortfolioSection() {
                   <ArrowRight size={15} />
                 </a>
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919523435814"
                   className="inline-flex h-10 w-full items-center justify-center gap-3 rounded border border-white/25 px-5 text-[12px] font-bold text-white sm:w-auto"
                 >
                   Schedule a Call

@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   HeartPulse,
@@ -19,6 +21,9 @@ import realEstateProject from "../industries/image/industry-real-estate.png";
 import aiProject from "../technology/image/technology-project-ai.png";
 
 export default function IndustriesPortfolioSection() {
+  const [activeTab, setActiveTab] = useState("All");
+  const [projectOffset, setProjectOffset] = useState(0);
+
   const industries = [
     { icon: HeartPulse, title: "Healthcare" },
     { icon: GraduationCap, title: "Education" },
@@ -36,13 +41,13 @@ export default function IndustriesPortfolioSection() {
     {
       img: healthcareProject,
       title: "Healthcare CRM Platform",
-      type: "Web Application",
+      type: "CRM",
       tech: "React / Node.js",
     },
     {
       img: ecommerceProject,
       title: "Ecommerce Marketplace",
-      type: "Web Application",
+      type: "Ecommerce",
       tech: "Next.js / Laravel",
     },
     {
@@ -65,6 +70,41 @@ export default function IndustriesPortfolioSection() {
     },
   ];
 
+  const filteredProjects = useMemo(() => {
+    if (activeTab === "All") return projects;
+    if (activeTab === "Web Apps") {
+      return projects.filter((project) => project.type === "Web Application");
+    }
+    if (activeTab === "Mobile Apps") return [];
+    return projects.filter((project) => project.type.includes(activeTab));
+  }, [activeTab]);
+
+  const visibleProjects = useMemo(() => {
+    if (filteredProjects.length === 0) return [];
+    return filteredProjects.map(
+      (_, index) => filteredProjects[(index + projectOffset) % filteredProjects.length]
+    );
+  }, [filteredProjects, projectOffset]);
+
+  const selectTab = (tab) => {
+    setActiveTab(tab);
+    setProjectOffset(0);
+  };
+
+  const showNextProject = () => {
+    setProjectOffset((current) =>
+      filteredProjects.length ? (current + 1) % filteredProjects.length : 0
+    );
+  };
+
+  const showPreviousProject = () => {
+    setProjectOffset((current) =>
+      filteredProjects.length
+        ? (current - 1 + filteredProjects.length) % filteredProjects.length
+        : 0
+    );
+  };
+
   return (
     <section className="overflow-hidden bg-[#061426] py-10 text-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-12">
@@ -79,10 +119,13 @@ export default function IndustriesPortfolioSection() {
             </p>
           </div>
 
-          <button className="hidden sm:inline-flex h-[46px] px-6 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 text-white text-[14px] font-semibold items-center gap-3 transition-all">
+          <Link
+            to="/industries"
+            className="hidden sm:inline-flex h-[46px] px-6 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 text-white text-[14px] font-semibold items-center gap-3 transition-all"
+          >
             View All Industries
             <ArrowRight size={17} />
-          </button>
+          </Link>
         </div>
 
         <div className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-8">
@@ -117,9 +160,11 @@ export default function IndustriesPortfolioSection() {
           <div className="hidden lg:flex items-center gap-3">
             {tabs.map((tab) => (
               <button
+                type="button"
                 key={tab}
+                onClick={() => selectTab(tab)}
                 className={`h-[34px] px-5 rounded-md text-[12px] font-semibold transition-all ${
-                  tab === "All"
+                  tab === activeTab
                     ? "bg-[#ffb700] text-[#061326]"
                     : "bg-[#0b213d] text-white hover:bg-[#102b50]"
                 }`}
@@ -129,18 +174,23 @@ export default function IndustriesPortfolioSection() {
             ))}
           </div>
 
-          <button className="hidden sm:inline-flex h-[46px] px-6 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 text-white text-[14px] font-semibold items-center gap-3 transition-all">
+          <Link
+            to="/portfolio"
+            className="hidden sm:inline-flex h-[46px] px-6 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 text-white text-[14px] font-semibold items-center gap-3 transition-all"
+          >
             View All Projects
             <ArrowRight size={17} />
-          </button>
+          </Link>
         </div>
 
         <div className="mb-2 flex gap-3 overflow-x-auto pb-4 lg:hidden">
           {tabs.map((tab) => (
             <button
+              type="button"
               key={tab}
+              onClick={() => selectTab(tab)}
               className={`h-[34px] px-5 rounded-md text-[12px] font-semibold whitespace-nowrap ${
-                tab === "All"
+                tab === activeTab
                   ? "bg-[#ffb700] text-[#061326]"
                   : "bg-[#0b213d] text-white"
               }`}
@@ -151,12 +201,17 @@ export default function IndustriesPortfolioSection() {
         </div>
 
         <div className="relative">
-          <button className="hidden lg:flex absolute -left-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#0b213d] border border-white/15 items-center justify-center text-[#ffb700]">
+          <button
+            type="button"
+            onClick={showPreviousProject}
+            className="hidden lg:flex absolute -left-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#0b213d] border border-white/15 items-center justify-center text-[#ffb700]"
+            aria-label="Show previous project"
+          >
             <ChevronLeft size={18} />
           </button>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {projects.map((project) => (
+            {visibleProjects.length > 0 ? visibleProjects.map((project) => (
               <div
                 key={project.title}
                 className="rounded-lg border border-[#1c3558] bg-[#071b34] overflow-hidden hover:-translate-y-1 hover:bg-[#0a2344] transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.20)]"
@@ -183,10 +238,19 @@ export default function IndustriesPortfolioSection() {
                   </div>
                 </div>
               </div>
-            ))}
+            )) : (
+              <div className="rounded-lg border border-[#1c3558] bg-[#071b34] p-6 text-sm font-semibold text-white/80 lg:col-span-5">
+                No projects available in this category yet.
+              </div>
+            )}
           </div>
 
-          <button className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#0b213d] border border-white/15 items-center justify-center text-[#ffb700]">
+          <button
+            type="button"
+            onClick={showNextProject}
+            className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[#0b213d] border border-white/15 items-center justify-center text-[#ffb700]"
+            aria-label="Show next project"
+          >
             <ChevronRight size={18} />
           </button>
         </div>
