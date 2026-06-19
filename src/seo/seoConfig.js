@@ -2,7 +2,6 @@ export const SITE_URL = "https://www.jdinfotechsolutions.in";
 export const SITE_NAME = "JD Infotech Solutions";
 export const DEFAULT_IMAGE = `${SITE_URL}/images/og-image.png`;
 export const PRIMARY_PHONE = "+91 9523435814";
-export const SECONDARY_PHONE = "+91 6200594193";
 export const CONTACT_EMAIL = "info@jdinfotechsolutions.in";
 
 const defaultKeywords = [

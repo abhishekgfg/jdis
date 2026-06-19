@@ -17,12 +17,12 @@ import Nikhil from "../../components/images/Nikhil.png";
 export default function MeetOurTeam() {
   const teamStructure = {
     "Tech Team": [
-      {
-        name: "Aviraj Singh",
-        role: "Full Stack Developer",
-        description: "A dynamic full-stack developer who delivers impactful digital solutions with technical precision and innovative approaches.",
-        img: Aviraj,
-      },
+      // {
+      //   name: "Aviraj Singh",
+      //   role: "Full Stack Developer",
+      //   description: "A dynamic full-stack developer who delivers impactful digital solutions with technical precision and innovative approaches.",
+      //   img: Aviraj,
+      // },
       {
         name: "Abhishek Kumar Pandey",
         role: "Full Stack Developer & Marketing BDE",

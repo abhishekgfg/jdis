@@ -119,13 +119,6 @@ export default function Navbar() {
                 <Phone size={14} className="text-yellow-400" />
                 +91 9523435814
               </a>
-              <a
-                href="tel:+916200594193"
-                className="inline-flex items-center gap-2 text-white/90 transition hover:text-yellow-400"
-              >
-                <Phone size={14} className="text-yellow-400" />
-                +91 6200594193
-              </a>
             </div>
           </div>
         </div>
@@ -447,13 +440,6 @@ export default function Navbar() {
                   >
                     <Phone size={14} className="text-yellow-300" />
                     +91 9523435814
-                  </a>
-                  <a
-                    href="tel:+916200594193"
-                    className="inline-flex items-center gap-2 transition hover:text-yellow-300"
-                  >
-                    <Phone size={14} className="text-yellow-300" />
-                    +91 6200594193
                   </a>
                 </div>
                 <p className="mt-3 text-xs font-semibold text-white/40">

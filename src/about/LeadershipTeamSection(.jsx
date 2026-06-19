@@ -9,11 +9,11 @@ import Ritik from "../components/images/hritik.jpeg";
 
 export default function LeadershipTeamSection() {
   const leaders = [
-    {
-      name: "Aviraj Singh",
-      role: "Full Stack Developer",
-      img: Aviraj,
-    },
+    // {
+    //   name: "Aviraj Singh",
+    //   role: "Full Stack Developer",
+    //   img: Aviraj,
+    // },
     {
       name: "Abhishek Kumar Pandey",
       role: "Full Stack Developer & Marketing BDE",

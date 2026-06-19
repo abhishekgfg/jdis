@@ -23,7 +23,7 @@ const contactItems = [
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+91 6200594193, +91 9523435814,+91 6202000340,", "Mon - Sat: 9:30 AM - 7:00 PM (IST)"],
+    lines: ["+91 9523435814, +91 6202000340", "Mon - Sat: 9:30 AM - 7:00 PM (IST)"],
     color: "text-[#5d7cff]",
   },
   {
@@ -51,7 +51,7 @@ const contactItems = [
   {
     icon: FaWhatsapp,
     title: "WhatsApp",
-    lines: ["+91 6200594193 +91 9523435814", "Chat with us on WhatsApp"],
+    lines: ["+91 9523435814", "Chat with us on WhatsApp"],
     color: "text-[#10c76f]",
   },
 ];
