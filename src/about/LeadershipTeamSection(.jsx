@@ -1,7 +1,7 @@
 import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import Aviraj from "../components/images/aviraj.jpeg";
+// import Aviraj from "../components/images/aviraj.jpeg";
 import Abhishek from "../components/images/Abhishek.jpeg";
 import Pankaj from "../components/images/pankaj.jpeg";
 import Rishabh from "../components/images/rishbh.jpeg";

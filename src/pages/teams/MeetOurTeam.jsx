@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Aviraj from "../../components/images/aviraj.jpeg";
+// import Aviraj from "../../components/images/aviraj.jpeg";
 import Abhishek from "../../components/images/Abhishek.jpeg";
 import Pankaj from "../../components/images/pankaj.jpeg";
 import Rishabh from "../../components/images/rishbh.jpeg";
