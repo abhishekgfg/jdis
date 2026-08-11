@@ -36,7 +36,7 @@ export default function HeroSection() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-10 lg:pb-[100px]">
+      <div className="relative z-10 mx-auto  px-4 pb-8 sm:px-6 lg:px-10 lg:pb-[100px]">
         <div className="max-w-[620px] pt-10 lg:pt-[50px]">
           <div className="mb-6 inline-flex items-center gap-2 rounded-lg border border-[#ffb700]/30 bg-[#081528]/90 px-4 py-2 backdrop-blur-md lg:mb-8">
             <Globe size={14} className="text-[#ffb700]" />
@@ -116,7 +116,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative border-t border-[#14294f] bg-[#030d1d]/95 lg:absolute lg:bottom-0 lg:left-0 lg:right-0">
-        <div className="mx-auto max-w-[1400px] px-4 py-6 sm:px-6 lg:px-12 lg:py-7">
+        <div className="mx-auto  px-4 py-6 sm:px-6 lg:px-12 lg:py-7">
           <p className="mb-4 text-center text-[11px] uppercase tracking-[2px] text-[#6e7f99] sm:text-left lg:mb-5">
             Trusted By Global Brands
           </p>

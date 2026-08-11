@@ -5,23 +5,20 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "John Doe",
+    name: "Rohit Sharma",
     position: "CEO, TechCorp",
-    avatar: "/src/assets/client1.jpg",
     feedback:
       "Skyward Labs delivered exceptional results. Their attention to detail and innovative approach exceeded our expectations.",
   },
   {
-    name: "Jane Smith",
+    name: "Pooja Mehta",
     position: "Marketing Head, InnovateX",
-    avatar: "/src/assets/client2.jpg",
     feedback:
       "The team at Skyward Labs is highly professional. They transformed our vision into a beautiful, functional product.",
   },
   {
-    name: "Michael Johnson",
+    name: "Vikas Gupta",
     position: "Founder, StartSmart",
-    avatar: "/src/assets/client3.jpg",
     feedback:
       "Amazing experience working with Skyward Labs. The communication, creativity, and execution were top-notch.",
   },
@@ -58,8 +55,12 @@ export default function Testimonials() {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             className="bg-white rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
           >
-            <div className="w-20 h-20 mb-6 rounded-full overflow-hidden border-4 border-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
-              <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
+            <div className="w-20 h-20 mb-6 rounded-full bg-purple-600 text-white shadow-lg flex items-center justify-center text-xl font-bold">
+              {t.name
+                .split(" ")
+                .map((part) => part[0])
+                .slice(0, 2)
+                .join("")}
             </div>
             <FaQuoteLeft className="text-purple-500 text-3xl mb-4" />
             <p className="text-gray-600 mb-6 italic">"{t.feedback}"</p>

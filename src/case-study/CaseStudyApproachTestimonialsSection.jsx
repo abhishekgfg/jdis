@@ -41,7 +41,7 @@ const testimonials = [
   {
     quote:
       "JD Infotech Solutions transformed our idea into a powerful digital platform that exceeded our expectations. Their team is professional, responsive, and truly invested in our success.",
-    name: "Michael Thompson",
+    name: "Manish Tripathi",
     role: "CTO, RetailHub",
   },
   {
@@ -59,7 +59,7 @@ const testimonials = [
   {
     quote:
       "We needed speed, security, and a better customer journey. JD Infotech delivered all three without making the project feel complicated.",
-    name: "Sarah Williams",
+    name: "Sneha Iyer",
     role: "Product Lead, FinTrust",
   },
   {
@@ -71,7 +71,7 @@ const testimonials = [
   {
     quote:
       "From UI design to backend logic, everything was handled with care. They built a solution that feels modern, fast, and reliable.",
-    name: "Emily Carter",
+    name: "Kavita Joshi",
     role: "Marketing Manager, CloudWorks",
   },
 ];

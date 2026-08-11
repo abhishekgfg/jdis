@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, CheckCircle2, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import ecommerceImg from "../components/images/solution-success-ecommerce.png";
 import fintechImg from "../components/images/mobile-portfolio-ecommerce.png";
@@ -131,6 +131,129 @@ const caseStudies = [
       { value: "3X", label: "Page Views" },
       { value: "75%", label: "Faster Search" },
     ],
+  },
+];
+
+const liveWebsiteProjects = [
+  {
+    title: "Frost Master",
+    url: "https://frostmaster.co.in/",
+    category: "Business Website",
+    stack: "MERN Stack",
+  },
+  {
+    title: "The 9 to 9 Restaurant",
+    url: "https://the9to9restaurant.com/",
+    category: "Restaurant Website",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Shanu Mart",
+    url: "https://shanumart.in/",
+    category: "E-commerce",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Sokudo India",
+    url: "https://sokudoindia.com/",
+    category: "Business Website",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Trendikala",
+    url: "https://www.trendikala.com/",
+    category: "E-commerce",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Gurmeet Kaur Store",
+    url: "https://www.gurmeetkaurstore.com/",
+    category: "E-commerce",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Nisha Sagar Store",
+    url: "https://nishasagarstore.in/",
+    category: "E-commerce",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Sartaaj Bharat",
+    url: "https://sartaaj-bharat-frontend.vercel.app/",
+    category: "Business Platform",
+    stack: "MERN Stack",
+  },
+  {
+    title: "IESC Global",
+    url: "https://iesc.global/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Shodh Sutra",
+    url: "https://www.shodhsutra.com/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Eduglobe",
+    url: "https://eduglobe.ae/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Eduorbix",
+    url: "https://eduorbix.com/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Mano Vaidya Foundation",
+    url: "https://manovaidya.org/",
+    category: "Healthcare",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Mano Vaidya",
+    url: "https://manovaidya.com/",
+    category: "Healthcare",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Divya Mantra",
+    url: "https://www.divyamantra.in/",
+    category: "Wellness",
+    stack: "MERN Stack",
+  },
+  {
+    title: "IISD",
+    url: "https://iisd.io/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "K K Yadav Interior",
+    url: "https://www.kkyadavinterior.in/",
+    category: "Interior Design",
+    stack: "MERN Stack",
+  },
+  {
+    title: "IIST",
+    url: "https://iist.ind.in/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Mano Vaidya Courses",
+    url: "https://course.manovaidya.com/",
+    category: "Education",
+    stack: "MERN Stack",
+  },
+  {
+    title: "Manovaidya India",
+    url: "https://manovaidya.in/",
+    category: "Consultancy",
+    stack: "PHP",
   },
 ];
 
@@ -292,6 +415,65 @@ export default function PortfolioCaseStudiesSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1265ff]">
+                Live Website Projects
+              </span>
+              <h2 className="mt-2 text-[28px] font-extrabold leading-tight text-[#151d35]">
+                Recently Delivered <span className="text-[#1265ff]">Websites</span>
+              </h2>
+            </div>
+
+            <p className="max-w-xl text-[13px] font-medium leading-6 text-[#536174] sm:text-right">
+              A selection of live MERN Stack and PHP projects delivered for
+              ecommerce, education, healthcare, restaurant and business clients.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {liveWebsiteProjects.map((project) => (
+              <a
+                key={project.url}
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex min-h-[168px] flex-col justify-between rounded-lg border border-[#dce8f8] bg-white p-5 shadow-[0_10px_26px_rgba(15,23,42,.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#1265ff]/45 hover:shadow-[0_18px_38px_rgba(18,101,255,.13)]"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="rounded-full bg-[#edf4ff] px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#1265ff]">
+                      {project.category}
+                    </span>
+                    <ExternalLink
+                      size={17}
+                      className="shrink-0 text-[#8a99ad] transition-colors group-hover:text-[#1265ff]"
+                    />
+                  </div>
+
+                  <h3 className="mt-4 text-[16px] font-extrabold leading-6 text-[#151d35]">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 break-all text-[12px] font-medium leading-5 text-[#66758b]">
+                    {project.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  </p>
+                </div>
+
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-[#dce8f8] bg-[#f7faff] px-3 py-1.5 text-[11px] font-extrabold text-[#151d35]">
+                    {project.stack}
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#1265ff]">
+                    Visit Site
+                    <ArrowRight size={13} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

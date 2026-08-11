@@ -4,31 +4,25 @@ import blogAi from "../components/images/b1.png";
 import blogCloud from "../components/images/b2.png";
 import blogSecurity from "../components/images/b3.png";
 import blogDesign from "../service/image/website-overview.png";
-import davidImg from "../components/images/deepak.jpeg";
-import johnImg from "../components/images/Vivek.jpeg";
-import sarahImg from "../components/images/Shubham.jpeg";
 
 const testimonials = [
   {
     quote:
       "JD Infotech Solutions delivered beyond our expectations. Their team was professional, responsive, and truly understood our business needs.",
-    name: "John Michael",
-    role: "CTO, FinServe Inc.",
-    image: johnImg,
+    name: "Amit Sharma",
+    role: "CTO, FinServe India",
   },
   {
     quote:
       "The team at JD Infotech is highly skilled and reliable. They delivered our project on time and helped us achieve outstanding results.",
-    name: "Sarah Thompson",
+    name: "Neha Agarwal",
     role: "Product Head, HealthPlus",
-    image: sarahImg,
   },
   {
     quote:
       "We've been working with JD Infotech Solutions for years. Their support and innovative solutions have been instrumental in our growth.",
-    name: "David Miller",
+    name: "Rajesh Verma",
     role: "CEO, BuildMax Realty",
-    image: davidImg,
   },
 ];
 
@@ -109,11 +103,13 @@ export default function PortfolioStoriesBlogSection() {
 
                 <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
                   <div className="flex items-center gap-4">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="h-14 w-14 rounded-full border-2 border-white object-cover"
-                    />
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-white bg-[#1265ff] text-[14px] font-extrabold text-white">
+                      {item.name
+                        .split(" ")
+                        .map((part) => part[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </div>
                     <div>
                       <h3 className="text-[14px] font-extrabold">
                         {item.name}

@@ -4,18 +4,12 @@ import { X, ArrowRight, Phone, Menu, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "./images/jagdamba.png";
+import { useProjectEnquiry } from "./ProjectEnquiryModal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-  const [enquiryForm, setEnquiryForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-    message: "",
-  });
   const location = useLocation();
+  const { openProjectEnquiry } = useProjectEnquiry();
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -45,31 +39,6 @@ export default function Navbar() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const handleEnquiryChange = (event) => {
-    const { name, value } = event.target;
-    setEnquiryForm((current) => ({ ...current, [name]: value }));
-  };
-
-  const handleEnquirySubmit = (event) => {
-    event.preventDefault();
-
-    const message = [
-      "New Project Consultation Request",
-      `Name: ${enquiryForm.name}`,
-      `Phone: ${enquiryForm.phone}`,
-      `Email: ${enquiryForm.email || "Not provided"}`,
-      `Service: ${enquiryForm.service || "Not selected"}`,
-      `Message: ${enquiryForm.message}`,
-    ].join("\n");
-
-    window.open(
-      `https://wa.me/919523435814?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
-
-    setIsEnquiryOpen(false);
-  };
-
   const renderMobileLink = (link) => {
     if (link.href?.startsWith("#")) {
       const to = location.pathname === "/" ? link.href : `/${link.href}`;
@@ -89,7 +58,17 @@ export default function Navbar() {
     return (
       <Link
         to={link.href}
-        onClick={() => setIsOpen(false)}
+        data-project-modal={link.href === "/contact" ? "false" : undefined}
+        onClick={(event) => {
+          if (link.href === "/contact") {
+            event.preventDefault();
+            setIsOpen(false);
+            openProjectEnquiry();
+            return;
+          }
+
+          setIsOpen(false);
+        }}
         className={`flex rounded-2xl px-5 py-3 font-bold transition hover:bg-white/10 hover:text-yellow-300 ${
           location.pathname === link.href
             ? "bg-yellow-400 text-slate-950 shadow-lg shadow-yellow-400/20 hover:bg-yellow-300 hover:text-slate-950"
@@ -110,7 +89,7 @@ export default function Navbar() {
         className="fixed top-0 z-50 w-full bg-slate-900 shadow-lg"
       >
         <div className="border-b border-white/10 bg-[#020b1b]">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-2 text-[12px] font-semibold text-white">
+          <div className="mx-auto flex  flex-wrap items-center justify-between gap-3 px-4 py-2 text-[12px] font-semibold text-white">
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="tel:+919523435814"
@@ -123,7 +102,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex  items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
             <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-lg">
               <img
@@ -197,7 +176,8 @@ export default function Navbar() {
 
             <button
               type="button"
-              onClick={() => setIsEnquiryOpen(true)}
+              data-project-modal="false"
+              onClick={openProjectEnquiry}
               className="group flex flex-shrink-0 items-center gap-1 rounded-lg bg-yellow-500 px-5 py-2 font-semibold text-slate-900 shadow-lg transition-all hover:bg-yellow-600 hover:shadow-xl"
             >
               <span>Start Project</span>
@@ -219,109 +199,6 @@ export default function Navbar() {
           </button>
         </div>
       </motion.header>
-
-      <AnimatePresence>
-        {isEnquiryOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020817]/78 px-4 py-6 backdrop-blur-sm"
-            onMouseDown={() => setIsEnquiryOpen(false)}
-          >
-            <motion.form
-              initial={{ y: 24, opacity: 0, scale: 0.96 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 24, opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.2 }}
-              onSubmit={handleEnquirySubmit}
-              onMouseDown={(event) => event.stopPropagation()}
-              className="relative w-full max-w-xl rounded-2xl border border-[#23456e] bg-white p-6 shadow-[0_35px_100px_rgba(2,8,23,.38)]"
-            >
-              <button
-                type="button"
-                onClick={() => setIsEnquiryOpen(false)}
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition hover:bg-slate-200"
-                aria-label="Close project form"
-              >
-                <X size={18} />
-              </button>
-
-              <div className="pr-10">
-                <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#1767ff]">
-                  Free Consultation
-                </span>
-                <h2 className="mt-1 text-[26px] font-extrabold leading-tight text-slate-900">
-                  Tell Us About Your Project
-                </h2>
-                <p className="mt-2 text-[13px] font-semibold leading-6 text-slate-600">
-                  Fill this short form and your project details will be sent
-                  directly to WhatsApp for a quick callback.
-                </p>
-              </div>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <input
-                  name="name"
-                  value={enquiryForm.name}
-                  onChange={handleEnquiryChange}
-                  required
-                  placeholder="Your name"
-                  className="h-12 rounded-lg border border-slate-200 px-4 text-[13px] font-semibold outline-none focus:border-[#1767ff] focus:ring-2 focus:ring-[#1767ff]/10"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  value={enquiryForm.phone}
-                  onChange={handleEnquiryChange}
-                  required
-                  placeholder="Phone number"
-                  className="h-12 rounded-lg border border-slate-200 px-4 text-[13px] font-semibold outline-none focus:border-[#1767ff] focus:ring-2 focus:ring-[#1767ff]/10"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={enquiryForm.email}
-                  onChange={handleEnquiryChange}
-                  placeholder="Email address"
-                  className="h-12 rounded-lg border border-slate-200 px-4 text-[13px] font-semibold outline-none focus:border-[#1767ff] focus:ring-2 focus:ring-[#1767ff]/10"
-                />
-                <select
-                  name="service"
-                  value={enquiryForm.service}
-                  onChange={handleEnquiryChange}
-                  className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-[13px] font-semibold text-slate-500 outline-none focus:border-[#1767ff] focus:ring-2 focus:ring-[#1767ff]/10"
-                >
-                  <option value="">Select service</option>
-                  <option>Website Development</option>
-                  <option>Mobile App Development</option>
-                  <option>E-commerce Development</option>
-                  <option>CRM / ERP Solution</option>
-                  <option>AI & Automation</option>
-                  <option>Cloud Deployment</option>
-                </select>
-              </div>
-
-              <textarea
-                name="message"
-                value={enquiryForm.message}
-                onChange={handleEnquiryChange}
-                required
-                placeholder="Tell us your requirement..."
-                className="mt-4 h-28 w-full resize-none rounded-lg border border-slate-200 px-4 py-3 text-[13px] font-semibold outline-none focus:border-[#1767ff] focus:ring-2 focus:ring-[#1767ff]/10"
-              />
-
-              <button
-                type="submit"
-                className="mt-5 inline-flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#1767ff] px-6 text-[13px] font-extrabold text-white shadow-[0_12px_24px_rgba(23,103,255,.22)] transition hover:bg-[#0f55da]"
-              >
-                Send to WhatsApp
-                <ArrowRight size={15} />
-              </button>
-            </motion.form>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <AnimatePresence>
         {isOpen && (
@@ -418,9 +295,10 @@ export default function Navbar() {
 
                 <button
                   type="button"
+                  data-project-modal="false"
                   onClick={() => {
                     setIsOpen(false);
-                    setIsEnquiryOpen(true);
+                    openProjectEnquiry();
                   }}
                   className="group mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3.5 text-sm font-extrabold text-slate-950 shadow-lg shadow-yellow-400/20 transition hover:bg-yellow-300"
                 >
