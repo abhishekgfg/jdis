@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 
+import { sendLead } from "../lib/leads";
 const ProjectEnquiryContext = createContext(null);
 
 const ctaTextPattern =
@@ -80,6 +81,7 @@ export function ProjectEnquiryProvider({ children }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    sendLead({ name: form.name, phone: form.phone, email: form.email, interest: form.service, source: "project-modal" });
 
     const message = [
       "New Project Consultation Request",

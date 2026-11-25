@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+import { sendLead } from "../lib/leads";
 export default function ContactFormWithInfo() {
   const [form, setForm] = useState({
     name: "",
@@ -18,6 +19,7 @@ export default function ContactFormWithInfo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    sendLead({ name: form.name, phone: form.phone, email: form.email, interest: form.subject, source: "contact-home" });
     const whatsappNumber = "9523435814";
     const text = `Hello, my name is ${form.name}. Email: ${form.email}. Phone: ${form.phone}. Subject: ${form.subject}. Message: ${form.message}`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

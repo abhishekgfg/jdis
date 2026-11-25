@@ -10,6 +10,7 @@ import {
   Tag,
   X,
 } from "lucide-react";
+import { getApiPost, getApiPosts, safeHtml } from "../lib/platform";
 import ecommerceImg from "../components/images/solution-success-ecommerce.png";
 import fintechImg from "../components/images/solution-success-fintech.png";
 import healthcareImg from "../components/images/solution-success-healthcare.png";
@@ -249,11 +250,49 @@ export default function BlogInsightsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activePost, setActivePost] = useState(null);
   const [openFaq, setOpenFaq] = useState(0);
+  const [apiPosts, setApiPosts] = useState([]);
 
+  // Posts written in the admin (Blog & content) show first; the built-in posts below stay as the fallback.
+  useEffect(() => {
+    let alive = true;
+    getApiPosts(50).then((items) => {
+      if (!alive || !items.length) return;
+      setApiPosts(
+        items.map((p) => ({
+          slug: p.slug,
+          fromPlatform: true,
+          image: p.coverUrl || cloudImg,
+          category: (p.tags && p.tags[0]) || "Insights",
+          date: new Date(p.publishedAt).toLocaleDateString("en-IN", { month: "long", year: "numeric" }),
+          readTime: `${p.readingMinutes || 3} min read`,
+          title: p.title,
+          excerpt: p.excerpt,
+          intro: p.excerpt,
+          sections: [],
+          benefits: [],
+          takeaway: "",
+        })),
+      );
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const allPosts = [...apiPosts, ...posts];
   const visiblePosts =
     activeCategory === "All"
-      ? posts
-      : posts.filter((post) => post.category === activeCategory);
+      ? allPosts
+      : allPosts.filter((post) => post.category === activeCategory);
+
+  function openPost(post) {
+    setActivePost(post);
+    if (post.fromPlatform && post.html === undefined) {
+      getApiPost(post.slug).then((full) => {
+        if (full?.html) setActivePost((cur) => (cur && cur.slug === post.slug ? { ...cur, html: safeHtml(full.html) } : cur));
+      });
+    }
+  }
 
   useEffect(() => {
     if (!activePost) return;
@@ -313,7 +352,7 @@ export default function BlogInsightsSection() {
         <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {visiblePosts.map((post) => (
             <article
-              key={post.title}
+              key={post.slug || post.title}
               className="overflow-hidden rounded-[10px] border border-[#dce7f7] bg-white shadow-[0_14px_34px_rgba(15,55,105,.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,55,105,.12)]"
             >
               <div className="relative h-[210px] overflow-hidden bg-[#061326] sm:h-[230px]">
@@ -348,7 +387,7 @@ export default function BlogInsightsSection() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => setActivePost(post)}
+                  onClick={() => openPost(post)}
                   className="mt-5 inline-flex items-center gap-3 text-[12px] font-extrabold text-[#1767ff]"
                 >
                   View Details
@@ -482,6 +521,15 @@ export default function BlogInsightsSection() {
 
             <div className="grid gap-6 p-5 sm:p-8 lg:grid-cols-[1.08fr_.92fr]">
               <div className="space-y-5">
+                {activePost.html && (
+                  <div
+                    className="space-y-3 text-[13px] font-medium leading-7 text-[#536174] [&_h2]:mt-4 [&_h2]:text-[18px] [&_h2]:font-extrabold [&_h2]:text-[#151d35] [&_h3]:mt-3 [&_h3]:text-[16px] [&_h3]:font-extrabold [&_h3]:text-[#151d35] [&_a]:text-[#1767ff] [&_a]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_img]:rounded-lg"
+                    dangerouslySetInnerHTML={{ __html: activePost.html }}
+                  />
+                )}
+                {activePost.fromPlatform && !activePost.html && (
+                  <p className="text-[13px] font-medium text-[#536174]">Loading…</p>
+                )}
                 {activePost.sections.map(([heading, text]) => (
                   <div key={heading}>
                     <h4 className="text-[18px] font-extrabold text-[#151d35]">
@@ -493,14 +541,16 @@ export default function BlogInsightsSection() {
                   </div>
                 ))}
 
-                <div className="rounded-[8px] border border-[#dce8f8] bg-[#f7faff] p-5">
-                  <h4 className="text-[16px] font-extrabold text-[#151d35]">
-                    Key Takeaway
-                  </h4>
-                  <p className="mt-2 text-[13px] font-semibold leading-7 text-[#536174]">
-                    {activePost.takeaway}
-                  </p>
-                </div>
+                {activePost.takeaway && (
+                  <div className="rounded-[8px] border border-[#dce8f8] bg-[#f7faff] p-5">
+                    <h4 className="text-[16px] font-extrabold text-[#151d35]">
+                      Key Takeaway
+                    </h4>
+                    <p className="mt-2 text-[13px] font-semibold leading-7 text-[#536174]">
+                      {activePost.takeaway}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <aside className="rounded-[10px] bg-[#061326] p-5 text-white">

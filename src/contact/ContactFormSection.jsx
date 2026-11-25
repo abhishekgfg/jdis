@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { FaSkype, FaWhatsapp } from "react-icons/fa";
 
+import { sendLead } from "../lib/leads";
 const services = [
   "Website Development",
   "Mobile App Development",
@@ -73,6 +74,7 @@ export default function ContactFormSection() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    sendLead({ name: form.name, phone: form.phone, email: form.email, interest: form.service, source: "contact-page" });
 
     const message = [
       "New Contact Enquiry",

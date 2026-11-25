@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence} from "framer-motion";
 
+import { sendLead } from "../lib/leads";
 export default function Hero() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", project: "" });
@@ -24,6 +25,7 @@ export default function Hero() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    sendLead({ name: formData.name, phone: formData.phone, email: formData.email, interest: formData.project, source: "hero" });
     const message = `Hello, my name is ${formData.name}.
 Email: ${formData.email}
 Project Details: ${formData.project}`;

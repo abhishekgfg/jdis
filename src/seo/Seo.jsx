@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { getSiteSettings } from "../lib/platform";
 import {
   DEFAULT_IMAGE,
   getBaseSchema,
@@ -131,8 +132,47 @@ function setJsonLd(page) {
   });
 }
 
+const BUILT_IN_GA = "G-8D0H30X1TT";
+
 export default function Seo() {
   const location = useLocation();
+
+  // Search text written in the admin for this page wins over the built-in text below; tracking ids come from the admin too.
+  useEffect(() => {
+    let alive = true;
+    getSiteSettings().then((site) => {
+      if (!alive || !site) return;
+      const path = location.pathname === "/" ? "/" : location.pathname.replace(/\/+$/, "");
+      const o = site.pages && site.pages[path];
+      if (o) {
+        if (o.title) {
+          document.title = o.title;
+          setMeta('meta[name="title"]', { name: "title", content: o.title });
+          setMeta('meta[property="og:title"]', { property: "og:title", content: o.title });
+          setMeta('meta[name="twitter:title"]', { name: "twitter:title", content: o.title });
+        }
+        if (o.description) {
+          setMeta('meta[name="description"]', { name: "description", content: o.description });
+          setMeta('meta[property="og:description"]', { property: "og:description", content: o.description });
+          setMeta('meta[name="twitter:description"]', { name: "twitter:description", content: o.description });
+        }
+        const img = o.ogImage || site.defaultOgImage;
+        if (img) {
+          setMeta('meta[property="og:image"]', { property: "og:image", content: img });
+          setMeta('meta[name="twitter:image"]', { name: "twitter:image", content: img });
+        }
+        if (o.noindex) setMeta('meta[name="robots"]', { name: "robots", content: "noindex, nofollow" });
+      }
+      if (site.googleVerification) setMeta('meta[name="google-site-verification"]', { name: "google-site-verification", content: site.googleVerification });
+      if (site.gaMeasurementId && site.gaMeasurementId !== BUILT_IN_GA && typeof window.gtag === "function" && !window.__fa_ga_added) {
+        window.__fa_ga_added = true;
+        window.gtag("config", site.gaMeasurementId);
+      }
+    });
+    return () => {
+      alive = false;
+    };
+  }, [location.pathname]);
 
   useEffect(() => {
     const page = getPageSeo(location.pathname);

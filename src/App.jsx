@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-// import ChatWidget from './components/ChatWidget'
+import AiChatWidget from './components/AiChatWidget'
 import Seo from './seo/Seo'
 import { ProjectEnquiryProvider } from './components/ProjectEnquiryModal'
 
@@ -52,7 +52,7 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
-          {/* <ChatWidget /> */}
+          <AiChatWidget />
         </div>
       </ProjectEnquiryProvider>
     </Router>
